@@ -186,8 +186,19 @@ section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
 .usp-card:hover::after { opacity: 1; }
 .usp-card i{ color: var(--lime); margin-bottom: 1.5rem; display: block;}
 .usp-num{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;color:var(--muted);margin-bottom:2rem;font-weight:600; opacity: 0.5;}
-.usp-title{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:1rem; letter-spacing: -0.01em;}
-.usp-desc{color:var(--muted);font-size:0.95rem;line-height:1.7}
+.usp-title, .step-title, .price-name, .price-amount, .section-title, .nav-links a {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
+}
+.usp-card:hover .usp-title { transform: translateX(12px); }
+.step:hover .step-title { transform: translateX(10px); }
+.price-card:hover .price-name { transform: translateX(8px); }
+.price-card:hover .price-amount { transform: translateX(6px); }
+.nav-links a:hover { transform: translateY(-2px); }
+
+/* ICON SHIFT */
+i { transition: transform 0.3s ease; }
+.btn-primary:hover i, .btn-dark:hover i, .nav-cta:hover i { transform: translateX(6px); }
+.usp-card:hover i { transform: scale(1.1) rotate(5deg); }
 
 /* HOW IT WORKS */
 .how-wrap{background:var(--bg2);margin:0;max-width:100%;padding:8rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);}
