@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "devblitz-landing",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
