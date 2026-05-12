@@ -20,9 +20,13 @@ Use these patterns when the user needs to interact with GitHub.
 6. Push: `git push -u origin main`
 
 ### Updating Changes
-1. Add changes: `git add .`
-2. Commit: `git commit -m "Update message"`
-3. Push: `git push`
+To save Vercel deployment limits, focus on committing changes locally and only push when ready for production.
+
+1. **Stage Changes:** `git add .`
+2. **Commit Locally:** `git commit -m "Your description of changes"`
+3. **Push to Production (When Ready):** `git push`
+
+> **Note:** Do NOT push after every small edit. Batch multiple commits together before pushing to GitHub to avoid hitting Vercel deployment limits.
 
 ## Vercel Deployment
 
