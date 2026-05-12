@@ -120,10 +120,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display
 }
 .hero-content { animation: float 6s ease-in-out infinite; }
 h1.hero-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(3.5rem,10vw,8rem);font-weight:700;line-height:0.85;letter-spacing:-0.05em;margin-bottom:2.5rem;}
-h1.hero-title em{font-style:normal;color:var(--lime); position: relative; display: inline-block;}
+/* GRADIENT TEXT FLOW */
+@keyframes textFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+h1.hero-title em {
+  background: linear-gradient(90deg, var(--lime), #fff, var(--lime), #fff, var(--lime));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textFlow 5s linear infinite;
+  display: inline-block;
+  font-style: normal;
+  position: relative;
+}
 h1.hero-title em::after {
     content: ""; position: absolute; bottom: 10%; left: 0; width: 100%; height: 8px; 
-    background: var(--lime); opacity: 0.2; border-radius: 4px; z-index: -1;
+    background: var(--lime); opacity: 0.1; border-radius: 4px; z-index: -1;
 }
 .hero-sub{font-size:1.3rem;color:var(--muted);max-width:620px;margin-bottom:3.5rem;line-height:1.6; opacity: 0.9;}
 .hero-sub strong{color:var(--lime); font-weight: 600;}
@@ -138,7 +152,18 @@ h1.hero-title em::after {
 .stat-label{font-size:0.85rem;color:var(--muted); font-weight: 500;}
 
 /* TICKER */
-.ticker-wrap{background:var(--lime);padding:0.75rem 0;overflow:hidden;white-space:nowrap; transform: rotate(-1deg) scale(1.02); margin: 2rem 0; z-index: 2; position: relative;}
+.ticker-wrap{
+    background:var(--lime);
+    padding:0.75rem 0;
+    overflow:hidden;
+    white-space:nowrap;
+    transform: rotate(-1deg) scale(1.02);
+    margin: 2rem 0;
+    z-index: 2;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
 .ticker{display:inline-block;animation:ticker 40s linear infinite}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-item{display:inline-block;color:#000;font-weight:800;font-size:0.9rem;letter-spacing:0.04em;text-transform:uppercase;padding:0 2.5rem; font-family: 'Space Grotesk', sans-serif;}
