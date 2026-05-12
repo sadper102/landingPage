@@ -15,16 +15,39 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg: #050505;
-  --bg2: #0E0E0E;
-  --bg3: #161616;
+  --bg: #030303;
+  --bg2: #080808;
+  --bg3: #0D0D0D;
   --lime: #B8FF35;
-  --lime-soft: rgba(184, 255, 53, 0.12);
-  --text: #F2F2F2;
-  --muted: #A0A0A0;
-  --border: rgba(255, 255, 255, 0.05);
-  --glass: rgba(10, 10, 10, 0.75);
+  --lime-glow: rgba(184, 255, 53, 0.4);
+  --lime-soft: rgba(184, 255, 53, 0.08);
+  --accent: #7000FF; /* Electric Purple for dual-glow */
+  --text: #FFFFFF;
+  --muted: #808080;
+  --border: rgba(255, 255, 255, 0.04);
+  --glass: rgba(5, 5, 5, 0.8);
 }
+
+/* REVEAL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px) scale(0.95);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+/* STAGGERED REVEAL FOR TEXT */
+.stagger-item { opacity: 0; transform: translateY(15px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.visible .stagger-item { opacity: 1; transform: translateY(0); }
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
 html{scroll-behavior:smooth}
 body{
     background: var(--bg);
@@ -39,12 +62,23 @@ body{
     background-size: 40px 40px;
 }
 
+/* NOISE OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
 /* CURSOR GLOW */
 .cursor-glow {
   position: fixed;
   top: 0; left: 0;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(184, 255, 53, 0.04) 0%, transparent 70%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.05) 0%, rgba(184, 255, 53, 0.03) 40%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -54,21 +88,17 @@ body{
 }
 @media (min-width: 1024px) { .cursor-glow { display: block; } }
 
-/* NOISE OVERLAY */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 9999;
+/* HERO AURA */
+.hero::before {
+  content: ''; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);
+  width: 40vw; height: 40vw; background: var(--accent); opacity: 0.05; filter: blur(120px); z-index: -1; animation: aura 10s infinite alternate;
 }
-
-/* REVEAL ANIMATION ENHANCEMENT */
-.reveal{opacity:0;transform:translateY(30px) scale(0.98); transition:all 0.8s cubic-bezier(0.16, 1, 0.3, 1)}
-.reveal.visible{opacity:1;transform:translateY(0) scale(1)}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:var(--glass);backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);}
+@keyframes aura {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.05; }
+    100% { transform: translate(-45%, -55%) scale(1.2); opacity: 0.08; }
+}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:var(--glass);backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);}
 .logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-0.03em;color:var(--lime); display: flex; align-items: center; gap: 0.5rem;}
 .logo span{color:var(--text)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
@@ -255,15 +285,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:5rem 2rem
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-content">
+  <div class="hero-content reveal">
     <h1 class="hero-title">
-      เปลี่ยนไอเดีย<br><em>ให้เป็นโปรแกรม.</em><br>จบไว ในราคาที่ใช่.
+      <span class="stagger-item stagger-1">เปลี่ยนไอเดีย</span><br>
+      <span class="stagger-item stagger-2"><em>ให้เป็นโปรแกรม.</em></span><br>
+      <span class="stagger-item stagger-3">จบไว ในราคาที่ใช่.</span>
     </h1>
+    <p class="hero-sub stagger-item stagger-4">
+      เราปลดล็อกขีดจำกัดด้วย <strong>AI-Powered Workflow</strong> พัฒนาซอฟต์แวร์เร็วกว่าเดิม 3 เท่า<br>
+      ส่งมอบงานคุณภาพระดับ Enterprise ในราคาที่ SME เข้าถึงได้
+    </p>
   </div>
-  <p class="hero-sub">
-    เราปลดล็อกขีดจำกัดด้วย <strong>AI-Powered Workflow</strong> พัฒนาซอฟต์แวร์เร็วกว่าเดิม 3 เท่า<br>
-    ส่งมอบงานคุณภาพระดับ Enterprise ในราคาที่ SME เข้าถึงได้
-  </p>
   <div class="hero-actions">
     <a href="#contact" class="btn-primary">คุยไอเดียกับเรา <i data-lucide="arrow-right"></i></a>
     <a href="#how" class="btn-secondary">ดูขั้นตอนการทำงาน</a>
