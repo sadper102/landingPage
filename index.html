@@ -118,15 +118,26 @@ section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
 .pill:hover{border-color:var(--lime);color:var(--lime); background: var(--lime-soft);}
 
 /* COMPARISON */
-.compare-wrap { overflow-x: auto; margin-top: 3rem; border-radius: 16px; border: 1px solid var(--border); background: var(--bg2);}
-.compare-table{width:100%;border-collapse:collapse;}
-.compare-table th{font-family:'Space Grotesk',sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:1.5rem;text-align:left;border-bottom:1px solid var(--border); background: rgba(255,255,255,0.02);}
-.compare-table td{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);font-size:0.95rem}
+.compare-wrap { overflow-x: auto; margin-top: 4rem; border-radius: 20px; border: 1px solid var(--border); background: var(--bg2); position: relative;}
+.compare-table{width:100%; border-collapse: separate; border-spacing: 0; min-width: 700px;}
+.compare-table th{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);padding:2rem 1.5rem; text-align:left; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.01);}
+.compare-table td{padding:1.5rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; vertical-align: middle; transition: all 0.2s;}
 .compare-table tr:last-child td { border-bottom: none; }
-.compare-table tr:hover td{background:rgba(255,255,255,0.02)}
-.compare-table td:first-child{color:var(--muted); font-weight: 500;}
-.yes{color:var(--lime);font-weight:700; display: flex; align-items: center; gap: 0.5rem;}
-.no{color:#555; display: flex; align-items: center; gap: 0.5rem;}
+
+/* Column Styles */
+.compare-table td:nth-child(1) { width: 34%; color: var(--muted); font-weight: 500; border-right: 1px solid var(--border); padding-left: 2rem;}
+.compare-table td:nth-child(2) { width: 33%; background: rgba(184, 255, 53, 0.02); color: var(--lime); font-weight: 600; text-align: center; }
+.compare-table td:nth-child(3) { width: 33%; color: #666; text-align: center; }
+
+/* Header adjustments */
+.compare-table th:nth-child(2) { color: var(--lime); text-align: center; background: rgba(184, 255, 53, 0.04); }
+.compare-table th:nth-child(3) { text-align: center; }
+
+/* Icon wrappers */
+.yes, .no { display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
+.no { color: #555; }
+.compare-table tr:hover td { background: rgba(255,255,255,0.03); }
+.compare-table tr:hover td:nth-child(2) { background: rgba(184, 255, 53, 0.06); }
 
 /* CTA */
 .cta-section{background:var(--lime);color:#000;text-align:center;padding:8rem 2rem;margin:0; position: relative; overflow: hidden;}
@@ -318,11 +329,31 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:5rem 2rem
         </tr>
         </thead>
         <tbody>
-        <tr><td>ระยะเวลาเริ่มต้น</td><td class="yes"><i data-lucide="check-circle-2" size="18"></i> พรุ่งนี้เลย</td><td class="no"><i data-lucide="x-circle" size="18"></i> 1–2 สัปดาห์</td></tr>
-        <tr><td>ได้เห็น Prototype</td><td class="yes"><i data-lucide="check-circle-2" size="18"></i> 24 ชั่วโมง</td><td class="no"><i data-lucide="x-circle" size="18"></i> 2–4 สัปดาห์</td></tr>
-        <tr><td>การแก้ไขงาน</td><td class="yes"><i data-lucide="check-circle-2" size="18"></i> หลักชั่วโมง</td><td class="no"><i data-lucide="x-circle" size="18"></i> รอ Sprint ถัดไป</td></tr>
-        <tr><td>งบประมาณ</td><td class="yes"><i data-lucide="check-circle-2" size="18"></i> ถูกกว่า 50%</td><td class="no"><i data-lucide="x-circle" size="18"></i> ราคาสูง</td></tr>
-        <tr><td>Source Code</td><td class="yes"><i data-lucide="check-circle-2" size="18"></i> ให้ครบ 100%</td><td class="no"><i data-lucide="x-circle" size="18"></i> มักมีค่าใช้จ่ายเพิ่ม</td></tr>
+        <tr>
+            <td>ระยะเวลาเริ่มต้น</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> พรุ่งนี้เลย</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> 1–2 สัปดาห์</div></td>
+        </tr>
+        <tr>
+            <td>ได้เห็น Prototype</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> 24 ชั่วโมง</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> 2–4 สัปดาห์</div></td>
+        </tr>
+        <tr>
+            <td>การแก้ไขงาน</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> หลักชั่วโมง</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> รอ Sprint ถัดไป</div></td>
+        </tr>
+        <tr>
+            <td>งบประมาณ</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ประหยัดกว่า 50%</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> ราคาสูง</div></td>
+        </tr>
+        <tr>
+            <td>Source Code</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ให้ครบ 100%</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> มักมีค่าใช้จ่ายเพิ่ม</div></td>
+        </tr>
         </tbody>
     </table>
   </div>
