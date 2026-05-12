@@ -638,16 +638,19 @@ const staggerItems = heroTitle.querySelectorAll('.stagger-item');
 staggerItems.forEach(item => {
   let html = '';
   const text = item.textContent;
-  const isEm = item.querySelector('em') || item.tagName === 'EM';
   
-  [...text].forEach(char => {
-    if(char === ' ') {
+  // Regex to match a base character followed by combining marks (vowels/tones)
+  // This handles Thai script properly
+  const clusters = text.match(/[\u0E00-\u0E7F][\u0E31-\u0E3A\u0E47-\u0E4E]*|./g) || [];
+  
+  clusters.forEach(cluster => {
+    if(cluster === ' ') {
       html += ' ';
     } else {
       const dx = (Math.random() - 0.5) * 150;
       const dy = (Math.random() - 0.5) * 150;
       const dr = (Math.random() - 0.5) * 60;
-      html += `<span class="char" style="--dx:${dx}px; --dy:${dy}px; --dr:${dr}deg">${char}</span>`;
+      html += `<span class="char" style="--dx:${dx}px; --dy:${dy}px; --dr:${dr}deg">${cluster}</span>`;
     }
   });
 
