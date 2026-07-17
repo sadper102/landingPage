@@ -3,29 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEONEX — รับทำโปรแกรมไว ครบ คุ้ม</title>
-<meta name="description" content="NEONEX - รับทำโปรแกรม เว็บไซต์ และ Web App ด้วย AI เร็วขึ้น 3 เท่า ประหยัดกว่า 50% ได้งานจริงภายในวัน">
+<title>NEONEX — รับทำเว็บไซต์ ระบบ และ AI Automation ที่ช่วยธุรกิจเติบโต</title>
+<meta name="description" content="NEONEX ออกแบบเว็บไซต์ ระบบหลังบ้าน และ AI Automation ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำ และรองรับการเติบโตของธุรกิจ SME และ Startups">
+<meta name="keywords" content="รับทำเว็บไซต์, ทำเว็บธุรกิจ, AI Automation, ระบบหลังบ้าน, Web App, เพิ่มยอดขาย, Digital Systems, NEONEX">
+<meta name="author" content="NEONEX">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://neonex.dev/">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="NEONEX — รับทำโปรแกรมไว ครบ คุ้ม">
-<meta property="og:description" content="รับทำโปรแกรมด้วย AI เร็วขึ้น 3 เท่า ประหยัดกว่า 50% ได้งานจริงภายในวัน">
+<meta property="og:url" content="https://neonex.dev/">
+<meta property="og:title" content="NEONEX — Build Digital Systems That Grow Your Business">
+<meta property="og:description" content="เว็บไซต์ ระบบ และ AI Automation ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำ รองรับการเติบโตของธุรกิจ">
+<meta property="og:image" content="https://neonex.dev/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEONEX — Build Digital Systems That Grow Your Business">
+<meta name="twitter:description" content="เว็บไซต์ ระบบ และ AI Automation ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำ รองรับการเติบโตของธุรกิจ">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "NEONEX",
+  "description": "ออกแบบเว็บไซต์ ระบบหลังบ้าน และ AI Automation ที่ช่วยธุรกิจเติบโต",
+  "url": "https://neonex.dev",
+  "serviceType": ["Web Development", "AI Automation", "Digital Systems"],
+  "areaServed": "TH",
+  "priceRange": "$$"
+}
+</script>
+
 <!-- Lucide Icons -->
 <script src="https://unpkg.com/lucide@latest"></script>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Chakra+Petch:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg: #030303;
-  --bg2: #080808;
-  --bg3: #0D0D0D;
-  --lime: #B8FF35;
-  --lime-glow: rgba(184, 255, 53, 0.4);
-  --lime-soft: rgba(184, 255, 53, 0.08);
-  --accent: #7000FF; /* Electric Purple for dual-glow */
-  --text: #FFFFFF;
-  --muted: #808080;
-  --border: rgba(255, 255, 255, 0.04);
-  --glass: rgba(5, 5, 5, 0.8);
+  --bg: #FFFFFF;
+  --bg2: #F8FAFC;
+  --bg3: #F1F5F9;
+  --primary: #1E3A5F;    /* Deep Blue */
+  --accent: #16A34A;     /* Green — "Growth" */
+  --accent-hover: #15803D;
+  --accent-glow: rgba(22, 163, 74, 0.15);
+  --accent-soft: rgba(22, 163, 74, 0.08);
+  --text: #0F172A;       /* Near-black */
+  --muted: #64748B;      /* Slate gray */
+  --border: rgba(15, 23, 42, 0.08);
+  --glass: rgba(255, 255, 255, 0.85);
 }
 
 /* REVEAL ANIMATIONS */
@@ -68,7 +96,7 @@ body::before {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.03;
+  opacity: 0.015;
   pointer-events: none;
   z-index: 9999;
 }
@@ -78,7 +106,7 @@ body::before {
   position: fixed;
   top: 0; left: 0;
   width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(112, 0, 255, 0.05) 0%, rgba(184, 255, 53, 0.03) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(22, 163, 74, 0.04) 0%, rgba(30, 58, 95, 0.02) 40%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -91,35 +119,30 @@ body::before {
 /* HERO AURA */
 .hero::before {
   content: ''; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);
-  width: 40vw; height: 40vw; background: var(--accent); opacity: 0.05; filter: blur(120px); z-index: -1; animation: aura 10s infinite alternate;
+  width: 40vw; height: 40vw; background: var(--accent); opacity: 0.02; filter: blur(120px); z-index: -1; animation: aura 10s infinite alternate;
 }
 @keyframes aura {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.05; }
-    100% { transform: translate(-45%, -55%) scale(1.2); opacity: 0.08; }
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.02; }
+    100% { transform: translate(-45%, -55%) scale(1.2); opacity: 0.04; }
 }
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:var(--glass);backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);}
-.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-0.03em;color:var(--lime); display: flex; align-items: center; gap: 0.5rem;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:var(--glass);backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);box-shadow: 0 1px 10px rgba(15, 23, 42, 0.03);}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-0.03em;color:var(--primary); display: flex; align-items: center; gap: 0.5rem;}
 .logo span{color:var(--text)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight: 500;transition:color 0.2s}
-.nav-links a:hover{color:var(--lime)}
-.nav-cta{background:var(--lime);color:#000;padding:0.6rem 1.4rem;border-radius:6px;font-weight:700;font-size:0.85rem;text-decoration:none;transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 14px 0 rgba(184, 255, 53, 0.2);}
-.nav-cta:hover{transform: translateY(-1px); box-shadow: 0 6px 20px rgba(184, 255, 53, 0.3);}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--primary);color:#fff;padding:0.6rem 1.4rem;border-radius:6px;font-weight:700;font-size:0.85rem;text-decoration:none;transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.15);}
+.nav-cta:hover{transform: translateY(-1px); background: var(--accent); box-shadow: 0 6px 20px rgba(22, 163, 74, 0.2);}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 2rem 4rem;max-width:1200px;margin:0 auto; position: relative;}
 .hero::after {
   content: ''; position: absolute; top: 15%; left: 50%; transform: translateX(-50%);
-  width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(184, 255, 53, 0.08) 0%, transparent 70%);
+  width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(22, 163, 74, 0.03) 0%, transparent 70%);
   z-index: -1; pointer-events: none; filter: blur(40px);
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-.hero-content { animation: float 6s ease-in-out infinite; }
-h1.hero-title{font-family:'Chakra Petch', sans-serif;font-size:clamp(3.5rem,10vw,8rem);font-weight:700;line-height:0.85;letter-spacing:-0.02em;margin-bottom:2.5rem;}
+h1.hero-title{font-family:'Chakra Petch', sans-serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:700;line-height:0.95;letter-spacing:-0.02em;margin-bottom:2.5rem;color:var(--primary)}
 /* CHARACTER SCATTER */
 .char {
   display: inline-block;
@@ -128,8 +151,8 @@ h1.hero-title{font-family:'Chakra Petch', sans-serif;font-size:clamp(3.5rem,10vw
 }
 .hero-title:hover .char {
   transform: translate(var(--dx), var(--dy)) rotate(var(--dr));
-  color: var(--lime);
-  opacity: 0.6;
+  color: var(--accent);
+  opacity: 0.7;
 }
 /* GRADIENT TEXT FLOW */
 @keyframes textFlow {
@@ -137,7 +160,7 @@ h1.hero-title{font-family:'Chakra Petch', sans-serif;font-size:clamp(3.5rem,10vw
   100% { background-position: 200% 50%; }
 }
 h1.hero-title em {
-  background: linear-gradient(90deg, var(--lime), #fff, var(--lime), #fff, var(--lime));
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary), var(--accent), var(--primary));
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -153,23 +176,23 @@ h1.hero-title em .char {
 }
 h1.hero-title em::after {
     content: ""; position: absolute; bottom: 10%; left: 0; width: 100%; height: 8px; 
-    background: var(--lime); opacity: 0.1; border-radius: 4px; z-index: -1;
+    background: var(--accent); opacity: 0.08; border-radius: 4px; z-index: -1;
 }
-.hero-sub{font-size:1.3rem;color:var(--muted);max-width:620px;margin-bottom:3.5rem;line-height:1.6; opacity: 0.9;}
-.hero-sub strong{color:var(--lime); font-weight: 600;}
+.hero-sub{font-size:1.25rem;color:var(--muted);max-width:720px;margin-bottom:3.5rem;line-height:1.7;}
+.hero-sub strong{color:var(--accent); font-weight: 600;}
 .hero-actions{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:5rem}
-.btn-primary{background:var(--lime);color:#000;padding:1.1rem 2.5rem;border-radius:12px;font-weight:700;font-size:1.05rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.75rem;transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); box-shadow: 0 0 0 0 rgba(184, 255, 53, 0);}
-.btn-primary:hover{transform:translateY(-4px) scale(1.02); box-shadow: 0 20px 40px -10px rgba(184, 255, 53, 0.4);}
-.btn-secondary{background:rgba(255,255,255,0.03);color:var(--text);padding:1.1rem 2.5rem;border-radius:12px;border:1px solid var(--border);font-size:1.05rem;font-weight: 600;text-decoration:none;transition: all 0.3s; backdrop-filter: blur(8px);}
-.btn-secondary:hover{background: rgba(255,255,255,0.08); border-color:var(--lime); transform: translateY(-2px);}
+.btn-primary{background:var(--accent);color:#fff;padding:1.1rem 2.5rem;border-radius:12px;font-weight:700;font-size:1.05rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.75rem;transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); box-shadow: 0 10px 20px -5px rgba(22, 163, 74, 0.25);}
+.btn-primary:hover{transform:translateY(-4px) scale(1.02); background: var(--accent-hover); box-shadow: 0 20px 40px -10px rgba(22, 163, 74, 0.4);}
+.btn-secondary{background:rgba(15,23,42,0.02);color:var(--text);padding:1.1rem 2.5rem;border-radius:12px;border:1px solid var(--border);font-size:1.05rem;font-weight: 600;text-decoration:none;transition: all 0.3s; backdrop-filter: blur(8px);}
+.btn-secondary:hover{background: rgba(15,23,42,0.06); border-color:var(--accent); transform: translateY(-2px);}
 .hero-stats{display:flex;gap:4rem;border-top:1px solid var(--border);padding-top:2.5rem}
-.stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);display:block;line-height:1; margin-bottom: 0.5rem;}
-.stat-num span { color: var(--lime); }
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--primary);display:block;line-height:1; margin-bottom: 0.5rem;}
+.stat-num span { color: var(--accent); }
 .stat-label{font-size:0.85rem;color:var(--muted); font-weight: 500;}
 
 /* TICKER */
 .ticker-wrap{
-    background:var(--lime);
+    background:var(--primary);
     padding:0.75rem 0;
     overflow:hidden;
     white-space:nowrap;
@@ -177,36 +200,37 @@ h1.hero-title em::after {
     margin: 2rem 0;
     z-index: 2;
     position: relative;
+    box-shadow: 0 4px 20px rgba(30, 58, 95, 0.15);
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 .ticker{display:inline-block;animation:ticker 40s linear infinite}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-item{display:inline-block;color:#000;font-weight:800;font-size:0.9rem;letter-spacing:0.04em;text-transform:uppercase;padding:0 2.5rem; font-family: 'Space Grotesk', sans-serif;}
-.ticker-sep{opacity: 0.3; margin: 0 0.5rem;}
+.ticker-item{display:inline-block;color:#fff;font-weight:700;font-size:0.9rem;letter-spacing:0.04em;text-transform:uppercase;padding:0 2.5rem; font-family: 'Space Grotesk', sans-serif;}
+.ticker-sep{color:var(--accent); font-weight: 800; margin: 0 0.5rem;}
 
 /* SECTION SHARED */
 section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
-.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
-.section-title{font-family:'Chakra Petch', sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.01em;margin-bottom:1.5rem}
+.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.section-title{font-family:'Chakra Petch', sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.01em;margin-bottom:1.5rem;color:var(--primary);line-height:1.2}
 
 /* USP GRID */
 .usp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem; margin-top: 3rem;}
 .usp-card{background:var(--bg2);padding:3rem; border-radius: 20px; border: 1px solid var(--border); transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); position:relative;overflow:hidden}
-.usp-card:hover{background:var(--bg3); border-color: var(--lime); transform: translateY(-8px) scale(1.02);}
+.usp-card:hover{background:var(--bg); border-color: var(--accent); transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);}
 .usp-card::after {
   content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at top right, rgba(184, 255, 53, 0.05), transparent 50%);
+  background: radial-gradient(circle at top right, rgba(22, 163, 74, 0.03), transparent 50%);
   opacity: 0; transition: opacity 0.5s;
 }
 .usp-card:hover::after { opacity: 1; }
-.usp-card i{ color: var(--lime); margin-bottom: 1.5rem; display: block;}
+.usp-card i{ color: var(--accent); margin-bottom: 1.5rem; display: block;}
 .usp-num{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;color:var(--muted);margin-bottom:2rem;font-weight:600; opacity: 0.5;}
 .usp-title, .step-title, .price-name, .price-amount, .section-title, .nav-links a {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
 }
-.usp-card:hover .usp-title { transform: translateX(12px); }
-.step:hover .step-title { transform: translateX(10px); }
+.usp-card:hover .usp-title { transform: translateX(12px); color: var(--primary); }
+.step:hover .step-title { transform: translateX(10px); color: var(--primary); }
 .price-card:hover .price-name { transform: translateX(8px); }
 .price-card:hover .price-amount { transform: translateX(6px); }
 .nav-links a:hover { transform: translateY(-2px); }
@@ -221,12 +245,23 @@ i { transition: transform 0.3s ease; }
 .how-inner{max-width:1200px;margin:0 auto}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;position:relative;margin-top:4rem}
 .step{padding:2.5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; position:relative; transition: all 0.3s;}
-.step:hover { border-color: var(--lime); }
-.step-n{font-family:'Space Grotesk',sans-serif;font-size:4rem;font-weight:700;color:rgba(184, 255, 53, 0.08);line-height:1;margin-bottom:1.5rem; transition: all 0.3s; -webkit-text-stroke: 1px rgba(184, 255, 53, 0.1);}
-.step:hover .step-n { color: var(--lime); -webkit-text-stroke: 1px var(--lime); opacity: 0.2;}
-.step-title{font-size:1.1rem;font-weight:700;margin-bottom:0.75rem}
+.step:hover { border-color: var(--accent); box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.04); }
+.step-n{font-family:'Space Grotesk',sans-serif;font-size:4rem;font-weight:700;color:rgba(22, 163, 74, 0.05);line-height:1;margin-bottom:1.5rem; transition: all 0.3s; -webkit-text-stroke: 1px rgba(22, 163, 74, 0.08);}
+.step:hover .step-n { color: var(--accent); -webkit-text-stroke: 1px var(--accent); opacity: 0.15;}
+.step-title{font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:var(--text)}
 .step-desc{font-size:0.9rem;color:var(--muted);line-height:1.7; margin-bottom: 1.5rem;}
-.step-time{display:inline-block;background:var(--lime-soft);color:var(--lime);font-size:0.75rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:100px;letter-spacing:0.05em}
+.step-time{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:0.75rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:100px;letter-spacing:0.05em}
+
+/* TESTIMONIALS (NEW) */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;}
+.testi-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2.5rem;transition:all 0.3s;box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02);}
+.testi-card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.05);}
+.testi-stars{color:#F59E0B;margin-bottom:1rem;display:flex;gap:0.25rem;}
+.testi-quote{font-size:0.95rem;color:var(--text);font-style:italic;line-height:1.7;margin-bottom:1.5rem;}
+.testi-user{display:flex;align-items:center;gap:1rem;}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--primary);font-weight:700;font-family:'Space Grotesk',sans-serif;font-size:0.9rem;border:1px solid var(--border);}
+.testi-name{font-weight:600;font-size:0.9rem;color:var(--primary);}
+.testi-title{font-size:0.75rem;color:var(--muted);}
 
 /* PRICING */
 @keyframes shimmer {
@@ -235,77 +270,77 @@ i { transition: transform 0.3s ease; }
 }
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:4rem}
 .price-card{border:1px solid var(--border);border-radius:24px;padding:3rem;position:relative;background:var(--bg2); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;}
-.price-card:hover { border-color: rgba(184, 255, 53, 0.3); transform: translateY(-10px); }
-.price-card.featured{border-color:var(--lime);background:var(--bg3); box-shadow: 0 20px 60px -20px rgba(184, 255, 53, 0.2);}
+.price-card:hover { border-color: rgba(22, 163, 74, 0.3); transform: translateY(-10px); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.04); }
+.price-card.featured{border-color:var(--accent);background:var(--bg); box-shadow: 0 20px 60px -20px rgba(22, 163, 74, 0.15);}
 .price-card.featured::after {
   content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(184, 255, 53, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(22, 163, 74, 0.02), transparent);
   animation: shimmer 4s infinite linear;
   pointer-events: none;
 }
-.price-tag{position:absolute;top:1.5rem;right:1.5rem;background:var(--lime);color:#000;font-size:0.7rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:0.3rem 0.8rem; border-radius: 100px;}
-.price-name{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:var(--lime);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}
-.price-amount{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;line-height:1;margin-bottom:1rem}
+.price-tag{position:absolute;top:1.5rem;right:1.5rem;background:var(--accent);color:#fff;font-size:0.7rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:0.3rem 0.8rem; border-radius: 100px;}
+.price-name{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}
+.price-amount{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;line-height:1;margin-bottom:1rem;color:var(--primary)}
 .price-amount span{font-size:1.1rem;font-weight:400;color:var(--muted)}
 .price-desc{font-size:0.95rem;color:var(--muted);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
 .price-features{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem}
 .price-features li{font-size:0.95rem;display:flex;gap:0.75rem;align-items:flex-start; color: var(--text);}
-.price-features li i{color:var(--lime);flex-shrink:0; margin-top: 0.2rem;}
-.btn-price{display:block;text-align:center;padding:1rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;transition:all 0.3s;border:1px solid var(--border);color:var(--text)}
+.price-features li i{color:var(--accent);flex-shrink:0; margin-top: 0.2rem;}
+.btn-price{display:block;text-align:center;padding:1rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;transition:all 0.3s;border:1px solid var(--border);color:var(--primary)}
 .btn-price:hover{background: var(--bg3); border-color: var(--muted);}
-.price-card.featured .btn-price{background:var(--lime);color:#000;border-color:var(--lime); box-shadow: 0 4px 12px rgba(184, 255, 53, 0.2);}
-.price-card.featured .btn-price:hover { box-shadow: 0 6px 18px rgba(184, 255, 53, 0.3); transform: translateY(-1px);}
+.price-card.featured .btn-price{background:var(--accent);color:#fff;border-color:var(--accent); box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);}
+.price-card.featured .btn-price:hover { background:var(--accent-hover); box-shadow: 0 6px 18px rgba(22, 163, 74, 0.3); transform: translateY(-1px);}
 
 /* TECH */
 .tech-pills{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:2rem}
 .pill{background:var(--bg2);border:1px solid var(--border);color:var(--muted);font-size:0.85rem;padding:0.5rem 1.2rem;border-radius:100px;transition:all 0.2s; font-weight: 500;}
-.pill:hover{border-color:var(--lime);color:var(--lime); background: var(--lime-soft);}
+.pill:hover{border-color:var(--accent);color:var(--accent); background: var(--accent-soft);}
 
 /* COMPARISON */
 .compare-wrap { overflow-x: auto; margin-top: 4rem; border-radius: 20px; border: 1px solid var(--border); background: var(--bg2); position: relative;}
 .compare-table{width:100%; border-collapse: separate; border-spacing: 0; min-width: 700px;}
-.compare-table th{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);padding:2rem 1.5rem; text-align:left; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.01);}
+.compare-table th{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);padding:2rem 1.5rem; text-align:left; border-bottom: 1px solid var(--border); background: rgba(15,23,42,0.01);}
 .compare-table td{padding:1.5rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; vertical-align: middle; transition: all 0.2s;}
 .compare-table tr:last-child td { border-bottom: none; }
 
 /* Column Styles */
 .compare-table td:nth-child(1) { width: 34%; color: var(--muted); font-weight: 500; border-right: 1px solid var(--border); padding-left: 2rem;}
-.compare-table td:nth-child(2) { width: 33%; background: rgba(184, 255, 53, 0.02); color: var(--lime); font-weight: 600; text-align: center; }
-.compare-table td:nth-child(3) { width: 33%; color: #666; text-align: center; }
+.compare-table td:nth-child(2) { width: 33%; background: rgba(22, 163, 74, 0.02); color: var(--accent); font-weight: 600; text-align: center; }
+.compare-table td:nth-child(3) { width: 33%; color: #64748B; text-align: center; }
 
 /* Header adjustments */
-.compare-table th:nth-child(2) { color: var(--lime); text-align: center; background: rgba(184, 255, 53, 0.04); }
+.compare-table th:nth-child(2) { color: var(--accent); text-align: center; background: rgba(22, 163, 74, 0.04); }
 .compare-table th:nth-child(3) { text-align: center; }
 
 /* Icon wrappers */
 .yes, .no { display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
-.no { color: #555; }
-.compare-table tr:hover td { background: rgba(255,255,255,0.03); }
-.compare-table tr:hover td:nth-child(2) { background: rgba(184, 255, 53, 0.06); }
+.no { color: #94A3B8; }
+.compare-table tr:hover td { background: rgba(15,23,42,0.01); }
+.compare-table tr:hover td:nth-child(2) { background: rgba(22, 163, 74, 0.04); }
 
 /* CTA */
-.cta-section{background:var(--lime);color:#000;text-align:center;padding:8rem 2rem;margin:0; position: relative; overflow: hidden;}
+.cta-section{background:linear-gradient(135deg, var(--primary) 0%, #0F172A 100%);color:#fff;text-align:center;padding:8rem 2rem;margin:0; position: relative; overflow: hidden;}
 .cta-section::before {
     content: ''; position: absolute; top: -50%; left: -20%; width: 140%; height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
     pointer-events: none;
 }
-.cta-section .section-label{color:rgba(0,0,0,0.5)}
-.cta-section .section-title{color:#000; font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:2rem}
-.cta-desc{font-size:1.2rem;max-width:550px;margin:0 auto 3.5rem;color:rgba(0,0,0,0.7);font-weight:500; line-height: 1.6;}
-.btn-dark{background:#000;color:var(--lime);padding:1.2rem 3rem;border-radius:100px;font-weight:700;font-size:1.1rem;text-decoration:none;display:inline-flex; align-items: center; gap: 0.75rem; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.2);}
-.btn-dark:hover{transform:translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3);}
+.cta-section .section-label{color:rgba(255,255,255,0.6)}
+.cta-section .section-title{color:#fff; font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:2rem}
+.cta-desc{font-size:1.2rem;max-width:620px;margin:0 auto 3.5rem;color:rgba(255,255,255,0.8);font-weight:500; line-height: 1.6;}
+.btn-dark{background:var(--accent);color:#fff;padding:1.2rem 3rem;border-radius:100px;font-weight:700;font-size:1.1rem;text-decoration:none;display:inline-flex; align-items: center; gap: 0.75rem; transition: all 0.3s; box-shadow: 0 10px 30px rgba(22, 163, 74, 0.25);}
+.btn-dark:hover{transform:translateY(-3px); background:var(--accent-hover); box-shadow: 0 15px 40px rgba(22, 163, 74, 0.4);}
 
 /* FOOTER */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:5rem 2rem;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap; gap: 4rem;}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:5rem 2rem;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap; gap: 4rem;}
 .footer-info { max-width: 300px; }
-.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--lime);font-size:1.4rem; margin-bottom: 1.5rem; display: block;}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--primary);font-size:1.4rem; margin-bottom: 1.5rem; display: block;}
 .footer-note{font-size:0.9rem;color:var(--muted); line-height: 1.6;}
 .footer-links-group { display: flex; gap: 4rem; }
 .footer-links{display:flex; flex-direction: column; gap:1rem}
-.footer-links h4 { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text); margin-bottom: 0.5rem;}
+.footer-links h4 { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.5rem;}
 .footer-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;transition:color 0.2s}
-.footer-links a:hover{color:var(--lime)}
+.footer-links a:hover{color:var(--accent)}
 
 /* SCROLL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
@@ -317,7 +352,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:5rem 2rem
   .hero-stats{gap:2rem;flex-wrap:wrap}
   .step{border-left:none;border-top:1px solid var(--border);padding:1.5rem 0}
   .step:first-child{border-top:none}
-  footer{flex-direction:column;gap:1rem;text-align:center}
+  footer{flex-direction:column;gap:2rem;text-align:center}
 }
 </style>
 </head>
@@ -329,179 +364,233 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:5rem 2rem
   <ul class="nav-links">
     <li><a href="#services">บริการ</a></li>
     <li><a href="#how">ขั้นตอน</a></li>
+    <li><a href="#testimonials">รีวิว</a></li>
     <li><a href="#pricing">ราคา</a></li>
     <li><a href="#tech">เทคโนโลยี</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">เริ่มโปรเจกต์เลย →</a>
+  <a href="#contact" class="nav-cta" aria-label="เริ่มโปรเจกต์กับ NEONEX">แอดไลน์คุยกับเรา →</a>
 </nav>
 
+<main>
 <!-- HERO -->
-<div class="hero">
+<header class="hero">
   <div class="hero-content reveal">
     <h1 class="hero-title">
-      <span class="stagger-item stagger-1">เปลี่ยนไอเดีย</span><br>
-      <span class="stagger-item stagger-2"><em>ให้เป็นโปรแกรม.</em></span><br>
-      <span class="stagger-item stagger-3">จบไว ในราคาที่ใช่.</span>
+      <span class="stagger-item stagger-1">Build Digital Systems</span><br>
+      <span class="stagger-item stagger-2"><em>That Grow Your Business.</em></span>
     </h1>
-    <p class="hero-sub stagger-item stagger-4">
-      เราปลดล็อกขีดจำกัดด้วย <strong>AI-Powered Workflow</strong> พัฒนาซอฟต์แวร์เร็วกว่าเดิม 3 เท่า<br>
-      ส่งมอบงานคุณภาพระดับ Enterprise ในราคาที่ SME เข้าถึงได้
+    <p class="hero-sub stagger-item stagger-3">
+      เราออกแบบ<strong>เว็บไซต์ ระบบหลังบ้าน และ AI Automation</strong> ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำซ้อน และรองรับการเติบโตของธุรกิจคุณในอนาคต ไม่ใช่แค่สร้างเว็บให้ใช้งานได้
     </p>
   </div>
   <div class="hero-actions">
-    <a href="#contact" class="btn-primary">คุยไอเดียกับเรา <i data-lucide="arrow-right"></i></a>
-    <a href="#how" class="btn-secondary">ดูขั้นตอนการทำงาน</a>
+    <a href="#contact" class="btn-primary" aria-label="แอดไลน์เพื่อพูดคุยกับ NEONEX">แอดไลน์พูดคุยกับเรา <i data-lucide="arrow-right"></i></a>
+    <a href="#services" class="btn-secondary">ดูบริการของเรา</a>
   </div>
   <div class="hero-stats">
     <div>
-      <span class="stat-num">24<span>h</span></span>
-      <div class="stat-label">ได้ Prototype ภายในวัน</div>
+      <span class="stat-num">50<span>+</span></span>
+      <div class="stat-label">โปรเจกต์ที่ส่งมอบแล้ว</div>
+    </div>
+    <div>
+      <span class="stat-num">80<span>%</span></span>
+      <div class="stat-label">ลดภาระงานซ้ำซ้อน</div>
     </div>
     <div>
       <span class="stat-num">3<span>×</span></span>
-      <div class="stat-label">เร็วกว่าทีมทั่วไป</div>
-    </div>
-    <div>
-      <span class="stat-num">50<span>%</span></span>
-      <div class="stat-label">ประหยัดงบประมาณ</div>
+      <div class="stat-label">เพิ่มประสิทธิภาพการขาย</div>
     </div>
   </div>
-</div>
+</header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
-    <span class="ticker-item">Fast Delivery <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Cost-Effective <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Rapid Iteration <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Prototype in 24h <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Clean Code <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Any Scale <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Fast Delivery <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Cost-Effective <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Rapid Iteration <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Prototype in 24h <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Clean Code <span class="ticker-sep">✦</span></span>
-    <span class="ticker-item">Any Scale <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Grow Sales <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Reduce Manual Work <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Scale Your Business <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">AI-Powered <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Custom Built <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Grow Sales <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Reduce Manual Work <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Scale Your Business <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">AI-Powered <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Custom Built <span class="ticker-sep">✦</span></span>
   </div>
 </div>
 
-<!-- USP / SERVICES -->
+<!-- SERVICES -->
 <section id="services">
-  <p class="section-label reveal">Our Edge</p>
-  <h2 class="section-title reveal">ทำไมธุรกิจยุคใหม่<br>เลือก NEONEX</h2>
+  <p class="section-label reveal">Our Services</p>
+  <h2 class="section-title reveal">บริการเพื่อรองรับความต้องการ<br>และการเติบโตของธุรกิจคุณ</h2>
   <div class="usp-grid reveal">
     <div class="usp-card">
       <div class="usp-num">01</div>
-      <i data-lucide="zap" size="32"></i>
-      <h3 class="usp-title">ส่งงานไวมาก</h3>
-      <p class="usp-desc">เราใช้ AI ช่วยเขียน code ทำให้งานที่ปกติใช้เวลา 2 อาทิตย์ อาจเสร็จใน 2-3 วัน ไม่ต้องรอคิว dev นานข้ามเดือน</p>
+      <i data-lucide="globe" size="32"></i>
+      <h3 class="usp-title">เว็บไซต์ที่ขายได้ (Websites)</h3>
+      <p class="usp-desc">ออกแบบและพัฒนาเว็บไซต์ธุรกิจ Landing Page หรือ E-commerce ที่ตอบโจทย์การตลาด ดึงดูดลูกค้า และเพิ่มยอดขายได้จริง ไม่ใช่แค่ทำให้เสร็จ</p>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem;">
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> Custom UI/UX & Responsive</li>
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> SEO-Optimized Structure</li>
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> Fast Speed & Web Analytics</li>
+      </ul>
     </div>
     <div class="usp-card">
       <div class="usp-num">02</div>
-      <i data-lucide="layout" size="32"></i>
-      <h3 class="usp-title">Prototype ใน 24 ชั่วโมง</h3>
-      <p class="usp-desc">คุยวันนี้ พรุ่งนี้ได้เห็นหน้าตาโปรแกรมจริง ทดลองใช้ก่อนตัดสินใจจ่ายเต็ม ลดความเสี่ยงในการจ้างงาน</p>
+      <i data-lucide="database" size="32"></i>
+      <h3 class="usp-title">ระบบหลังบ้าน & Web App</h3>
+      <p class="usp-desc">ออกแบบและพัฒนาระบบหลังบ้าน ระบบจัดเก็บข้อมูล Dashboard สรุปผล CRM หรือซอฟต์แวร์ภายในองค์กรที่แข็งแกร่ง ปลอดภัย และเติบโตไปพร้อมกับธุรกิจ</p>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem;">
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> Custom Databases & APIs</li>
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> User Login & Permission Levels</li>
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> Real-time Dashboard reporting</li>
+      </ul>
     </div>
     <div class="usp-card">
       <div class="usp-num">03</div>
-      <i data-lucide="refresh-cw" size="32"></i>
-      <h3 class="usp-title">แก้ไขได้ทันใจ</h3>
-      <p class="usp-desc">อยากเปลี่ยนสี เพิ่มฟีเจอร์ หรือปรับ flow ทั้งหน้า — เราจัดการให้เสร็จได้ภายในไม่กี่ชั่วโมง ไม่ใช่รอเป็นอาทิตย์</p>
-    </div>
-    <div class="usp-card">
-      <div class="usp-num">04</div>
-      <i data-lucide="trending-down" size="32"></i>
-      <h3 class="usp-title">ราคาถูกกว่า 50%</h3>
-      <p class="usp-desc">เราลดขั้นตอนที่ซ้ำซ้อนและใช้ AI เพิ่มประสิทธิภาพ ทำให้ได้งานคุณภาพสูงในราคาที่ SME และ Startups จ่ายได้</p>
-    </div>
-    <div class="usp-card">
-      <div class="usp-num">05</div>
-      <i data-lucide="box" size="32"></i>
-      <h3 class="usp-title">รับทุกขนาดงาน</h3>
-      <p class="usp-desc">ตั้งแต่ Landing page ขนาดเล็ก ไปจนถึง Web Application เต็มระบบหรือ SaaS เรายินดีช่วยเหลือทุกโปรเจกต์</p>
-    </div>
-    <div class="usp-card">
-      <div class="usp-num">06</div>
-      <i data-lucide="code-2" size="32"></i>
-      <h3 class="usp-title">Code พร้อม Handoff</h3>
-      <p class="usp-desc">ส่งมอบ source code ครบถ้วน พร้อมคู่มือการใช้งานที่ชัดเจน ต่อยอดได้ทันทีโดยไม่ต้องจ้างเราตลอดไป</p>
+      <i data-lucide="cpu" size="32"></i>
+      <h3 class="usp-title">AI & Automation</h3>
+      <p class="usp-desc">เพิ่มประสิทธิภาพการทำงานด้วยการเชื่อมต่อ AI และสร้างระบบทำงานแทนคนแบบอัตโนมัติ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนได้ถึง 80%</p>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem;">
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> Auto-Reply & Intelligent Bots</li>
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> Workflow Integrations (Zapier/Make)</li>
+        <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--accent);"></i> AI Agents & LLM Connections</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<div class="how-wrap" id="how">
+<section class="how-wrap" id="how">
   <div class="how-inner">
     <p class="section-label reveal">Seamless Process</p>
-    <h2 class="section-title reveal">จากจินตนาการ สู่ระบบที่ใช้งานได้จริง<br>ในเวลาอันสั้น</h2>
+    <h2 class="section-title reveal">ขั้นตอนสร้างระบบที่ตอบโจทย์ธุรกิจ<br>แบบไม่ต้องกังวล</h2>
     <div class="steps">
       <div class="step reveal">
         <div class="step-n">01</div>
-        <h3 class="step-title">เล่าไอเดีย</h3>
-        <p class="step-desc">คุยความต้องการ ฟีเจอร์ที่อยากได้ และกลุ่มเป้าหมาย ไม่ต้องมีความรู้ด้านเทคนิคเลยก็ได้</p>
+        <h3 class="step-title">คุยเป้าหมายธุรกิจ</h3>
+        <p class="step-desc">แชร์วิสัยทัศน์ ความต้องการ หรือปัญหาหลักที่คุณต้องการแก้ไข เราวิเคราะห์และวางระบบให้เหมาะที่สุด</p>
         <span class="step-time">วันที่ 1</span>
       </div>
       <div class="step reveal">
         <div class="step-n">02</div>
-        <h3 class="step-title">รับ Prototype</h3>
-        <p class="step-desc">เราส่ง prototype ให้ดูและทดลองใช้จริง เพื่อให้มั่นใจว่ามาถูกทางก่อนเริ่มพัฒนาจริง</p>
+        <h3 class="step-title">เห็นต้นแบบจริง (Prototype)</h3>
+        <p class="step-desc">สัมผัสและทดลองใช้งาน Prototype จริงเพื่อให้มั่นใจว่าหน้าตาและขั้นตอนทำงานตอบโจทย์ก่อนเริ่มงานพัฒนาเต็มรูปแบบ</p>
         <span class="step-time">ภายใน 24 ชม.</span>
       </div>
       <div class="step reveal">
         <div class="step-n">03</div>
-        <h3 class="step-title">พัฒนา & ขัดเกลา</h3>
-        <p class="step-desc">วน iterate ปรับปรุง UI และระบบหลังบ้านจนกว่าจะพอใจ พร้อมเชื่อมต่อ API และฐานข้อมูล</p>
+        <h3 class="step-title">พัฒนา & ปรับแต่ง</h3>
+        <p class="step-desc">พัฒนาระบบจริง เชื่อมต่อฐานข้อมูล APIs และตั้งค่าบอทอัตโนมัติ พร้อมปรับปรุงดีไซน์จนกว่าคุณจะพึงพอใจ</p>
         <span class="step-time">3–7 วัน</span>
       </div>
       <div class="step reveal">
         <div class="step-n">04</div>
-        <h3 class="step-title">ส่งมอบงาน</h3>
-        <p class="step-desc">ได้รับ source code ครบถ้วน, ทำการ deploy ขึ้น server จริง พร้อมระบบที่พร้อมใช้งานทันที</p>
-        <span class="step-time">จบงานไว</span>
+        <h3 class="step-title">เปิดใช้งานและเติบโต</h3>
+        <p class="step-desc">ทำการเปิดตัวขึ้นโฮสต์จริงเพื่อให้พร้อมรองรับลูกค้า พร้อมส่งมอบ Source Code ทั้งหมดและเอกสารคู่มืออย่างครบถ้วน</p>
+        <span class="step-time">จบงานสมบูรณ์</span>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <p class="section-label reveal">Testimonials</p>
+  <h2 class="section-title reveal">เสียงตอบรับจากลูกค้าที่เติบโตไปกับเรา</h2>
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+      </div>
+      <p class="testi-quote">"ก่อนหน้านี้ร้านเราเสียเวลากับการตอบลูกค้าและคีย์ออเดอร์หลังบ้านมาก พอ NEONEX ทำระบบ CRM และระบบแอดมินให้ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนไปได้มากกว่า 80% เลยครับ"</p>
+      <div class="testi-user">
+        <div class="testi-avatar">SP</div>
+        <div>
+          <div class="testi-name">คุณสมพล เลิศดี</div>
+          <div class="testi-title">เจ้าของธุรกิจค้าส่งออนไลน์</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+      </div>
+      <p class="testi-quote">"ประทับใจความเร็วในการขึ้นต้นแบบมาก คุยกันวันนี้ วันต่อมาก็ได้ลิงก์ไปทดสอบระบบแล้ว เว็บไซต์สะอาด โหลดรวดเร็ว ปรับแต่งหน้า SEO เองง่ายขึ้น ช่วยเพิ่มยอด Conversion ได้ชัดเจน"</p>
+      <div class="testi-user">
+        <div class="testi-avatar">NP</div>
+        <div>
+          <div class="testi-name">คุณนภัทร พานิชย์</div>
+          <div class="testi-title">Co-Founder, Tech Startup</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+        <i data-lucide="star" fill="currentColor" size="16"></i>
+      </div>
+      <p class="testi-quote">"คิดถูกที่ทำเว็บกับ NEONEX เพราะไม่ได้ติดล็อกแพลตฟอร์มแบบเจ้าอื่น ได้ Source Code และฐานข้อมูลครบทุกอย่าง แก้ไขและต่อยอดระบบเพิ่มเติมเองได้สะดวกรวดเร็วมาก"</p>
+      <div class="testi-user">
+        <div class="testi-avatar">WT</div>
+        <div>
+          <div class="testi-name">คุณวิริยะ ตั้งสกุล</div>
+          <div class="testi-title">ผู้จัดการไอที, SME Retail</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- COMPARISON -->
 <section>
-  <p class="section-label reveal">การเปรียบเทียบ</p>
-  <h2 class="section-title reveal">NEONEX vs ทีมทั่วไป</h2>
+  <p class="section-label reveal">Comparison</p>
+  <h2 class="section-title reveal">ทำไมธุรกิจยุคใหม่จึงเลือกสร้างระบบกับ NEONEX</h2>
   <div class="compare-wrap reveal">
     <table class="compare-table">
         <thead>
         <tr>
             <th>หัวข้อ</th>
             <th>NEONEX</th>
-            <th>Agency / Freelance ทั่วไป</th>
+            <th>ทำเว็บเอง / ใช้ Template สำเร็จรูป</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>ระยะเวลาเริ่มต้น</td>
-            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> พรุ่งนี้เลย</div></td>
-            <td><div class="no"><i data-lucide="x-circle" size="18"></i> 1–2 สัปดาห์</div></td>
+            <td>การออกแบบ (UI/UX)</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ออกแบบเฉพาะตัวตนแบรนด์คุณ เพื่อผลลัพธ์ที่ดีที่สุด</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> ดีไซน์ซ้ำกับแบรนด์อื่น ขยับขยายหน้าตาระบบยาก</div></td>
         </tr>
         <tr>
-            <td>ได้เห็น Prototype</td>
-            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> 24 ชั่วโมง</div></td>
-            <td><div class="no"><i data-lucide="x-circle" size="18"></i> 2–4 สัปดาห์</div></td>
+            <td>การดึงดูดลูกค้า (Conversion)</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> วางโครงสร้างเพื่อเปลี่ยนผู้เข้าชมเป็นลูกค้าจริง</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> เน้นสวยงามอย่างเดียว ไม่มีกลยุทธ์เพื่อเพิ่มยอดขาย</div></td>
         </tr>
         <tr>
-            <td>การแก้ไขงาน</td>
-            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> หลักชั่วโมง</div></td>
-            <td><div class="no"><i data-lucide="x-circle" size="18"></i> รอ Sprint ถัดไป</div></td>
+            <td>ระบบฐานข้อมูลหลังบ้าน</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> พัฒนาระบบหลังบ้าน ดึงข้อมูลและจัดการออเดอร์ได้อย่างยืดหยุ่น</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> ทำไม่ได้ หรือต้องพึ่งพาปลั๊กอินนอกที่มีค่าบริการรายเดือน</div></td>
         </tr>
         <tr>
-            <td>งบประมาณ</td>
-            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ประหยัดกว่า 50%</div></td>
-            <td><div class="no"><i data-lucide="x-circle" size="18"></i> ราคาสูง</div></td>
+            <td>AI & Automation Support</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ผสานการทำงานอัตโนมัติ เช่น คีย์ออเดอร์ ตอบคำถาม ออโต้ซิงค์</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> ต้องทำงานแอดมินทุกขั้นตอนด้วยมือตัวเองทั้งหมด</div></td>
         </tr>
         <tr>
-            <td>Source Code</td>
-            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ให้ครบ 100%</div></td>
-            <td><div class="no"><i data-lucide="x-circle" size="18"></i> มักมีค่าใช้จ่ายเพิ่ม</div></td>
+            <td>ความเป็นเจ้าของซอฟต์แวร์</td>
+            <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ส่งมอบ Source Code และสิทธิ์ขาดระบบ 100%</div></td>
+            <td><div class="no"><i data-lucide="x-circle" size="18"></i> ผูกมัดติดกับแพลตฟอร์มรายเดือน ไม่สามารถย้ายหรือเปลี่ยนโค้ดได้</div></td>
         </tr>
         </tbody>
     </table>
@@ -511,48 +600,47 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:5rem 2rem
 <!-- PRICING -->
 <section id="pricing">
   <p class="section-label reveal">แผนราคา</p>
-  <h2 class="section-title reveal">เลือกแพ็กเกจที่เหมาะกับคุณ</h2>
+  <h2 class="section-title reveal">บริการที่เหมาะสมกับการเติบโตของธุรกิจคุณ</h2>
   <div class="pricing-grid reveal">
     <div class="price-card">
-      <div class="price-name">Starter</div>
+      <div class="price-name">Websites</div>
       <div class="price-amount">Contact Us</div>
-      <div class="price-desc">เหมาะสำหรับ Landing page, เว็บไซต์ธุรกิจ หรือเครื่องมือขนาดเล็ก</div>
+      <div class="price-desc">เว็บไซต์เพื่อเพิ่มยอดขาย ปรับแต่ง SEO โหลดรวดเร็ว และดึงดูดลูกค้าเป้าหมาย</div>
       <ul class="price-features">
-        <li><i data-lucide="check" size="18"></i> Landing page / Mini site</li>
-        <li><i data-lucide="check" size="18"></i> Mobile Responsive</li>
-        <li><i data-lucide="check" size="18"></i> ส่งงานภายใน 3 วัน</li>
-        <li><i data-lucide="check" size="18"></i> แก้ไขงาน 2 รอบ</li>
-        <li><i data-lucide="check" size="18"></i> ส่งมอบ Source Code</li>
+        <li><i data-lucide="check" size="18"></i> Landing Page / Corporate Site</li>
+        <li><i data-lucide="check" size="18"></i> Custom UI/UX & Mobile Responsive</li>
+        <li><i data-lucide="check" size="18"></i> SEO & Web Analytics Setup</li>
+        <li><i data-lucide="check" size="18"></i> พัฒนารวดเร็ว 3–5 วัน</li>
+        <li><i data-lucide="check" size="18"></i> ส่งมอบ Source Code 100%</li>
       </ul>
-      <a href="#contact" class="btn-price">ขอใบเสนอราคา</a>
+      <a href="#contact" class="btn-price" aria-label="ขอใบเสนอราคาเว็บไซต์">ปรึกษาและขอใบเสนอราคา</a>
     </div>
     <div class="price-card featured">
       <div class="price-tag">Recommended</div>
-      <div class="price-name">Pro</div>
+      <div class="price-name">Systems</div>
       <div class="price-amount">Contact Us</div>
-      <div class="price-desc">เหมาะสำหรับ Web App, ระบบจัดการข้อมูล หรือ Dashboard</div>
+      <div class="price-desc">ระบบดิจิทัลหลังบ้าน Web Application แผงควบคุมข้อมูล (Dashboard) หรือ CRM</div>
       <ul class="price-features">
-        <li><i data-lucide="check" size="18"></i> Web Application เต็มระบบ</li>
-        <li><i data-lucide="check" size="18"></i> Backend + Database</li>
-        <li><i data-lucide="check" size="18"></i> ระบบ Login / Auth</li>
-        <li><i data-lucide="check" size="18"></i> ส่งงานภายใน 1–2 สัปดาห์</li>
-        <li><i data-lucide="check" size="18"></i> แก้ไขงานไม่จำกัด (30 วัน)</li>
-        <li><i data-lucide="check" size="18"></i> Deploy & Documentation</li>
+        <li><i data-lucide="check" size="18"></i> Custom Web Application & CRM</li>
+        <li><i data-lucide="check" size="18"></i> Database & Backend Development</li>
+        <li><i data-lucide="check" size="18"></i> Dashboard สรุปผล Real-time</li>
+        <li><i data-lucide="check" size="18"></i> ระบบ User Login & Roles</li>
+        <li><i data-lucide="check" size="18"></i> Deploy & Setup Server Cloud</li>
       </ul>
-      <a href="#contact" class="btn-price">คุยรายละเอียดโปรเจกต์</a>
+      <a href="#contact" class="btn-price" aria-label="ติดต่อเรื่องทำระบบหลังบ้าน">ปรึกษาและขอใบเสนอราคา</a>
     </div>
     <div class="price-card">
-      <div class="price-name">Enterprise</div>
+      <div class="price-name">AI & Automation</div>
       <div class="price-amount">Custom</div>
-      <div class="price-desc">ระบบขนาดใหญ่ SaaS หรืองานที่ต้องการการดูแลต่อเนื่อง</div>
+      <div class="price-desc">บอทตอบกลับอัจฉริยะ ระบบทำงานอัตโนมัติ 24 ชม. และเชื่อมต่อ API ทำงานแทนคน</div>
       <ul class="price-features">
-        <li><i data-lucide="check" size="18"></i> ระบบขนาดใหญ่ / SaaS</li>
-        <li><i data-lucide="check" size="18"></i> API Integration</li>
-        <li><i data-lucide="check" size="18"></i> Performance Tuning</li>
-        <li><i data-lucide="check" size="18"></i> Dedicated Support</li>
-        <li><i data-lucide="check" size="18"></i> Retainer รายเดือน</li>
+        <li><i data-lucide="check" size="18"></i> AI Agents / GPT Integrations</li>
+        <li><i data-lucide="check" size="18"></i> LINE & Facebook Chatbots</li>
+        <li><i data-lucide="check" size="18"></i> Workflow Automations (Make/Zapier)</li>
+        <li><i data-lucide="check" size="18"></i> Data Auto-Sync & API Sync</li>
+        <li><i data-lucide="check" size="18"></i> Dedicated Support & Maintenance</li>
       </ul>
-      <a href="#contact" class="btn-price">ติดต่อเพื่อวางแผน</a>
+      <a href="#contact" class="btn-price" aria-label="คุยแผนทำ AI และระบบอัตโนมัติ">ติดต่อเพื่อวางแผนระบบ</a>
     </div>
   </div>
 </section>
@@ -560,60 +648,54 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:5rem 2rem
 <!-- TECH STACK -->
 <section id="tech">
   <p class="section-label reveal">Tech Stack</p>
-  <h2 class="section-title reveal">เทคโนโลยีที่เราเลือกใช้</h2>
-  <p style="color:var(--text); font-weight: 600; margin-bottom:0.75rem" class="reveal">Frontend</p>
-  <div class="tech-pills reveal">
+  <h2 class="section-title reveal">เทคโนโลยีประสิทธิภาพสูงที่เราใช้สร้างระบบ</h2>
+  <div class="tech-pills reveal" style="margin-top: 1.5rem;">
     <span class="pill">Next.js / React</span>
-    <span class="pill">Vue.js / Nuxt</span>
-    <span class="pill">Tailwind CSS</span>
     <span class="pill">TypeScript</span>
-    <span class="pill">Framer Motion</span>
-  </div>
-  <p style="color:var(--text); font-weight: 600; margin:2rem 0 0.75rem" class="reveal">Backend & Database</p>
-  <div class="tech-pills reveal">
+    <span class="pill">Tailwind CSS</span>
     <span class="pill">Node.js / Bun</span>
     <span class="pill">FastAPI / Python</span>
-    <span class="pill">PostgreSQL</span>
-    <span class="pill">Supabase</span>
-    <span class="pill">Firebase</span>
-    <span class="pill">MongoDB</span>
-  </div>
-  <p style="color:var(--text); font-weight: 600; margin:2rem 0 0.75rem" class="reveal">DevOps & Cloud</p>
-  <div class="tech-pills reveal">
-    <span class="pill">Vercel</span>
-    <span class="pill">AWS</span>
+    <span class="pill">PostgreSQL / Supabase</span>
+    <span class="pill">Firebase / MongoDB</span>
+    <span class="pill">Vercel / AWS</span>
     <span class="pill">Docker</span>
-    <span class="pill">Cloudflare</span>
-    <span class="pill">GitHub Actions</span>
+    <span class="pill">Cloudflare / GitHub Actions</span>
   </div>
 </section>
 
 <!-- CTA -->
-<div class="cta-section" id="contact">
+<!-- CTA -->
+<section class="cta-section" id="contact">
   <p class="section-label">Get Started</p>
-  <h2 class="section-title">มีโปรเจกต์ในใจ?<br>มาทำให้มันเป็นจริงกัน</h2>
-  <p class="cta-desc">ปรึกษาไอเดียเบื้องต้นฟรี เราจะช่วยวิเคราะห์และประเมินเวลาทำงานให้คุณภายใน 1 ชั่วโมง</p>
-  <a href="mailto:nattaponhirun4@gmail.com" class="btn-dark">คุยกับเราตอนนี้ <i data-lucide="send" size="20"></i></a>
-  <p style="margin-top:2rem;font-size:0.9rem;color:rgba(0,0,0,0.5); font-weight: 600;">Email: nattaponhirun4@gmail.com · ตอบไวในเวลาทำการ</p>
-</div>
+  <h2 class="section-title">พร้อมสร้างระบบเพื่อ<br>เติบโตธุรกิจคุณแล้วหรือยัง?</h2>
+  <p class="cta-desc">ปรึกษาไอเดีย แนะนำแนวทางแก้ปัญหา หรือประเมินแผนงานฟรี ไม่มีค่าใช้จ่าย ทีมงานตอบกลับรวดเร็วภายใน 1 ชั่วโมง</p>
+  <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
+    <a href="#contact" class="btn-dark" aria-label="แอดไลน์คุยกับ NEONEX" onclick="alert('ขออภัยในความไม่สะดวกค่ะ ช่องทาง LINE กำลังปรับปรุงระบบ กรุณาคลิกปุ่มส่งอีเมลเพื่อติดต่อเราชั่วคราวนะคะ');"><i data-lucide="message-circle" size="20"></i> แอดไลน์พูดคุยกับเรา</a>
+    <a href="mailto:nattaponhirun4@gmail.com" class="btn-dark" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:#fff;" aria-label="ส่งอีเมลหา NEONEX"><i data-lucide="mail" size="20"></i> ส่งอีเมลหาเราตอนนี้</a>
+  </div>
+  <p style="font-size:0.9rem;color:rgba(255,255,255,0.6); font-weight: 500;">Email Contact: nattaponhirun4@gmail.com · ยินดีให้บริการในวันทำการ</p>
+</section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-info">
     <div class="footer-logo"><i data-lucide="zap" size="24" stroke-width="3"></i> NEONEX</div>
-    <p class="footer-note">เปลี่ยนไอเดียให้เป็นซอฟต์แวร์ด้วยความเร็วสูงและคุณภาพระดับมืออาชีพ โดยทีมงานผู้เชี่ยวชาญด้าน AI และ Software Engineering</p>
+    <p class="footer-note">เราพัฒนาเว็บไซต์ ระบบดิจิทัล และ AI Automation ที่เน้นผลลัพธ์ในการขับเคลื่อนยอดขาย ลดขั้นตอนงานซ้ำซ้อน และเพิ่มมูลค่าการเติบโตให้ธุรกิจคุณ</p>
   </div>
   <div class="footer-links-group">
     <div class="footer-links">
         <h4>Product</h4>
-        <a href="#services">บริการ</a>
-        <a href="#how">ขั้นตอน</a>
-        <a href="#pricing">ราคา</a>
+        <a href="#services">บริการของเรา</a>
+        <a href="#how">ขั้นตอนทำงาน</a>
+        <a href="#testimonials">รีวิวจากลูกค้า</a>
+        <a href="#pricing">แผนบริการ & ราคา</a>
     </div>
     <div class="footer-links">
         <h4>Support</h4>
-        <a href="mailto:nattaponhirun4@gmail.com">ติดต่อเรา</a>
-        <a href="#">Facebook</a>
+        <a href="mailto:nattaponhirun4@gmail.com">ติดต่ออีเมล</a>
+        <a href="#contact">ติดต่อไลน์ (เร็วๆ นี้)</a>
     </div>
   </div>
 </footer>
