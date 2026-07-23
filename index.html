@@ -547,9 +547,9 @@
       <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
         <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" class="btn-facebook" aria-label="ทักแชท Facebook Messenger"><i data-lucide="message-square" size="20"></i> ทักแชท Facebook Messenger</a>
         <a href="#pricing" class="btn-dark" aria-label="คำนวณราคาและติดต่อผ่านระบบ"><i data-lucide="calculator" size="20"></i> คำนวณราคา & ส่งสเปก</a>
-        <a href="mailto:nattaponhirun4@gmail.com" class="btn-dark" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff;" aria-label="ส่งอีเมลหา NEONEX"><i data-lucide="mail" size="20"></i> ส่งอีเมลหาเราโดยตรง</a>
+        <a href="javascript:void(0)" onclick="sendEmailDirect(event)" class="btn-dark" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff;" aria-label="ส่งอีเมลหา NEONEX"><i data-lucide="mail" size="20"></i> ส่งอีเมลหาเราโดยตรง</a>
       </div>
-      <p style="font-size:0.9rem;color:var(--muted); font-weight: 500;">Email: nattaponhirun4@gmail.com · Messenger: <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;">ทักแชท Messenger</a> · เพจ: <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;">NEONEX Facebook Page</a></p>
+      <p style="font-size:0.9rem;color:var(--muted); font-weight: 500;">Email: <a href="javascript:void(0)" onclick="sendEmailDirect(event)" style="color:var(--primary); text-decoration:underline;">nattaponhirun4@gmail.com</a> · Messenger: <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;">ทักแชท Messenger</a> · เพจ: <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;">NEONEX Facebook Page</a></p>
     </section>
   </main>
 
@@ -579,7 +579,7 @@
         <h4>Support & Social</h4>
         <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.4rem;"><i data-lucide="message-square" size="14"></i> แชท Messenger</a>
         <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.4rem;"><i data-lucide="facebook" size="14"></i> Facebook Page</a>
-        <a href="mailto:nattaponhirun4@gmail.com">ติดต่ออีเมล</a>
+        <a href="javascript:void(0)" onclick="sendEmailDirect(event)">ติดต่ออีเมล (nattaponhirun4@gmail.com)</a>
         <a href="#pricing">ขอใบประเมินราคา</a>
       </div>
     </div>
@@ -593,13 +593,14 @@
       </div>
       <h3 class="modal-title">จัดเตรียมใบสเปกสำเร็จ!</h3>
       <p class="modal-desc">
-        เราได้รับข้อมูลของคุณเรียบร้อยแล้ว ทีมงานจะติดต่อกลับโดยด่วนที่สุด! ข้อมูลสเปกระบบของคุณได้ถูกคัดลอก (Copy) ลงคลิปบอร์ดแล้ว คุณสามารถกดทักแชท Messenger หาเราต่อเพื่อประสานงานด่วนได้ทันทีค่ะ
+        เราได้รับข้อมูลของคุณเรียบร้อยแล้ว ทีมงานจะติดต่อกลับโดยด่วนที่สุด! ข้อมูลสเปกระบบของคุณได้ถูกคัดลอก (Copy) ลงคลิปบอร์ดแล้ว คุณสามารถกดทักแชท Messenger หรือส่งอีเมลหาเราเพื่อประสานงานด่วนได้ทันทีค่ะ
       </p>
       <div class="modal-blueprint-area" id="modal-blueprint-text">
         <!-- Dyn. generated blueprint text -->
       </div>
       <div class="modal-buttons">
         <button class="modal-btn secondary" onclick="closeModal()">ปิดหน้าต่าง</button>
+        <button class="modal-btn secondary" onclick="sendBriefViaEmail()"><i data-lucide="mail"></i> ส่งสเปกทาง Email</button>
         <button class="modal-btn facebook" onclick="window.open('https://m.me/61588520352122', '_blank')"><i data-lucide="message-square"></i> ทักแชท Messenger</button>
         <button class="modal-btn primary" onclick="goToLine()"><i data-lucide="message-circle"></i> เปิด LINE เพื่อพูดคุย</button>
       </div>
@@ -614,6 +615,12 @@
     </div>
     <span class="fb-text">ทักแชท Messenger</span>
   </a>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-notification" class="toast-notification">
+    <i data-lucide="check-circle" size="20"></i>
+    <span id="toast-message">คัดลอกอีเมลเรียบร้อยแล้ว</span>
+  </div>
 
   <script>
     // Initialize Lucide Icons
@@ -997,6 +1004,58 @@ ${itemsList.join('\n')}
       // We already copied it, let's open line and remind user.
       alert('เราได้คัดลอกรายละเอียดสเปกให้คุณแล้ว! ระบบกำลังนำคุณแอดไลน์เพื่อติดต่อแชท ให้คุณกดวาง (Paste) ส่งข้อความหาเราในช่องแชทได้ทันทีค่ะ');
       window.open('https://line.me/R/ti/p/@neonex', '_blank'); // Replace with actual line link
+    }
+
+    /* --- TOAST & SMART EMAIL SYSTEM --- */
+    function showToast(message) {
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-message');
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4500);
+    }
+
+    function sendEmailDirect(e) {
+      if (e) e.preventDefault();
+      const email = 'nattaponhirun4@gmail.com';
+      const subject = encodeURIComponent('สอบถามบริการ / ขอใบเสนอราคา - NEONEX');
+      const body = encodeURIComponent('สวัสดีครับ/ค่ะ ทีมงาน NEONEX\n\nสนใจสอบถามรายละเอียดเกี่ยวกับเว็บไซต์/ระบบดังนี้:\n');
+
+      // Copy email address to clipboard
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).catch(() => {});
+      }
+
+      // Open web Gmail compose window (works directly on browser even without desktop mail app)
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+      const win = window.open(gmailUrl, '_blank');
+
+      // Fallback to mailto protocol if popup blocked or prefer mail app
+      setTimeout(() => {
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+      }, 300);
+
+      showToast('คัดลอก nattaponhirun4@gmail.com แล้ว กำลังเปิดหน้าส่งอีเมล...');
+    }
+
+    function sendBriefViaEmail() {
+      const email = 'nattaponhirun4@gmail.com';
+      const subject = encodeURIComponent('ใบสเปกระบบและประเมินราคา - NEONEX');
+      const briefContent = lastGeneratedBrief || 'ขอสอบถามใบประเมินราคาสเปกระบบ';
+      const body = encodeURIComponent(briefContent);
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(briefContent).catch(() => {});
+      }
+
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+      window.open(gmailUrl, '_blank');
+      showToast('คัดลอกแผนงานสเปกแล้ว กำลังเปิด Gmail ส่งหาทีมงาน...');
     }
   </script>
 </body>
