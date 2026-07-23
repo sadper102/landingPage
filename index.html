@@ -512,9 +512,20 @@
 
           <div class="quote-form">
             <span class="panel-header-text">ขอใบเสนอราคา / ปรึกษาแนวคิดฟรี</span>
-            <input type="text" id="quote-name" placeholder="ชื่อ หรือชื่อบริษัทของคุณ" class="form-input" required>
-            <input type="text" id="quote-contact" placeholder="LINE ID / Facebook / อีเมลสำหรับการติดต่อกลับ" class="form-input" required>
-            <textarea id="quote-notes" placeholder="รายละเอียดหรือขอบเขตงานที่ต้องการเพิ่มเติม..." class="form-input" style="min-height: 80px; resize: vertical;"></textarea>
+            <!-- HONEYPOT ANTI-SPAM BOT TRAP (Hidden from real users) -->
+            <div style="display:none !important; visibility:hidden !important; tab-index:-1;" aria-hidden="true">
+              <input type="text" id="quote-website-hp" name="website_hp" autocomplete="off" tabindex="-1">
+            </div>
+
+            <input type="text" id="quote-name" placeholder="ชื่อ หรือชื่อบริษัทของคุณ" class="form-input" required maxlength="100">
+            <input type="text" id="quote-contact" placeholder="LINE ID / Facebook / อีเมลสำหรับการติดต่อกลับ" class="form-input" required maxlength="150">
+            <textarea id="quote-notes" placeholder="รายละเอียดหรือขอบเขตงานที่ต้องการเพิ่มเติม..." class="form-input" style="min-height: 80px; resize: vertical;" maxlength="1000"></textarea>
+            
+            <div style="font-size: 0.78rem; color: var(--muted); margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.4rem;">
+              <i data-lucide="shield-check" size="16" style="color: var(--primary); flex-shrink: 0; margin-top: 2px;"></i>
+              <span>ข้อมูลของคุณได้รับการคุ้มครองความปลอดภัยตามมาตรฐาน PDPA ใช้สำหรับประเมินราคาและติดต่อกลับเท่านั้น</span>
+            </div>
+
             <button class="btn-form-submit" onclick="submitProjectBrief()"><i data-lucide="send"></i> ส่งแผนงานสเปกนี้ให้เรา</button>
           </div>
         </div>
@@ -926,23 +937,64 @@
     // Run once on load
     calculateEstimate();
 
-    /* --- FORM SUBMISSION & COPY BLUEPRINT --- */
+    /* --- SECURITY CONFIGURATION & FORM HANDLING --- */
+    const SECURITY_CONFIG = {
+      ENABLE_HONEYPOT: true,
+      ENABLE_RATE_LIMIT: true,
+      RATE_LIMIT_COOLDOWN_MS: 10000, // 10s cooldown
+      ENABLE_WEBHOOK: false, // Set true when connecting to Google Sheets / Discord / Make
+      WEBHOOK_URL: '' // Place API Webhook URL here
+    };
+
+    let lastSubmissionTime = 0;
     let lastGeneratedBrief = '';
 
+    function sanitizeInput(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+        .trim();
+    }
+
     function submitProjectBrief() {
+      // 1. Honeypot Anti-Bot Verification
+      const hpCheck = document.getElementById('quote-website-hp');
+      if (SECURITY_CONFIG.ENABLE_HONEYPOT && hpCheck && hpCheck.value !== '') {
+        console.warn('Bot submission blocked via honeypot trap.');
+        showToast('จัดเตรียมใบสเปกสำเร็จ!');
+        return;
+      }
+
+      // 2. Client-side Rate Limiting
+      const now = Date.now();
+      if (SECURITY_CONFIG.ENABLE_RATE_LIMIT && (now - lastSubmissionTime < SECURITY_CONFIG.RATE_LIMIT_COOLDOWN_MS)) {
+        showToast('กรุณารอ 10 วินาทีก่อนส่งแผนงานใหม่อีกครั้งค่ะ');
+        return;
+      }
+      lastSubmissionTime = now;
+
+      // 3. Extract & Sanitize User Inputs
       const nameInput = document.getElementById('quote-name');
       const contactInput = document.getElementById('quote-contact');
       const notesInput = document.getElementById('quote-notes');
-      
-      if (!nameInput.value || !contactInput.value) {
+
+      const nameVal = sanitizeInput(nameInput.value);
+      const contactVal = sanitizeInput(contactInput.value);
+      const notesVal = sanitizeInput(notesInput.value);
+
+      if (!nameVal || !contactVal) {
         alert('กรุณากรอกข้อมูลชื่อและช่องทางการติดต่อด้วยค่ะ');
         return;
       }
-      
+
       let totalPrice = 0;
       let totalDays = 0;
       let itemsList = [];
-      
+
       for (const [key, value] of Object.entries(selectedOptions)) {
         if (value.selected) {
           totalPrice += value.price;
@@ -950,7 +1002,7 @@
           itemsList.push(`- ${value.title} (฿${value.price.toLocaleString()} / +${value.days} วัน)`);
         }
       }
-      
+
       let speedText = 'ปกติ (Standard)';
       if (selectedSpeed === 'express') {
         totalPrice += 12000;
@@ -958,35 +1010,48 @@
         speedText = 'ด่วนพิเศษ (+฿12,000 / -4 วัน)';
         itemsList.push(`- แผนความเร่งด่วน: ${speedText}`);
       }
-      
+
       // Build Text Brief
       const blueprintText = 
 `--- NEONEX PROJECT SPECIFICATION BLUEPRINT ---
-ผู้สนใจใช้บริการ: ${nameInput.value}
-ช่องทางติดต่อกลับ: ${contactInput.value}
+ผู้สนใจใช้บริการ: ${nameVal}
+ช่องทางติดต่อกลับ: ${contactVal}
 บริการและระบบที่เลือก:
 ${itemsList.join('\n')}
 
-รายละเอียดเพิ่มเติม: ${notesInput.value || 'ไม่มีข้อมูลระบุ'}
+รายละเอียดเพิ่มเติม: ${notesVal || 'ไม่มีข้อมูลระบุ'}
 ------------------------------------------------
 ประเมินราคางานเบื้องต้น: ฿${totalPrice.toLocaleString()}
 ประเมินระยะเวลาจัดทำ: ${totalDays} วัน
 จัดเตรียมเมื่อ: ${new Date().toLocaleDateString('th-TH')}
 ------------------------------------------------`;
-      
+
       lastGeneratedBrief = blueprintText;
-      
+
+      // Optional Secure Webhook Dispatch
+      if (SECURITY_CONFIG.ENABLE_WEBHOOK && SECURITY_CONFIG.WEBHOOK_URL) {
+        fetch(SECURITY_CONFIG.WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: nameVal,
+            contact: contactVal,
+            notes: notesVal,
+            totalPrice: totalPrice,
+            totalDays: totalDays,
+            blueprint: blueprintText,
+            timestamp: new Date().toISOString()
+          })
+        }).catch(err => console.error('Webhook error:', err));
+      }
+
       // Copy to clipboard
       navigator.clipboard.writeText(blueprintText).then(() => {
-        // Render in modal preview
         const blueprintArea = document.getElementById('modal-blueprint-text');
         blueprintArea.textContent = blueprintText;
-        
-        // Open Modal
         document.getElementById('success-modal').classList.add('open');
       }).catch(err => {
         console.error('Failed to copy text: ', err);
-        // Still open modal even if copy fails
         const blueprintArea = document.getElementById('modal-blueprint-text');
         blueprintArea.textContent = blueprintText;
         document.getElementById('success-modal').classList.add('open');
