@@ -1413,6 +1413,7 @@ section {
   top: 0; left: 0; width: 100%; height: 100%;
   background: rgba(3, 7, 18, 0.85);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -1420,6 +1421,9 @@ section {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
+  overflow-y: auto;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
 }
 .custom-modal.open {
   opacity: 1;
@@ -1437,6 +1441,8 @@ section {
   transform: scale(0.9);
   transition: transform 0.3s;
   position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .custom-modal.open .modal-content {
   transform: scale(1);
@@ -1982,9 +1988,20 @@ footer {
 /* AUDIT BOOKING MODAL FORM STYLES */
 .audit-modal-content {
   max-width: 620px !important;
+  width: 100% !important;
+  max-height: 85vh !important;
+  overflow-y: auto !important;
   text-align: left !important;
   padding: 2.2rem !important;
   position: relative;
+  box-sizing: border-box !important;
+}
+@media (max-width: 640px) {
+  .audit-modal-content {
+    padding: 1.5rem 1.1rem !important;
+    max-height: 90vh !important;
+    border-radius: 18px !important;
+  }
 }
 .modal-close-btn {
   position: absolute;
@@ -2001,6 +2018,7 @@ footer {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
+  z-index: 10;
 }
 .modal-close-btn:hover {
   background: rgba(255, 255, 255, 0.15);
@@ -2022,16 +2040,17 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 @media (max-width: 600px) {
-  .form-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; gap: 0; }
 }
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
+  width: 100%;
 }
 .form-label {
   font-size: 0.85rem;
@@ -2039,14 +2058,18 @@ footer {
   color: var(--text);
 }
 .form-input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background: rgba(11, 15, 25, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
   padding: 0.7rem 0.9rem;
   color: #fff;
   font-family: 'Prompt', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   transition: border-color 0.2s, box-shadow 0.2s;
+  text-overflow: ellipsis;
 }
 .form-input:focus {
   outline: none;
@@ -2055,14 +2078,20 @@ footer {
 }
 .form-input select, select.form-input {
   appearance: none;
+  -webkit-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.9rem center;
-  padding-right: 2.5rem;
+  padding-right: 2.2rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .form-input option {
   background: #0B0F19;
   color: #fff;
+  font-size: 0.85rem;
+  padding: 8px;
 }
 .form-textarea {
   resize: vertical;
