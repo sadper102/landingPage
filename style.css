@@ -1599,17 +1599,35 @@ section {
 footer {
   background: var(--bg2);
   border-top: 1px solid var(--border);
-  padding: 5rem 5%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.footer-inner {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 4.5rem 5% 3.5rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 4rem;
 }
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(3, 7, 18, 0.4);
+  width: 100%;
+}
+.footer-bottom-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.25rem 5%;
+  text-align: center;
+  font-size: 0.825rem;
+  color: var(--muted);
+}
 .footer-info {
-  max-width: 350px;
+  max-width: 380px;
 }
 .footer-logo {
   font-family: 'Space Grotesk', sans-serif;
@@ -1668,7 +1686,7 @@ footer {
   .hero-stats { gap: 1.5rem; }
   .steps { gap: 1.5rem; }
   .step { padding: 2rem 1.5rem; }
-  footer { flex-direction: column; gap: 3rem; text-align: center; justify-content: center; align-items: center; }
+  .footer-inner { flex-direction: column; gap: 3rem; text-align: center; justify-content: center; align-items: center; }
   .footer-info { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
   .footer-links-group { justify-content: center; width: 100%; }
 }
