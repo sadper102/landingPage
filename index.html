@@ -22,19 +22,52 @@
   <meta name="twitter:title" content="NEONEX — Build Digital Systems That Grow Your Business">
   <meta name="twitter:description" content="เว็บไซต์ ระบบ และ AI Automation ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำ รองรับการเติบโตของธุรกิจ">
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Structured Data (JSON-LD for SEO & GEO AI Search) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "NEONEX",
-    "description": "ออกแบบเว็บไซต์ ระบบหลังบ้าน และ AI Automation ที่ช่วยธุรกิจเติบโต",
-    "url": "https://neonex.dev",
-    "serviceType": ["Web Development", "AI Automation", "Digital Systems"],
-    "areaServed": "TH",
-    "priceRange": "$$"
-  }
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "NEONEX",
+      "description": "ออกแบบและพัฒนาระบบ AI Automation, ระบบหลังบ้าน ERP/CRM และเว็บไซต์ธุรกิจที่ช่วยลดงานซ้ำซ้อนและเพิ่มยอดขาย",
+      "url": "https://neonex.dev",
+      "serviceType": ["Web Development", "AI Automation", "Custom Software", "Digital Systems"],
+      "areaServed": "TH",
+      "priceRange": "$$"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "NEONEX ให้บริการอะไรบ้างสำหรับธุรกิจ SME?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NEONEX ให้บริการออกแบบและพัฒนาระบบ AI Automation, ระบบหลังบ้าน ERP/CRM, แชทบอทตอบลูกค้าและปิดการขาย 24/7 และเว็บไซต์ธุรกิจที่เน้นเพิ่มยอดขายและลดเวลาทำงานซ้ำซ้อนได้ถึง 80%"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "การจองคิว AI & Efficiency Audit กับ NEONEX มีค่าใช้จ่ายไหม?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ไม่มีค่าใช้จ่าย (ฟรี 30 นาที) ทีมงานจะช่วยวิเคราะห์ขั้นตอนการทำงานและประเมินจุดที่สามารถใช้ AI เข้ามาช่วยลดต้นทุนและเพิ่มประสิทธิภาพให้ธุรกิจของคุณได้ทันที"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ระบบ AI Automation ช่วยประหยัดเวลาและลดต้นทุนได้อย่างไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ระบบสามารถดึงข้อมูลเอกสาร (OCR ใบเสร็จ/ใบสั่งซื้อ), ตอบแชทลูกค้า, ซิงค์สต็อกและข้อมูลข้ามระบบอัตโนมัติ ช่วยลดเวลาทำงานของพนักงานลงจากหลายชั่วโมงเหลือเพียงไม่กี่วินาที"
+          }
+        }
+      ]
+    }
+  ]
   </script>
+
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -55,13 +88,13 @@
     <div class="logo"><i data-lucide="zap" size="24" stroke-width="3"></i><span>NEONEX</span></div>
     <ul class="nav-links">
       <li><a href="#services">บริการ</a></li>
+      <li><a href="#before-after">ผลลัพธ์จริง</a></li>
       <li><a href="#how">ขั้นตอน</a></li>
       <li><a href="#testimonials">รีวิว</a></li>
       <li><a href="#pricing">คำนวณราคา</a></li>
-      <li><a href="#tech">เทคโนโลยี</a></li>
       <li><a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.3rem;"><i data-lucide="message-circle" size="16"></i> Messenger</a></li>
     </ul>
-    <a href="#pricing" class="nav-cta" aria-label="เริ่มโปรเจกต์กับ NEONEX">ประเมินราคางาน →</a>
+    <a href="javascript:void(0)" onclick="openAuditModal()" class="nav-cta" aria-label="จองคิวรับ AI Audit กับ NEONEX">จองคิว Audit ฟรี →</a>
   </nav>
 
   <main>
@@ -69,15 +102,20 @@
     <header class="hero-wrapper" id="hero">
       <div class="hero-left reveal">
         <h1 class="hero-title">
-          <span class="stagger-item stagger-1">Build Digital Systems</span><br>
-          <span class="stagger-item stagger-2"><em>That Grow Your Business.</em></span>
+          <span class="stagger-item stagger-1">Build AI & Digital Systems</span><br>
+          <span class="stagger-item stagger-2"><em>That Scale Your Business.</em></span>
         </h1>
         <p class="hero-sub stagger-item stagger-3">
           เราออกแบบ<strong>เว็บไซต์ ระบบหลังบ้าน และ AI Automation</strong> ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำซ้อน และประหยัดเวลาด้วยระบบอัตโนมัติ ไม่ใช่แค่สร้างเว็บให้เสร็จ แต่สร้างระบบที่ทำงานแทนคุณได้จริง 24 ชั่วโมง
         </p>
         <div class="hero-actions stagger-item stagger-4">
-          <a href="#pricing" class="btn-primary" aria-label="ประเมินราคาโปรเจกต์ของคุณ">เริ่มออกแบบระบบของคุณ <i data-lucide="arrow-right"></i></a>
-          <a href="#services" class="btn-secondary">ดูบริการทั้งหมด</a>
+          <button onclick="openAuditModal()" class="btn-primary btn-audit-cta" aria-label="จองคิวรับ AI & Efficiency Audit ฟรี">
+            <i data-lucide="sparkles" size="18"></i> จองคิวรับ AI Audit ฟรี 30 นาที <i data-lucide="arrow-right" size="18"></i>
+          </button>
+          <a href="#before-after" class="btn-secondary">ดูผลลัพธ์ Before vs After</a>
+        </div>
+        <div class="hero-micro-text stagger-item stagger-4">
+          <i data-lucide="shield-check" size="15"></i> ไม่มีค่าใช้จ่าย • วิเคราะห์จุดลดต้นทุนและประเมิน ROI ให้ทันที 30 นาที
         </div>
         <div class="hero-stats stagger-item stagger-4">
           <div>
@@ -222,6 +260,84 @@
         <span class="ticker-item">Custom Built Software <span class="ticker-sep">✦</span></span>
       </div>
     </div>
+
+    <!-- BEFORE VS AFTER SECTION (HIGH TICKET B2B PROOF) -->
+    <section id="before-after" class="before-after-wrap">
+      <p class="section-label reveal">Real Impact & ROI</p>
+      <h2 class="section-title reveal">พลิกรูปแบบการทำงานด้วย AI & Automation<br><span style="color:var(--primary);">ยกระดับผลลัพธ์ธุรกิจ SME แบบเห็นผลชัดเจน</span></h2>
+      
+      <div class="ba-grid reveal">
+        <!-- Card 1 -->
+        <div class="ba-card">
+          <div class="ba-badge"><i data-lucide="file-text" size="16"></i> งานจัดการเอกสาร & บัญชี</div>
+          <div class="ba-comparison">
+            <div class="ba-box before">
+              <div class="ba-tag">ก่อนใช้ระบบ (Manual)</div>
+              <p>พนักงานต้องนั่งคีย์ข้อมูลจากใบเสร็จ/ใบสั่งซื้อลง Excel มือเฉลี่ย <strong>4 ชั่วโมง/วัน</strong> เสี่ยงต่อข้อผิดพลาดสูง</p>
+            </div>
+            <div class="ba-arrow"><i data-lucide="arrow-down-right" size="18"></i></div>
+            <div class="ba-box after">
+              <div class="ba-tag">หลังใช้ AI Automation (NEONEX)</div>
+              <p><strong>AI OCR สกัดข้อมูลเอกสารอัตโนมัติ</strong> ลงระบบ ERP/Sheet ใน 5 วินาที แม่นยำ 99.8% ประหยัดเวลา 95%</p>
+            </div>
+          </div>
+          <div class="ba-metric">
+            <span class="ba-metric-num">ประหยัด 100+ ชม./เดือน</span>
+            <span class="ba-metric-sub">คืนทุน ROI ภายใน 2 เดือน</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="ba-card">
+          <div class="ba-badge"><i data-lucide="message-square-text" size="16"></i> งานตอบแชท & ปิดการขาย</div>
+          <div class="ba-comparison">
+            <div class="ba-box before">
+              <div class="ba-tag">ก่อนใช้ระบบ (Manual)</div>
+              <p>แอดมินตอบแชทไม่ทันช่วงคนทักเยอะหรือนอกเวลาทำการ <strong>ลูกค้าหลุด 30-40%</strong> ไปซื้อร้านอื่น</p>
+            </div>
+            <div class="ba-arrow"><i data-lucide="arrow-down-right" size="18"></i></div>
+            <div class="ba-box after">
+              <div class="ba-tag">หลังใช้ AI Smart Agent (NEONEX)</div>
+              <p><strong>AI ตอบแชท ปรับแต่งตามข้อมูลสินค้าจริง</strong> ช่วยปิดการขายและส่งใบเสนอราคาอัตโนมัติ 24/7</p>
+            </div>
+          </div>
+          <div class="ba-metric">
+            <span class="ba-metric-num">เพิ่มยอดขาย +35%</span>
+            <span class="ba-metric-sub">ตอบกลับลูกค้าทันที 0 วินาที</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="ba-card">
+          <div class="ba-badge"><i data-lucide="workflow" size="16"></i> งานเชื่อมต่อข้อมูลข้ามระบบ</div>
+          <div class="ba-comparison">
+            <div class="ba-box before">
+              <div class="ba-tag">ก่อนใช้ระบบ (Manual)</div>
+              <p>ข้อมูลกระจัดกระจายใน LINE, Google Sheets และอีเมล ต้องใช้คนคอยก็อปปี้ส่งต่อระหว่างแผนก</p>
+            </div>
+            <div class="ba-arrow"><i data-lucide="arrow-down-right" size="18"></i></div>
+            <div class="ba-box after">
+              <div class="ba-tag">หลังใช้ Custom System Integration</div>
+              <p><strong>Centralized Auto-Pipeline</strong> ซิงค์ข้อมูลสต็อก ออเดอร์ และลูกค้าเรียลไทม์ ไร้ข้อผิดพลาด</p>
+            </div>
+          </div>
+          <div class="ba-metric">
+            <span class="ba-metric-num">ลดงานซ้ำซ้อน 80%</span>
+            <span class="ba-metric-sub">ทีมงานโฟกัสการเติบโตธุรกิจ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-cta-box reveal">
+        <div class="ba-cta-content">
+          <h3>ต้องการดูว่าธุรกิจของคุณประหยัดเวลาและต้นทุนได้เท่าไหร่?</h3>
+          <p>จองคิวพูดคุยกับทีมวิศวกรและผู้เชี่ยวชาญ AI ของเราเพื่อวิเคราะห์ Workflow ธุรกิจคุณได้ฟรี</p>
+        </div>
+        <button onclick="openAuditModal()" class="btn-primary" aria-label="จองคิว AI Audit ฟรี">
+          <i data-lucide="calendar" size="18"></i> จองคิวรับ AI Audit ฟรี (30 นาที) →
+        </button>
+      </div>
+    </section>
 
     <!-- SERVICES -->
     <section id="services">
@@ -594,7 +710,71 @@
         <a href="#pricing">ขอใบประเมินราคา</a>
       </div>
     </div>
-  </footer>
+  <!-- AI & EFFICIENCY AUDIT BOOKING MODAL -->
+  <div class="custom-modal" id="audit-modal">
+    <div class="modal-content audit-modal-content">
+      <button class="modal-close-btn" onclick="closeAuditModal()"><i data-lucide="x" size="20"></i></button>
+
+      <div class="audit-modal-header">
+        <div class="audit-badge"><i data-lucide="sparkles" size="14"></i> Exclusive 1-on-1 Session</div>
+        <h3 class="modal-title" style="margin-top:0.4rem;">จองคิวรับ AI & Efficiency Audit ฟรี</h3>
+        <p class="modal-desc" style="margin-bottom:1rem;">วิเคราะห์กระบวนการทำงาน ประเมินจุดลดต้นทุน และออกแบบแนวทาง AI Automation สำหรับธุรกิจคุณ (30 นาที)</p>
+      </div>
+
+      <form id="audit-form" onsubmit="handleAuditSubmit(event)" class="audit-form-body">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">ชื่อ-นามสกุล <span style="color:#EF4444;">*</span></label>
+            <input type="text" id="audit-name" class="form-input" placeholder="เช่น คุณสมชาย วิวัฒน์" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">เบอร์โทรศัพท์ / LINE ID <span style="color:#EF4444;">*</span></label>
+            <input type="text" id="audit-contact" class="form-input" placeholder="เช่น 081-234-5678 หรือ line_id" required>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">ชื่อบริษัท / ประเภทธุรกิจ <span style="color:#EF4444;">*</span></label>
+            <select id="audit-business" class="form-input" required>
+              <option value="" disabled selected>-- เลือกประเภทธุรกิจของคุณ --</option>
+              <option value="ขายของออนไลน์ / E-Commerce">ขายของออนไลน์ / E-Commerce</option>
+              <option value="ธุรกิจบริการ / ค้าส่ง (B2B & Wholesale)">ธุรกิจบริการ / ค้าส่ง (B2B & Wholesale)</option>
+              <option value="โรงงาน / การผลิต / โลจิสติกส์">โรงงาน / การผลิต / โลจิสติกส์</option>
+              <option value="อสังหาฯ / ก่อสร้าง / ที่ปรึกษา">อสังหาฯ / ก่อสร้าง / ที่ปรึกษา</option>
+              <option value="Startup / Tech / Solopreneur">Startup / Tech / Solopreneur</option>
+              <option value="อื่นๆ">อื่นๆ</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">งบประมาณที่คาดหวังในการพัฒนาระบบ</label>
+            <select id="audit-budget" class="form-input">
+              <option value="฿15,000 - ฿30,000">฿15,000 - ฿30,000 (starter/landing)</option>
+              <option value="฿30,000 - ฿70,000" selected>฿30,000 - ฿70,000 (AI & Web App)</option>
+              <option value="฿70,000 - ฿150,000+">฿70,000 - ฿150,000+ (Full Custom Enterprise)</option>
+              <option value="ต้องการปรึกษาเพื่อประเมินงบก่อน">ต้องการปรึกษาเพื่อประเมินงบก่อน</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">ปัญหาหลักหรือขั้นตอนงานซ้ำซ้อนที่อยากให้ AI ช่วยแก้ไข <span style="color:#EF4444;">*</span></label>
+          <textarea id="audit-bottleneck" class="form-input form-textarea" rows="3" placeholder="เช่น คีย์ออเดอร์ลง Excel ช้ามาก, แอดมินตอบแชทไม่ทันช่วงกลางคืน, อยากได้ระบบหลังบ้านจัดการสต็อก" required></textarea>
+        </div>
+
+        <div class="audit-perks">
+          <div class="perk-item"><i data-lucide="check-circle-2" size="16" style="color:var(--primary);"></i> ฟรี 30 นาที ไม่มีความผูกมัด</div>
+          <div class="perk-item"><i data-lucide="check-circle-2" size="16" style="color:var(--primary);"></i> สรุปประเมิน ROI ให้ทันที</div>
+          <div class="perk-item"><i data-lucide="check-circle-2" size="16" style="color:var(--primary);"></i> คุยตรงกับ AI Specialist</div>
+        </div>
+
+        <div class="modal-buttons" style="margin-top:1.2rem;">
+          <button type="button" class="modal-btn secondary" onclick="closeAuditModal()">ยกเลิก</button>
+          <button type="submit" class="modal-btn primary"><i data-lucide="send" size="16"></i> ยืนยันการจองคิว Audit ฟรี →</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- CUSTOM SUCCESS MODAL -->
   <div class="custom-modal" id="success-modal">
@@ -1122,6 +1302,74 @@ ${itemsList.join('\n')}
       window.open(gmailUrl, '_blank');
       showToast('คัดลอกแผนงานสเปกแล้ว กำลังเปิด Gmail ส่งหาทีมงาน...');
     }
+
+    /* --- AUDIT BOOKING MODAL LOGIC --- */
+    function openAuditModal() {
+      const modal = document.getElementById('audit-modal');
+      if (modal) {
+        modal.classList.add('open');
+        lucide.createIcons();
+      }
+    }
+
+    function closeAuditModal() {
+      const modal = document.getElementById('audit-modal');
+      if (modal) modal.classList.remove('open');
+    }
+
+    function handleAuditSubmit(e) {
+      if (e) e.preventDefault();
+      const name = document.getElementById('audit-name').value;
+      const contact = document.getElementById('audit-contact').value;
+      const business = document.getElementById('audit-business').value;
+      const budget = document.getElementById('audit-budget').value;
+      const bottleneck = document.getElementById('audit-bottleneck').value;
+
+      const auditBrief = 
+`--- NEONEX AI & EFFICIENCY AUDIT BOOKING ---
+ผู้ติดต่อ: ${name}
+เบอร์โทร / LINE: ${contact}
+ประเภทธุรกิจ: ${business}
+งบประมาณที่สนใจ: ${budget}
+ปัญหาที่พบ / Workflow ซ้ำซ้อน:
+${bottleneck}
+------------------------------------------------
+วันที่นัดหมาย: ${new Date().toLocaleDateString('th-TH')}
+------------------------------------------------`;
+
+      lastGeneratedBrief = auditBrief;
+
+      if (SECURITY_CONFIG && SECURITY_CONFIG.ENABLE_WEBHOOK && SECURITY_CONFIG.WEBHOOK_URL) {
+        fetch(SECURITY_CONFIG.WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'AUDIT_BOOKING',
+            name,
+            contact,
+            business,
+            budget,
+            bottleneck,
+            timestamp: new Date().toISOString()
+          })
+        }).catch(err => console.error('Audit Webhook Error:', err));
+      }
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(auditBrief).catch(() => {});
+      }
+
+      closeAuditModal();
+      
+      const blueprintArea = document.getElementById('modal-blueprint-text');
+      if (blueprintArea) blueprintArea.textContent = auditBrief;
+
+      const successModal = document.getElementById('success-modal');
+      if (successModal) successModal.classList.add('open');
+
+      showToast('ส่งข้อมูลนัดหมาย Audit เรียบร้อยแล้ว! คัดลอกรายละเอียดแล้ว');
+    }
   </script>
 </body>
 </html>
+

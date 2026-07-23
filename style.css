@@ -1821,3 +1821,250 @@ footer {
   color: #10B981;
 }
 
+/* HERO MICRO TEXT & AUDIT CTA */
+.hero-micro-text {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.hero-micro-text i {
+  color: var(--primary);
+}
+.btn-audit-cta {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #030712 !important;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+  border: none;
+  cursor: pointer;
+}
+.btn-audit-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.55);
+}
+
+/* BEFORE VS AFTER SECTION */
+.before-after-wrap {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.ba-card {
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.75rem;
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.ba-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+.ba-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(99, 102, 241, 0.12);
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+.ba-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.ba-box {
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.ba-box.before {
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #FCA5A5;
+}
+.ba-box.after {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #D1FAE5;
+}
+.ba-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+.ba-box.before .ba-tag { color: #EF4444; }
+.ba-box.after .ba-tag { color: #10B981; }
+
+.ba-arrow {
+  text-align: center;
+  color: var(--muted);
+  opacity: 0.6;
+}
+.ba-metric {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+.ba-metric-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.ba-metric-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.ba-cta-box {
+  margin-top: 3.5rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(99, 102, 241, 0.08) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.ba-cta-content h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: #fff;
+}
+.ba-cta-content p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* AUDIT BOOKING MODAL FORM STYLES */
+.audit-modal-content {
+  max-width: 620px !important;
+  text-align: left !important;
+  padding: 2.2rem !important;
+  position: relative;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.audit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(16, 185, 129, 0.12);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.form-input {
+  background: rgba(11, 15, 25, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  color: #fff;
+  font-family: 'Prompt', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+}
+.form-input select, select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.5rem;
+}
+.form-input option {
+  background: #0B0F19;
+  color: #fff;
+}
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.audit-perks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+.perk-item {
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+
