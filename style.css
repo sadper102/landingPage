@@ -2130,9 +2130,9 @@ footer {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2.5rem;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -2201,6 +2201,11 @@ footer {
 .portfolio-badge.corporate {
   background: rgba(99, 102, 241, 0.9);
   color: #ffffff;
+}
+
+.portfolio-badge.nda {
+  background: rgba(245, 158, 11, 0.9);
+  color: #030712;
 }
 
 .portfolio-content {
