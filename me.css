@@ -1,0 +1,44 @@
+/* me.html — personal portfolio. Builds on the tokens and components in style.css. */
+
+.me-nav .nav-inner { gap: 16px; }
+.me-nav .logo { letter-spacing: .04em; }
+
+.me-hero { align-items: start; }
+.me-hero .hero-title { font-size: clamp(48px, 7.2vw, 104px); margin-bottom: 20px; }
+.me-role {
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 24px;
+}
+.me-hero .hero-sub { margin-bottom: 32px; }
+.me-hero .spec-card { margin-top: 8px; }
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tags li {
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 1px solid var(--ink);
+}
+
+/* Services: 4 columns, ruled */
+.me-services { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.me-services .usp-card { padding: 28px 24px 32px; }
+.me-services .usp-card:first-child { padding-left: 0; }
+.me-services .usp-card:last-child { padding-right: 0; }
+.me-services .usp-title { font-size: 22px; }
+@media (max-width: 1000px) {
+  .me-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .me-services .usp-card:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .me-services .usp-card:nth-child(even) { padding-right: 0; }
+}
+@media (max-width: 600px) {
+  .me-services { grid-template-columns: minmax(0, 1fr); }
+  .me-services .usp-card, .me-services .usp-card:nth-child(n) { border-left: 0; padding: 24px 0 28px; }
+}
+
+.me-process { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 800px) { .me-process { grid-template-columns: minmax(0, 1fr); } }
+
+.me-cta .cta-actions { margin-top: 4px; }
