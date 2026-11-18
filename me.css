@@ -1,44 +1,52 @@
 /* me.html — personal portfolio. Builds on the tokens and components in style.css. */
 
-.me-nav .nav-inner { gap: 16px; }
-.me-nav .logo { letter-spacing: .04em; }
+.me-nav .logo { margin-right: auto; }
 
-.me-hero { align-items: start; }
-.me-hero .hero-title { font-size: clamp(48px, 7.2vw, 104px); margin-bottom: 20px; }
-.me-role {
-  font-size: clamp(20px, 2.2vw, 26px);
-  font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: 24px;
+/* Two-column hero (name + profile card), left aligned */
+.hero-wrapper.me-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  gap: 48px 64px;
+  align-items: start;
+  padding-bottom: 0;
 }
-.me-hero .hero-sub { margin-bottom: 32px; }
-.me-hero .spec-card { margin-top: 8px; }
+@media (max-width: 900px) { .hero-wrapper.me-hero { grid-template-columns: minmax(0, 1fr); } }
+.me-hero .hero-left { align-items: flex-start; text-align: left; max-width: none; }
+.me-hero .hero-title { font-size: clamp(40px, 6vw, 72px); line-height: 1.08; margin-bottom: 16px; }
+.me-role { font-size: clamp(19px, 2vw, 23px); font-weight: 500; line-height: 1.45; color: var(--text); margin-bottom: 18px; }
+.me-hero .hero-sub { margin-bottom: 28px; }
+
+.profile-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+.profile-card dl > div {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 16px;
+  padding: 13px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.profile-card dl > div:last-child { border-bottom: 0; }
+.profile-card dt { color: var(--muted); font-size: 15px; }
+.profile-card dd { font-weight: 500; }
 
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-tags li {
-  font-family: var(--mono);
   font-size: 14px;
-  padding: 6px 12px;
-  border: 1px solid var(--ink);
+  font-weight: 500;
+  color: var(--text-2);
+  padding: 5px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
 }
 
-/* Services: 4 columns, ruled */
 .me-services { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.me-services .usp-card { padding: 28px 24px 32px; }
-.me-services .usp-card:first-child { padding-left: 0; }
-.me-services .usp-card:last-child { padding-right: 0; }
-.me-services .usp-title { font-size: 22px; }
-@media (max-width: 1000px) {
-  .me-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .me-services .usp-card:nth-child(odd) { border-left: 0; padding-left: 0; }
-  .me-services .usp-card:nth-child(even) { padding-right: 0; }
-}
-@media (max-width: 600px) {
-  .me-services { grid-template-columns: minmax(0, 1fr); }
-  .me-services .usp-card, .me-services .usp-card:nth-child(n) { border-left: 0; padding: 24px 0 28px; }
-}
+@media (max-width: 1100px) { .me-services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .me-services { grid-template-columns: minmax(0, 1fr); } }
 
 .me-process { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 800px) { .me-process { grid-template-columns: minmax(0, 1fr); } }
-
-.me-cta .cta-actions { margin-top: 4px; }

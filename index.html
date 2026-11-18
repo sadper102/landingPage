@@ -7,7 +7,7 @@
   <meta name="description" content="NEONEX ออกแบบเว็บไซต์ ระบบหลังบ้าน และ AI Automation ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำ และรองรับการเติบโตของธุรกิจ SME และ Startups">
   <meta name="keywords" content="รับทำเว็บไซต์, ทำเว็บธุรกิจ, AI Automation, ระบบหลังบ้าน, Web App, เพิ่มยอดขาย, Digital Systems, NEONEX">
   <meta name="author" content="NEONEX">
-  <meta name="theme-color" content="#F3F1EA">
+  <meta name="theme-color" content="#0A0A0A">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://neonex.dev/">
 
@@ -80,10 +80,10 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261118b">
+  <link rel="stylesheet" href="style.css?v=20261118d">
 </head>
 <body>
 
@@ -92,7 +92,7 @@
   <!-- NAV -->
   <nav id="navbar" aria-label="เมนูหลัก">
     <div class="nav-inner">
-      <a href="#hero" class="logo" aria-label="NEONEX หน้าแรก">NEONEX<span>.</span></a>
+      <a href="#hero" class="logo" aria-label="NEONEX หน้าแรก"><span class="logo-mark" aria-hidden="true">N</span>NEONEX</a>
       <ul class="nav-links" id="navbar-links">
         <li><a href="#portfolio">ผลงาน</a></li>
         <li><a href="#services">บริการ</a></li>
@@ -113,45 +113,42 @@
     <!-- HERO -->
     <header class="hero-wrapper" id="hero">
       <div class="hero-left">
-        <p class="hero-eyebrow">รับเขียนโค้ดแก้ปัญหาธุรกิจ — สำหรับ SME และ Startups</p>
-        <h1 class="hero-title">Build AI &amp; digital systems that scale your business<span>.</span></h1>
-        <p class="hero-sub">เว็บไซต์ที่ขายได้ ระบบหลังบ้าน AI และงานอัตโนมัติ ที่ช่วยให้ธุรกิจได้เงินเพิ่มหรือเสียเงินน้อยลง — งานไหนเขียนโค้ดแก้ได้ เรารับหมด ไม่ใช่แค่ทำเว็บให้เสร็จ แต่สร้างระบบที่ทำงานแทนคุณได้จริง 24 ชั่วโมง</p>
+        <p class="hero-badge">รับเขียนโค้ดแก้ปัญหาธุรกิจ · สำหรับ SME และ Startup</p>
+        <h1 class="hero-title"><span class="nw">ระบบที่ช่วยธุรกิจ</span> <span class="nw">ขายได้มากขึ้น</span> <span class="nw">และทำงานน้อยลง</span></h1>
+        <p class="hero-sub">เว็บไซต์ที่ขายได้ ระบบหลังบ้าน AI และงานอัตโนมัติ งานไหนเขียนโค้ดแก้ได้ เรารับหมด ส่งมอบพร้อม Source Code ให้คุณเป็นเจ้าของ 100%</p>
         <div class="hero-actions">
           <button type="button" onclick="openAuditModal()" class="btn-primary">
-            จองคิวรับ AI Audit ฟรี 30 นาที <i data-lucide="arrow-right" size="18" aria-hidden="true"></i>
+            <i data-lucide="calendar" size="18" aria-hidden="true"></i> จองคิวรับ AI Audit ฟรี
           </button>
-          <a href="#before-after" class="btn-secondary">ดูผลลัพธ์ Before / After</a>
+          <a href="#portfolio" class="btn-secondary"><i data-lucide="layout-grid" size="18" aria-hidden="true"></i> ดูผลงาน</a>
         </div>
-        <p class="hero-micro-text">ไม่มีค่าใช้จ่าย · วิเคราะห์จุดลดต้นทุนและประเมิน ROI ให้ภายใน 30 นาที</p>
+        <p class="hero-micro-text">ฟรี 30 นาที · เห็นต้นแบบภายใน 24 ชม. · ตอบกลับภายใน 1 ชั่วโมง</p>
       </div>
 
-      <aside class="spec-card" aria-label="สิ่งที่คุณได้รับ">
-        <div class="spec-card-head"><span>Project spec</span><span class="muted">NX-STD</span></div>
-        <dl>
-          <div><dt>Prototype</dt><dd>ภายใน 24 ชม.</dd></div>
-          <div><dt>พัฒนาจริง</dt><dd>3–7 วัน</dd></div>
-          <div><dt>Source code</dt><dd>ส่งมอบ 100% ไม่ผูกแพลตฟอร์ม</dd></div>
-          <div><dt>เริ่มต้น</dt><dd>฿15,000</dd></div>
-          <div><dt>ตอบกลับ</dt><dd>ภายใน 1 ชั่วโมง</dd></div>
-        </dl>
-      </aside>
+      <figure class="hero-shot">
+        <div class="browser">
+          <div class="browser-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">console.firstmodel.app</span></div>
+          <img src="assets/firstmodel_preview.jpg" alt="หน้าจอระบบ Firstmodel — AI API Platform ที่เราพัฒนา" width="800" height="500">
+        </div>
+      </figure>
     </header>
 
-    <!-- STATS STRIP -->
-    <div class="stats-strip" role="list" aria-label="ตัวเลขสำคัญ">
-      <div class="stats-inner">
-        <div class="stat" role="listitem"><span class="stat-num">50+</span><span class="stat-label">โปรเจกต์ที่ส่งมอบ</span></div>
-        <div class="stat" role="listitem"><span class="stat-num">80%</span><span class="stat-label">ลดภาระงานซ้ำซ้อน</span></div>
-        <div class="stat" role="listitem"><span class="stat-num">3×</span><span class="stat-label">เพิ่มยอดขายและประสิทธิภาพ</span></div>
-        <div class="stat" role="listitem"><span class="stat-num">24/7</span><span class="stat-label">ระบบทำงานแทนคุณ</span></div>
-      </div>
+    <!-- WORK STRIP -->
+    <div class="logo-strip">
+      <p>ผลงานที่ใช้งานจริง</p>
+      <ul>
+        <li>Firstmodel</li>
+        <li>AISLEMe</li>
+        <li>FallEAC</li>
+        <li>4 อ. เอไอ</li>
+      </ul>
     </div>
 
     <!-- 01 RESULTS -->
     <section id="before-after">
       <div class="section-head split">
         <div>
-          <p class="section-label">§01 — Real impact</p>
+          <p class="section-label">ผลลัพธ์จริง</p>
           <h2 class="section-title">ก่อนและหลังใช้ระบบ</h2>
         </div>
         <p class="section-intro">พลิกรูปแบบการทำงานด้วย AI &amp; Automation — สามงานที่ธุรกิจ SME เสียเวลามากที่สุด และสิ่งที่เปลี่ยนไปหลังติดตั้งระบบ</p>
@@ -192,12 +189,12 @@
     <!-- 02 SERVICES -->
     <section id="services">
       <div class="section-head">
-        <p class="section-label">§02 — Services</p>
-        <h2 class="section-title narrow">โค้ดที่ช่วยให้ธุรกิจได้เงินเพิ่ม หรือเสียเงินน้อยลง</h2>
+        <p class="section-label">บริการ</p>
+        <h2 class="section-title narrow"><span class="nw">โค้ดที่ช่วยให้ธุรกิจได้เงินเพิ่ม</span> <span class="nw">หรือเสียเงินน้อยลง</span></h2>
       </div>
       <div class="usp-grid cols-4 reveal">
         <article class="usp-card">
-          <span class="usp-num">01</span>
+          <span class="usp-icon" aria-hidden="true"><i data-lucide="globe"></i></span>
           <h3 class="usp-title">เว็บไซต์ที่ขายได้</h3>
           <p class="usp-desc">เว็บไซต์ธุรกิจ Landing Page หรือ E-commerce ที่วางโครงสร้างเพื่อเปลี่ยนผู้เข้าชมให้เป็นลูกค้าจริง ไม่ใช่แค่ทำให้เสร็จ</p>
           <ul class="dash-list">
@@ -208,7 +205,7 @@
           <p class="usp-price">เริ่มต้น <strong>฿15,000</strong></p>
         </article>
         <article class="usp-card">
-          <span class="usp-num">02</span>
+          <span class="usp-icon" aria-hidden="true"><i data-lucide="database"></i></span>
           <h3 class="usp-title">ระบบหลังบ้าน &amp; Web App</h3>
           <p class="usp-desc">ระบบจัดเก็บข้อมูล Dashboard สรุปผล CRM หรือซอฟต์แวร์ภายในองค์กร ที่แข็งแกร่ง ปลอดภัย และโตไปพร้อมธุรกิจ</p>
           <ul class="dash-list">
@@ -219,7 +216,7 @@
           <p class="usp-price">เริ่มต้น <strong>฿35,000</strong></p>
         </article>
         <article class="usp-card">
-          <span class="usp-num">03</span>
+          <span class="usp-icon" aria-hidden="true"><i data-lucide="bot"></i></span>
           <h3 class="usp-title">AI &amp; Automation</h3>
           <p class="usp-desc">เชื่อมต่อ AI และสร้างระบบทำงานแทนคนแบบอัตโนมัติ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนได้ถึง 80%</p>
           <ul class="dash-list">
@@ -230,7 +227,7 @@
           <p class="usp-price">เริ่มต้น <strong>฿20,000</strong></p>
         </article>
         <article class="usp-card">
-          <span class="usp-num">04</span>
+          <span class="usp-icon" aria-hidden="true"><i data-lucide="code-2"></i></span>
           <h3 class="usp-title">งานโค้ดอื่นๆ ที่แก้ปัญหาได้</h3>
           <p class="usp-desc">มีโจทย์ที่ไม่อยู่ในรายการ? ถ้าเขียนโค้ดแก้ได้ เรารับ ตั้งแต่งานเล็กไปจนถึงต่อยอดระบบเดิมที่มีอยู่</p>
           <ul class="dash-list">
@@ -247,7 +244,7 @@
     <section id="portfolio">
       <div class="section-head split">
         <div>
-          <p class="section-label">§03 — Selected work</p>
+          <p class="section-label">ผลงาน</p>
           <h2 class="section-title">ผลงานที่ใช้งานจริง</h2>
         </div>
         <p class="section-intro">ตัวอย่างบางส่วนของระบบ AI Application และเว็บไซต์องค์กรที่ส่งมอบและเปิดใช้งานจริง</p>
@@ -342,7 +339,7 @@
     <section class="how-wrap" id="how">
       <div class="how-inner">
         <div class="section-head">
-          <p class="section-label">§04 — Process</p>
+          <p class="section-label">ขั้นตอนการทำงาน</p>
           <h2 class="section-title">จากคุยวันแรก ถึงเปิดใช้งานจริง</h2>
         </div>
         <ol class="steps reveal">
@@ -373,21 +370,21 @@
     <!-- 05 TESTIMONIALS -->
     <section id="testimonials">
       <div class="section-head">
-        <p class="section-label">§05 — Clients</p>
+        <p class="section-label">รีวิวจากลูกค้า</p>
         <h2 class="section-title">ลูกค้าพูดถึงเรา</h2>
       </div>
       <div class="testi-grid reveal">
         <figure class="testi-card">
           <blockquote class="testi-quote">“ก่อนหน้านี้ร้านเราเสียเวลากับการตอบลูกค้าและคีย์ออเดอร์หลังบ้านมาก พอ NEONEX ทำระบบ CRM และระบบแอดมินให้ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนไปได้มากกว่า 80% เลยครับ”</blockquote>
-          <figcaption class="testi-user"><span class="testi-name">คุณสมพล เลิศดี</span><span class="testi-title">เจ้าของธุรกิจค้าส่งออนไลน์</span></figcaption>
+          <figcaption class="testi-user"><span class="testi-avatar" aria-hidden="true">SP</span><span class="testi-who"><span class="testi-name">คุณสมพล เลิศดี</span><span class="testi-title">เจ้าของธุรกิจค้าส่งออนไลน์</span></span></figcaption>
         </figure>
         <figure class="testi-card">
           <blockquote class="testi-quote">“ประทับใจความเร็วในการขึ้นต้นแบบมาก คุยกันวันนี้ วันต่อมาก็ได้ลิงก์ไปทดสอบระบบแล้ว เว็บไซต์สะอาด โหลดรวดเร็ว ปรับแต่งหน้า SEO เองง่ายขึ้น ช่วยเพิ่มยอด Conversion ได้ชัดเจน”</blockquote>
-          <figcaption class="testi-user"><span class="testi-name">คุณนภัทร พานิชย์</span><span class="testi-title">Co-Founder, Tech Startup</span></figcaption>
+          <figcaption class="testi-user"><span class="testi-avatar" aria-hidden="true">NP</span><span class="testi-who"><span class="testi-name">คุณนภัทร พานิชย์</span><span class="testi-title">Co-Founder, Tech Startup</span></span></figcaption>
         </figure>
         <figure class="testi-card">
           <blockquote class="testi-quote">“คิดถูกที่ทำเว็บกับ NEONEX เพราะไม่ได้ติดล็อกแพลตฟอร์มแบบเจ้าอื่น ได้ Source Code และฐานข้อมูลครบทุกอย่าง แก้ไขและต่อยอดระบบเพิ่มเติมเองได้สะดวกรวดเร็วมาก”</blockquote>
-          <figcaption class="testi-user"><span class="testi-name">คุณวิริยะ ตั้งสกุล</span><span class="testi-title">ผู้จัดการไอที, SME Retail</span></figcaption>
+          <figcaption class="testi-user"><span class="testi-avatar" aria-hidden="true">WT</span><span class="testi-who"><span class="testi-name">คุณวิริยะ ตั้งสกุล</span><span class="testi-title">ผู้จัดการไอที, SME Retail</span></span></figcaption>
         </figure>
       </div>
     </section>
@@ -395,7 +392,7 @@
     <!-- 06 COMPARISON -->
     <section id="comparison">
       <div class="section-head">
-        <p class="section-label">§06 — Comparison</p>
+        <p class="section-label">เปรียบเทียบ</p>
         <h2 class="section-title">ทำไมไม่ใช้ Template สำเร็จรูป</h2>
       </div>
       <div class="table-scroll reveal">
@@ -418,7 +415,7 @@
     <section id="pricing">
       <div class="section-head split">
         <div>
-          <p class="section-label">§07 — Cost estimator</p>
+          <p class="section-label">ประเมินราคา</p>
           <h2 class="section-title">จัดสเปกและประเมินราคา</h2>
         </div>
         <p class="section-intro">เลือกบริการและส่วนเสริมที่ต้องการ ระบบจะสรุปราคาเริ่มต้นและระยะเวลาให้ทันที</p>
@@ -518,7 +515,7 @@
         </div>
 
         <aside class="estimator-panel" aria-label="สรุปราคา">
-          <div class="spec-card-head"><span>Specification</span><span class="muted">NX-QUOTE</span></div>
+          <div class="panel-head">สรุปราคาเบื้องต้น</div>
           <div class="estimator-panel-body">
             <div class="panel-summary-list" id="panel-summary-items"></div>
             <div class="panel-calculation">
@@ -549,7 +546,7 @@
     <!-- 08 STACK -->
     <section id="tech">
       <div class="section-head">
-        <p class="section-label">§08 — Stack</p>
+        <p class="section-label">เทคโนโลยี</p>
         <h2 class="section-title">เครื่องมือที่เราใช้สร้างระบบ</h2>
       </div>
       <ul class="tech-pills reveal">
@@ -571,7 +568,7 @@
       <div class="cta-inner">
         <div>
           <p class="cta-eyebrow">ฟรี 30 นาที · ไม่มีค่าใช้จ่าย</p>
-          <h2 class="cta-title">พร้อมสร้างระบบเพื่อเติบโตธุรกิจคุณแล้วหรือยัง<span>?</span></h2>
+          <h2 class="cta-title">พร้อมสร้างระบบเพื่อเติบโตธุรกิจคุณแล้วหรือยัง?</h2>
         </div>
         <div class="cta-side">
           <p class="cta-desc">ปรึกษาไอเดีย แนะนำแนวทางแก้ปัญหา หรือประเมินแผนงานฟรี ทีมงานตอบกลับภายใน 1 ชั่วโมง</p>
@@ -589,7 +586,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-info">
-        <div class="footer-logo">NEONEX<span>.</span></div>
+        <div class="footer-logo"><span class="logo-mark" aria-hidden="true">N</span>NEONEX</div>
         <p class="footer-note">เราพัฒนาเว็บไซต์ ระบบดิจิทัล และ AI Automation ที่เน้นผลลัพธ์ ขับเคลื่อนยอดขาย ลดขั้นตอนงานซ้ำซ้อน และเพิ่มมูลค่าการเติบโตให้ธุรกิจคุณ</p>
       </div>
       <div class="footer-links-group">
