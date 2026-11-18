@@ -7,7 +7,7 @@
   <meta name="description" content="NEONEX ออกแบบเว็บไซต์ ระบบหลังบ้าน และ AI Automation ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำ และรองรับการเติบโตของธุรกิจ SME และ Startups">
   <meta name="keywords" content="รับทำเว็บไซต์, ทำเว็บธุรกิจ, AI Automation, ระบบหลังบ้าน, Web App, เพิ่มยอดขาย, Digital Systems, NEONEX">
   <meta name="author" content="NEONEX">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#F3F1EA">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://neonex.dev/">
 
@@ -78,710 +78,510 @@
 
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Chakra+Petch:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261118b">
 </head>
 <body>
 
-  <!-- AMBIENT BACKGROUND GLOWS -->
-  <div class="aura-1"></div>
-  <div class="aura-2"></div>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
 
   <!-- NAV -->
-  <nav id="navbar">
-    <div class="logo"><i data-lucide="zap" size="24" stroke-width="3"></i><span>NEONEX</span></div>
-    <ul class="nav-links">
-      <li><a href="#services">บริการ</a></li>
-      <li><a href="#portfolio">ผลงานของเรา</a></li>
-      <li><a href="#before-after">ผลลัพธ์จริง</a></li>
-      <li><a href="#how">ขั้นตอน</a></li>
-      <li><a href="#testimonials">รีวิว</a></li>
-      <li><a href="#pricing">คำนวณราคา</a></li>
-      <li><a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.3rem;"><i data-lucide="message-circle" size="16"></i> Messenger</a></li>
-    </ul>
-    <a href="javascript:void(0)" onclick="openAuditModal()" class="nav-cta" aria-label="จองคิวรับ AI Audit กับ NEONEX">จองคิว Audit ฟรี →</a>
+  <nav id="navbar" aria-label="เมนูหลัก">
+    <div class="nav-inner">
+      <a href="#hero" class="logo" aria-label="NEONEX หน้าแรก">NEONEX<span>.</span></a>
+      <ul class="nav-links" id="navbar-links">
+        <li><a href="#portfolio">ผลงาน</a></li>
+        <li><a href="#services">บริการ</a></li>
+        <li><a href="#before-after">ผลลัพธ์</a></li>
+        <li><a href="#how">ขั้นตอน</a></li>
+        <li><a href="#testimonials">รีวิว</a></li>
+        <li><a href="#pricing">คำนวณราคา</a></li>
+        <li><a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer">Messenger ↗</a></li>
+      </ul>
+      <button type="button" onclick="openAuditModal()" class="nav-cta">จองคิว Audit ฟรี</button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="navbar-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
-  <main>
-    <!-- HERO SECTION -->
+  <main id="main">
+    <!-- HERO -->
     <header class="hero-wrapper" id="hero">
-      <div class="hero-left reveal">
-        <h1 class="hero-title">
-          <span class="stagger-item stagger-1">Build AI & Digital Systems</span><br>
-          <span class="stagger-item stagger-2"><em>That Scale Your Business.</em></span>
-        </h1>
-        <p class="hero-sub stagger-item stagger-3">
-          เราออกแบบ<strong>เว็บไซต์ ระบบหลังบ้าน และ AI Automation</strong> ที่ช่วยเพิ่มยอดขาย ลดงานซ้ำซ้อน และประหยัดเวลาด้วยระบบอัตโนมัติ ไม่ใช่แค่สร้างเว็บให้เสร็จ แต่สร้างระบบที่ทำงานแทนคุณได้จริง 24 ชั่วโมง
-        </p>
-        <div class="hero-actions stagger-item stagger-4">
-          <button onclick="openAuditModal()" class="btn-primary btn-audit-cta" aria-label="จองคิวรับ AI & Efficiency Audit ฟรี">
-            <i data-lucide="sparkles" size="18"></i> จองคิวรับ AI Audit ฟรี 30 นาที <i data-lucide="arrow-right" size="18"></i>
+      <div class="hero-left">
+        <p class="hero-eyebrow">รับเขียนโค้ดแก้ปัญหาธุรกิจ — สำหรับ SME และ Startups</p>
+        <h1 class="hero-title">Build AI &amp; digital systems that scale your business<span>.</span></h1>
+        <p class="hero-sub">เว็บไซต์ที่ขายได้ ระบบหลังบ้าน AI และงานอัตโนมัติ ที่ช่วยให้ธุรกิจได้เงินเพิ่มหรือเสียเงินน้อยลง — งานไหนเขียนโค้ดแก้ได้ เรารับหมด ไม่ใช่แค่ทำเว็บให้เสร็จ แต่สร้างระบบที่ทำงานแทนคุณได้จริง 24 ชั่วโมง</p>
+        <div class="hero-actions">
+          <button type="button" onclick="openAuditModal()" class="btn-primary">
+            จองคิวรับ AI Audit ฟรี 30 นาที <i data-lucide="arrow-right" size="18" aria-hidden="true"></i>
           </button>
-          <a href="#before-after" class="btn-secondary">ดูผลลัพธ์ Before vs After</a>
+          <a href="#before-after" class="btn-secondary">ดูผลลัพธ์ Before / After</a>
         </div>
-        <div class="hero-micro-text stagger-item stagger-4">
-          <i data-lucide="shield-check" size="15"></i> ไม่มีค่าใช้จ่าย • วิเคราะห์จุดลดต้นทุนและประเมิน ROI ให้ทันที 30 นาที
-        </div>
-        <div class="hero-stats stagger-item stagger-4">
-          <div>
-            <span class="stat-num">50<span>+</span></span>
-            <div class="stat-label">โปรเจกต์ที่ส่งมอบ</div>
-          </div>
-          <div>
-            <span class="stat-num">80<span>%</span></span>
-            <div class="stat-label">ลดภาระงานซ้ำซ้อน</div>
-          </div>
-          <div>
-            <span class="stat-num">3<span>×</span></span>
-            <div class="stat-label">เพิ่มยอดขายและประสิทธิภาพ</div>
-          </div>
-        </div>
+        <p class="hero-micro-text">ไม่มีค่าใช้จ่าย · วิเคราะห์จุดลดต้นทุนและประเมิน ROI ให้ภายใน 30 นาที</p>
       </div>
 
-      <div class="hero-right reveal">
-        <!-- Interactive Control Center Mockup -->
-        <div class="interactive-mockup" id="simulator-container">
-          <div class="mockup-header">
-            <div class="window-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <div class="window-title" id="mockup-window-title">AI Automation Console</div>
-            <div class="window-status">
-              <span class="status-pulse"></span>
-              <span>Live Sim</span>
-            </div>
-          </div>
-          <div class="mockup-tabs">
-            <button class="mockup-tab-btn active" id="btn-tab-bot" onclick="switchTab('bot')">
-              <i data-lucide="message-square"></i> AI Chatbot
-            </button>
-            <button class="mockup-tab-btn" id="btn-tab-dash" onclick="switchTab('dash')">
-              <i data-lucide="layout-dashboard"></i> Dashboard
-            </button>
-            <button class="mockup-tab-btn" id="btn-tab-speed" onclick="switchTab('speed')">
-              <i data-lucide="zap"></i> Web Speed
-            </button>
-          </div>
-          <div class="mockup-body">
-            <!-- Tab 1: AI Chatbot -->
-            <div id="tab-bot" class="mockup-content active">
-              <div class="chat-container">
-                <div class="chat-messages" id="chat-messages">
-                  <!-- Messages will append here dynamically -->
-                </div>
-                <div class="chat-input-bar">
-                  <span id="chat-typing-placeholder">ระบบกำลังจำลองการทำงานอัตโนมัติ...</span>
-                  <i data-lucide="send" size="14"></i>
-                </div>
-                <div class="chat-system-logs" id="system-logs">
-                  <div class="log-line">> System initialized. Awaiting orders...</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab 2: Dashboard -->
-            <div id="tab-dash" class="mockup-content">
-              <div class="dash-metrics">
-                <div class="dash-card">
-                  <span class="dash-card-label">คำสั่งซื้อวันนี้</span>
-                  <span class="dash-card-val" id="dash-orders">142</span>
-                </div>
-                <div class="dash-card">
-                  <span class="dash-card-label">ยอดขายสะสม</span>
-                  <span class="dash-card-val green" id="dash-sales">฿45,200</span>
-                </div>
-                <div class="dash-card">
-                  <span class="dash-card-label">บอททำงานแทน</span>
-                  <span class="dash-card-val">85%</span>
-                </div>
-              </div>
-              <div class="dash-chart-area">
-                <div class="dash-card-label" style="text-align:left; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
-                  <span>การลดภาระงานแอดมิน (ชั่วโมงสะสม)</span>
-                  <span class="green" style="font-weight:700;">+248 hrs</span>
-                </div>
-                <svg class="chart-svg" viewBox="0 0 300 100">
-                  <path class="chart-glow-path" d="M 0 90 Q 50 70 100 80 T 150 40 T 200 50 T 250 20 T 300 10" />
-                  <path class="chart-path" d="M 0 90 Q 50 70 100 80 T 150 40 T 200 50 T 250 20 T 300 10" />
-                </svg>
-              </div>
-              <div class="dash-live-feed" id="live-feed">
-                <div class="feed-item">
-                  <span class="feed-name">คุณสมพล: ดำเนินการชำระเงินสำเร็จ</span>
-                  <span class="feed-status success">Success</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab 3: Speed & SEO -->
-            <div id="tab-speed" class="mockup-content">
-              <div class="speed-wrapper">
-                <div class="speed-gauge-container">
-                  <svg class="speed-gauge-svg">
-                    <circle class="gauge-bg" cx="70" cy="70" r="60" />
-                    <circle class="gauge-fill" cx="70" cy="70" r="60" id="speed-gauge" />
-                  </svg>
-                  <div class="gauge-val-text">
-                    <span id="speed-score-num">0</span>
-                    <span>Performance</span>
-                  </div>
-                  <button class="btn-speed-run" onclick="runSpeedTest()" id="btn-speed-trigger">Run Test</button>
-                </div>
-                <div class="speed-metrics-list">
-                  <div class="speed-metric-row">
-                    <span class="speed-metric-label">First Contentful Paint</span>
-                    <span class="speed-metric-val" id="speed-fcp">0.0s</span>
-                  </div>
-                  <div class="speed-metric-row">
-                    <span class="speed-metric-label">Largest Contentful Paint</span>
-                    <span class="speed-metric-val" id="speed-lcp">0.0s</span>
-                  </div>
-                  <div class="speed-metric-row">
-                    <span class="speed-metric-label">SEO Score</span>
-                    <span class="speed-metric-val" style="color: #10B981;">100/100</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <aside class="spec-card" aria-label="สิ่งที่คุณได้รับ">
+        <div class="spec-card-head"><span>Project spec</span><span class="muted">NX-STD</span></div>
+        <dl>
+          <div><dt>Prototype</dt><dd>ภายใน 24 ชม.</dd></div>
+          <div><dt>พัฒนาจริง</dt><dd>3–7 วัน</dd></div>
+          <div><dt>Source code</dt><dd>ส่งมอบ 100% ไม่ผูกแพลตฟอร์ม</dd></div>
+          <div><dt>เริ่มต้น</dt><dd>฿15,000</dd></div>
+          <div><dt>ตอบกลับ</dt><dd>ภายใน 1 ชั่วโมง</dd></div>
+        </dl>
+      </aside>
     </header>
 
-    <!-- TICKER -->
-    <div class="ticker-wrap">
-      <div class="ticker">
-        <span class="ticker-item">Grow Sales <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">Reduce Manual Work <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">Scale Your Business <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">AI-Powered Systems <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">Custom Built Software <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">Grow Sales <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">Reduce Manual Work <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">Scale Your Business <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">AI-Powered Systems <span class="ticker-sep">✦</span></span>
-        <span class="ticker-item">Custom Built Software <span class="ticker-sep">✦</span></span>
+    <!-- STATS STRIP -->
+    <div class="stats-strip" role="list" aria-label="ตัวเลขสำคัญ">
+      <div class="stats-inner">
+        <div class="stat" role="listitem"><span class="stat-num">50+</span><span class="stat-label">โปรเจกต์ที่ส่งมอบ</span></div>
+        <div class="stat" role="listitem"><span class="stat-num">80%</span><span class="stat-label">ลดภาระงานซ้ำซ้อน</span></div>
+        <div class="stat" role="listitem"><span class="stat-num">3×</span><span class="stat-label">เพิ่มยอดขายและประสิทธิภาพ</span></div>
+        <div class="stat" role="listitem"><span class="stat-num">24/7</span><span class="stat-label">ระบบทำงานแทนคุณ</span></div>
       </div>
     </div>
 
-    <!-- BEFORE VS AFTER SECTION (HIGH TICKET B2B PROOF) -->
-    <section id="before-after" class="before-after-wrap">
-      <p class="section-label reveal">Real Impact & ROI</p>
-      <h2 class="section-title reveal">พลิกรูปแบบการทำงานด้วย AI & Automation<br><span style="color:var(--primary);">ยกระดับผลลัพธ์ธุรกิจ SME แบบเห็นผลชัดเจน</span></h2>
-      
-      <div class="ba-grid reveal">
-        <!-- Card 1 -->
-        <div class="ba-card">
-          <div class="ba-badge"><i data-lucide="file-text" size="16"></i> งานจัดการเอกสาร & บัญชี</div>
-          <div class="ba-comparison">
-            <div class="ba-box before">
-              <div class="ba-tag">ก่อนใช้ระบบ (Manual)</div>
-              <p>พนักงานต้องนั่งคีย์ข้อมูลจากใบเสร็จ/ใบสั่งซื้อลง Excel มือเฉลี่ย <strong>4 ชั่วโมง/วัน</strong> เสี่ยงต่อข้อผิดพลาดสูง</p>
-            </div>
-            <div class="ba-arrow"><i data-lucide="arrow-down-right" size="18"></i></div>
-            <div class="ba-box after">
-              <div class="ba-tag">หลังใช้ AI Automation (NEONEX)</div>
-              <p><strong>AI OCR สกัดข้อมูลเอกสารอัตโนมัติ</strong> ลงระบบ ERP/Sheet ใน 5 วินาที แม่นยำ 99.8% ประหยัดเวลา 95%</p>
-            </div>
-          </div>
-          <div class="ba-metric">
-            <span class="ba-metric-num">ประหยัด 100+ ชม./เดือน</span>
-            <span class="ba-metric-sub">คืนทุน ROI ภายใน 2 เดือน</span>
-          </div>
+    <!-- 01 RESULTS -->
+    <section id="before-after">
+      <div class="section-head split">
+        <div>
+          <p class="section-label">§01 — Real impact</p>
+          <h2 class="section-title">ก่อนและหลังใช้ระบบ</h2>
         </div>
-
-        <!-- Card 2 -->
-        <div class="ba-card">
-          <div class="ba-badge"><i data-lucide="message-square-text" size="16"></i> งานตอบแชท & ปิดการขาย</div>
-          <div class="ba-comparison">
-            <div class="ba-box before">
-              <div class="ba-tag">ก่อนใช้ระบบ (Manual)</div>
-              <p>แอดมินตอบแชทไม่ทันช่วงคนทักเยอะหรือนอกเวลาทำการ <strong>ลูกค้าหลุด 30-40%</strong> ไปซื้อร้านอื่น</p>
-            </div>
-            <div class="ba-arrow"><i data-lucide="arrow-down-right" size="18"></i></div>
-            <div class="ba-box after">
-              <div class="ba-tag">หลังใช้ AI Smart Agent (NEONEX)</div>
-              <p><strong>AI ตอบแชท ปรับแต่งตามข้อมูลสินค้าจริง</strong> ช่วยปิดการขายและส่งใบเสนอราคาอัตโนมัติ 24/7</p>
-            </div>
-          </div>
-          <div class="ba-metric">
-            <span class="ba-metric-num">เพิ่มยอดขาย +35%</span>
-            <span class="ba-metric-sub">ตอบกลับลูกค้าทันที 0 วินาที</span>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="ba-card">
-          <div class="ba-badge"><i data-lucide="workflow" size="16"></i> งานเชื่อมต่อข้อมูลข้ามระบบ</div>
-          <div class="ba-comparison">
-            <div class="ba-box before">
-              <div class="ba-tag">ก่อนใช้ระบบ (Manual)</div>
-              <p>ข้อมูลกระจัดกระจายใน LINE, Google Sheets และอีเมล ต้องใช้คนคอยก็อปปี้ส่งต่อระหว่างแผนก</p>
-            </div>
-            <div class="ba-arrow"><i data-lucide="arrow-down-right" size="18"></i></div>
-            <div class="ba-box after">
-              <div class="ba-tag">หลังใช้ Custom System Integration</div>
-              <p><strong>Centralized Auto-Pipeline</strong> ซิงค์ข้อมูลสต็อก ออเดอร์ และลูกค้าเรียลไทม์ ไร้ข้อผิดพลาด</p>
-            </div>
-          </div>
-          <div class="ba-metric">
-            <span class="ba-metric-num">ลดงานซ้ำซ้อน 80%</span>
-            <span class="ba-metric-sub">ทีมงานโฟกัสการเติบโตธุรกิจ</span>
-          </div>
-        </div>
+        <p class="section-intro">พลิกรูปแบบการทำงานด้วย AI &amp; Automation — สามงานที่ธุรกิจ SME เสียเวลามากที่สุด และสิ่งที่เปลี่ยนไปหลังติดตั้งระบบ</p>
       </div>
-
-      <div class="ba-cta-box reveal">
-        <div class="ba-cta-content">
-          <h3>ต้องการดูว่าธุรกิจของคุณประหยัดเวลาและต้นทุนได้เท่าไหร่?</h3>
-          <p>จองคิวพูดคุยกับทีมวิศวกรและผู้เชี่ยวชาญ AI ของเราเพื่อวิเคราะห์ Workflow ธุรกิจคุณได้ฟรี</p>
-        </div>
-        <button onclick="openAuditModal()" class="btn-primary" aria-label="จองคิว AI Audit ฟรี">
-          <i data-lucide="calendar" size="18"></i> จองคิวรับ AI Audit ฟรี (30 นาที) →
-        </button>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <p class="section-label reveal">Our Services</p>
-      <h2 class="section-title reveal">บริการเพื่อรองรับความต้องการ<br>และการเติบโตของธุรกิจคุณ</h2>
-      <div class="usp-grid reveal">
-        <div class="usp-card">
-          <div class="usp-num">01</div>
-          <i data-lucide="globe" size="32"></i>
-          <h3 class="usp-title">เว็บไซต์ที่ขายได้ (Websites)</h3>
-          <p class="usp-desc">ออกแบบและพัฒนาเว็บไซต์ธุรกิจ Landing Page หรือ E-commerce ที่ตอบโจทย์การตลาด ดึงดูดลูกค้า และเพิ่มยอดขายได้จริง ไม่ใช่แค่ทำให้เสร็จ</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem;">
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> Custom UI/UX & Responsive</li>
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> SEO-Optimized Structure</li>
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> Fast Speed & Web Analytics</li>
-          </ul>
-        </div>
-        <div class="usp-card">
-          <div class="usp-num">02</div>
-          <i data-lucide="database" size="32"></i>
-          <h3 class="usp-title">ระบบหลังบ้าน & Web App</h3>
-          <p class="usp-desc">ออกแบบและพัฒนาระบบหลังบ้าน ระบบจัดเก็บข้อมูล Dashboard สรุปผล CRM หรือซอฟต์แวร์ภายในองค์กรที่แข็งแกร่ง ปลอดภัย และเติบโตไปพร้อมกับธุรกิจ</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem;">
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> Custom Databases & APIs</li>
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> User Login & Permission Levels</li>
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> Real-time Dashboard Reporting</li>
-          </ul>
-        </div>
-        <div class="usp-card">
-          <div class="usp-num">03</div>
-          <i data-lucide="cpu" size="32"></i>
-          <h3 class="usp-title">AI & Automation</h3>
-          <p class="usp-desc">เพิ่มประสิทธิภาพการทำงานด้วยการเชื่อมต่อ AI และสร้างระบบทำงานแทนคนแบบอัตโนมัติ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนได้ถึง 80%</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem;">
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> Auto-Reply & Intelligent Bots</li>
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> Workflow Integrations (Zapier/Make)</li>
-            <li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check" size="16" style="color:var(--primary);"></i> AI Agents & LLM Connections</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO / CLIENT SHOWCASE SECTION -->
-    <section id="portfolio" class="portfolio-wrap">
-      <p class="section-label reveal">Featured Portfolio</p>
-      <h2 class="section-title reveal">ผลงานระบบและเว็บไซต์ที่เราส่งมอบให้ลูกค้า<br><span style="color:var(--primary);">ใช้งานจริง โหลดไว ตอบโจทย์ธุรกิจ</span></h2>
-      <p class="portfolio-subtitle reveal">ตัวอย่างบางส่วนของระบบ AI Application และเว็บไซต์องค์กรระดับมืออาชีพที่ได้รับการยอมรับและเปิดใช้งานจริง</p>
-
-      <div class="portfolio-grid reveal">
-        <!-- Project 1: AISLEMe -->
-        <article class="portfolio-card">
-          <div class="portfolio-img-wrapper">
-            <img src="assets/aisleme_preview.png" alt="AISLEMe AI-Powered Learning Journey Platform" class="portfolio-img" loading="lazy">
-            <div class="portfolio-badge"><i data-lucide="sparkles" size="14"></i> AI Web Application</div>
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-meta">
-              <span class="portfolio-client">AISLEMe</span>
-              <span class="portfolio-tech"><i data-lucide="code-2" size="14"></i> Next.js • AI Engine • Tailwind</span>
-            </div>
-            <h3 class="portfolio-title">AISLEMe — AI-Powered Learning Journey Platform</h3>
-            <p class="portfolio-desc">
-              แพลตฟอร์มการเรียนรู้ยุคใหม่ด้วย AI ที่ช่วยวิเคราะห์และวางเส้นทางการเรียนรู้ส่วนบุคคล (Personalized Learning Path) มาพร้อม UI/UX ดีไซน์ล้ำสมัยในรูปแบบ Futuristic Dark Mode และระบบประมวลผล AI ที่ตอบสนองแบบเรียลไทม์
-            </p>
-            <ul class="portfolio-features">
-              <li><i data-lucide="check-circle-2" size="16"></i> สถาปัตยกรรม Next.js High Performance รองรับผู้ใช้งานจำนวนมาก</li>
-              <li><i data-lucide="check-circle-2" size="16"></i> UI/UX Modern Dark Theme พร้อมเอฟเฟกต์ Glassmorphism สดใส</li>
-              <li><i data-lucide="check-circle-2" size="16"></i> ระบบวิเคราะห์ข้อมูลส่วนบุคคลและ Interactive Dashboards</li>
-            </ul>
-            <div class="portfolio-action">
-              <a href="https://aisleme.com/" target="_blank" rel="noopener noreferrer" class="btn-portfolio-visit">
-                <span>เข้าชมเว็บไซต์จริง (aisleme.com)</span>
-                <i data-lucide="external-link" size="16"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2: FallEAC -->
-        <article class="portfolio-card">
-          <div class="portfolio-img-wrapper">
-            <img src="assets/falleac_preview.png" alt="FallEAC - ผู้เชี่ยวชาญด้านอุปกรณ์กันตกมืออาชีพ" class="portfolio-img" loading="lazy">
-            <div class="portfolio-badge corporate"><i data-lucide="shield-check" size="14"></i> Corporate & E-Catalog</div>
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-meta">
-              <span class="portfolio-client">FallEAC</span>
-              <span class="portfolio-tech"><i data-lucide="globe" size="14"></i> Corporate Site • SEO • Catalog</span>
-            </div>
-            <h3 class="portfolio-title">FallEAC — ผู้เชี่ยวชาญด้านระบบและอุปกรณ์กันตกบนที่สูง</h3>
-            <p class="portfolio-desc">
-              เว็บไซต์องค์กรและระบบแคตตาล็อกสินค้าโซลูชันความปลอดภัยอุตสาหกรรม โครงสร้างเว็บเน้นความเร็วระดับสูง (High-Speed Load) รองรับ SEO สำหรับการค้นหาโซลูชันสายช่วยชีวิต (Lifeline) และอุปกรณ์นิรภัยครบวงจร
-            </p>
-            <ul class="portfolio-features">
-              <li><i data-lucide="check-circle-2" size="16"></i> โครงสร้างเว็บไซต์เน้น SEO & Mobile-First Performance โหลดเสร็จใน 1s</li>
-              <li><i data-lucide="check-circle-2" size="16"></i> ระบบแสดงแคตตาล็อกสินค้าแยกหมวดหมู่และช่องทางขอใบเสนอราคาด่วน</li>
-              <li><i data-lucide="check-circle-2" size="16"></i> ดีไซน์สร้างความน่าเชื่อถือระดับมืออาชีพตามมาตรฐานสากล</li>
-            </ul>
-            <div class="portfolio-action">
-              <a href="https://falleac.com/" target="_blank" rel="noopener noreferrer" class="btn-portfolio-visit">
-                <span>เข้าชมเว็บไซต์จริง (falleac.com)</span>
-                <i data-lucide="external-link" size="16"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3: Web Scraping & Data Pipeline (Confidential NDA) -->
-        <article class="portfolio-card">
-          <div class="portfolio-img-wrapper">
-            <img src="assets/scraping_preview.png" alt="Automated Web Scraping & Market Intelligence Pipeline" class="portfolio-img" loading="lazy">
-            <div class="portfolio-badge nda"><i data-lucide="lock" size="14"></i> Confidential (NDA)</div>
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-meta">
-              <span class="portfolio-client">Enterprise Client</span>
-              <span class="portfolio-tech"><i data-lucide="cpu" size="14"></i> Python • Scraping • Data ETL</span>
-            </div>
-            <h3 class="portfolio-title">Automated Web Scraping & Market Intelligence Pipeline</h3>
-            <p class="portfolio-desc">
-              ระบบดึงข้อมูลและติดตามราคาสินค้าคู่แข่งอัตโนมัติ (Web Scraping & Price Tracker) สามารถสกัดและประมวลผลข้อมูลกว่า 500,000+ รายการ/วัน พร้อมระบบ Bypass Captcha และส่งออกข้อมูลเข้าฐานข้อมูลเรียลไทม์
-            </p>
-            <ul class="portfolio-features">
-              <li><i data-lucide="check-circle-2" size="16"></i> สกัดข้อมูลจากเว็บโครงสร้างซับซ้อนด้วย Headless Browser & IP Rotation</li>
-              <li><i data-lucide="check-circle-2" size="16"></i> ระบบแจ้งเตือนเมื่อเกิดการเปลี่ยนแปลงราคาหรือสต็อกสินค้าเรียลไทม์</li>
-              <li><i data-lucide="check-circle-2" size="16"></i> แปลงเป็น Clean Structured Data (JSON, CSV, Database Sync)</li>
-            </ul>
-            <div class="portfolio-action">
-              <button onclick="openAuditModal()" class="btn-portfolio-visit">
-                <span>สอบถามโซลูชัน Data & Scraping</span>
-                <i data-lucide="arrow-right" size="16"></i>
-              </button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="how-wrap" id="how">
-      <div class="how-inner">
-        <p class="section-label reveal">Seamless Process</p>
-        <h2 class="section-title reveal">ขั้นตอนสร้างระบบที่ตอบโจทย์ธุรกิจ<br>แบบไม่ต้องกังวล</h2>
-        <div class="steps">
-          <div class="step reveal">
-            <div class="step-n">01</div>
-            <h3 class="step-title">คุยเป้าหมายธุรกิจ</h3>
-            <p class="step-desc">แชร์วิสัยทัศน์ ความต้องการ หรือปัญหาหลักที่คุณต้องการแก้ไข เราวิเคราะห์และวางระบบให้เหมาะที่สุด</p>
-            <span class="step-time">วันที่ 1</span>
-          </div>
-          <div class="step reveal">
-            <div class="step-n">02</div>
-            <h3 class="step-title">เห็นต้นแบบจริง (Prototype)</h3>
-            <p class="step-desc">สัมผัสและทดลองใช้งาน Prototype จริงเพื่อให้มั่นใจว่าหน้าตาและขั้นตอนทำงานตอบโจทย์ก่อนเริ่มงานพัฒนาเต็มรูปแบบ</p>
-            <span class="step-time">ภายใน 24 ชม.</span>
-          </div>
-          <div class="step reveal">
-            <div class="step-n">03</div>
-            <h3 class="step-title">พัฒนา & ปรับแต่ง</h3>
-            <p class="step-desc">พัฒนาระบบจริง เชื่อมต่อฐานข้อมูล APIs และตั้งค่าบอทอัตโนมัติ พร้อมปรับปรุงดีไซน์จนกว่าคุณจะพึงพอใจ</p>
-            <span class="step-time">3–7 วัน</span>
-          </div>
-          <div class="step reveal">
-            <div class="step-n">04</div>
-            <h3 class="step-title">เปิดใช้งานและเติบโต</h3>
-            <p class="step-desc">ทำการเปิดตัวขึ้นโฮสต์จริงเพื่อให้พร้อมรองรับลูกค้า พร้อมส่งมอบ Source Code ทั้งหมดและเอกสารคู่มืออย่างครบถ้วน</p>
-            <span class="step-time">จบงานสมบูรณ์</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials">
-      <p class="section-label reveal">Testimonials</p>
-      <h2 class="section-title reveal">เสียงตอบรับจากลูกค้าที่เติบโตไปกับเรา</h2>
-      <div class="testi-grid reveal">
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-          </div>
-          <p class="testi-quote">"ก่อนหน้านี้ร้านเราเสียเวลากับการตอบลูกค้าและคีย์ออเดอร์หลังบ้านมาก พอ NEONEX ทำระบบ CRM และระบบแอดมินให้ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนไปได้มากกว่า 80% เลยครับ"</p>
-          <div class="testi-user">
-            <div class="testi-avatar">SP</div>
-            <div>
-              <div class="testi-name">คุณสมพล เลิศดี</div>
-              <div class="testi-title">เจ้าของธุรกิจค้าส่งออนไลน์</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-          </div>
-          <p class="testi-quote">"ประทับใจความเร็วในการขึ้นต้นแบบมาก คุยกันวันนี้ วันต่อมาก็ได้ลิงก์ไปทดสอบระบบแล้ว เว็บไซต์สะอาด โหลดรวดเร็ว ปรับแต่งหน้า SEO เองง่ายขึ้น ช่วยเพิ่มยอด Conversion ได้ชัดเจน"</p>
-          <div class="testi-user">
-            <div class="testi-avatar">NP</div>
-            <div>
-              <div class="testi-name">คุณนภัทร พานิชย์</div>
-              <div class="testi-title">Co-Founder, Tech Startup</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-            <i data-lucide="star" fill="currentColor" size="16"></i>
-          </div>
-          <p class="testi-quote">"คิดถูกที่ทำเว็บกับ NEONEX เพราะไม่ได้ติดล็อกแพลตฟอร์มแบบเจ้าอื่น ได้ Source Code และฐานข้อมูลครบทุกอย่าง แก้ไขและต่อยอดระบบเพิ่มเติมเองได้สะดวกรวดเร็วมาก"</p>
-          <div class="testi-user">
-            <div class="testi-avatar">WT</div>
-            <div>
-              <div class="testi-name">คุณวิริยะ ตั้งสกุล</div>
-              <div class="testi-title">ผู้จัดการไอที, SME Retail</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPARISON -->
-    <section id="comparison">
-      <p class="section-label reveal">Comparison</p>
-      <h2 class="section-title reveal">ทำไมธุรกิจยุคใหม่จึงเลือกสร้างระบบกับ NEONEX</h2>
-      <div class="compare-wrap reveal">
-        <table class="compare-table">
+      <div class="table-scroll reveal">
+        <table class="ledger">
           <thead>
-            <tr>
-              <th>หัวข้อ</th>
-              <th>NEONEX</th>
-              <th>ทำเว็บเอง / ใช้ Template สำเร็จรูป</th>
-            </tr>
+            <tr><th scope="col">งาน</th><th scope="col">ก่อน (Manual)</th><th scope="col">หลัง (NEONEX)</th><th scope="col">ผลลัพธ์</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td>การออกแบบ (UI/UX)</td>
-              <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ออกแบบเฉพาะตัวตนแบรนด์คุณ เพื่อผลลัพธ์ที่ดีที่สุด</div></td>
-              <td><div class="no"><i data-lucide="x-circle" size="18"></i> ดีไซน์ซ้ำกับแบรนด์อื่น ขยับขยายหน้าตาระบบยาก</div></td>
+              <th scope="row">เอกสาร &amp; บัญชี</th>
+              <td class="muted">พนักงานคีย์ข้อมูลจากใบเสร็จ/ใบสั่งซื้อลง Excel เฉลี่ย 4 ชั่วโมง/วัน เสี่ยงผิดพลาดสูง</td>
+              <td>AI OCR สกัดข้อมูลเอกสารลงระบบ ERP/Sheet ใน 5 วินาที แม่นยำ 99.8%</td>
+              <td><span class="ledger-num">100+ ชม.</span><span class="ledger-sub">ประหยัดต่อเดือน · คืนทุนใน 2 เดือน</span></td>
             </tr>
             <tr>
-              <td>การดึงดูดลูกค้า (Conversion)</td>
-              <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> วางโครงสร้างเพื่อเปลี่ยนผู้เข้าชมเป็นลูกค้าจริง</div></td>
-              <td><div class="no"><i data-lucide="x-circle" size="18"></i> เน้นสวยงามอย่างเดียว ไม่มีกลยุทธ์เพื่อเพิ่มยอดขาย</div></td>
+              <th scope="row">ตอบแชท &amp; ปิดการขาย</th>
+              <td class="muted">แอดมินตอบไม่ทันช่วงคนทักเยอะหรือนอกเวลา ลูกค้าหลุด 30–40% ไปร้านอื่น</td>
+              <td>AI Smart Agent ตอบตามข้อมูลสินค้าจริง ส่งใบเสนอราคาอัตโนมัติ 24/7</td>
+              <td><span class="ledger-num">+35%</span><span class="ledger-sub">ยอดขาย · ตอบกลับทันที</span></td>
             </tr>
             <tr>
-              <td>ระบบฐานข้อมูลหลังบ้าน</td>
-              <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> พัฒนาระบบหลังบ้าน ดึงข้อมูลและจัดการออเดอร์ได้อย่างยืดหยุ่น</div></td>
-              <td><div class="no"><i data-lucide="x-circle" size="18"></i> ทำไม่ได้ หรือต้องพึ่งพาปลั๊กอินนอกที่มีค่าบริการรายเดือน</div></td>
+              <th scope="row">เชื่อมข้อมูลข้ามระบบ</th>
+              <td class="muted">ข้อมูลกระจายใน LINE, Google Sheets และอีเมล ต้องใช้คนก็อปปี้ส่งต่อระหว่างแผนก</td>
+              <td>Centralized Auto-Pipeline ซิงค์สต็อก ออเดอร์ และลูกค้าแบบเรียลไทม์</td>
+              <td><span class="ledger-num">−80%</span><span class="ledger-sub">งานซ้ำซ้อน</span></td>
             </tr>
-            <tr>
-              <td>AI & Automation Support</td>
-              <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ผสานการทำงานอัตโนมัติ เช่น คีย์ออเดอร์ ตอบคำถาม ออโต้ซิงค์</div></td>
-              <td><div class="no"><i data-lucide="x-circle" size="18"></i> ต้องทำงานแอดมินทุกขั้นตอนด้วยมือตัวเองทั้งหมด</div></td>
-            </tr>
-            <tr>
-              <td>ความเป็นเจ้าของซอฟต์แวร์</td>
-              <td><div class="yes"><i data-lucide="check-circle-2" size="18"></i> ส่งมอบ Source Code และสิทธิ์ขาดระบบ 100%</div></td>
-              <td><div class="no"><i data-lucide="x-circle" size="18"></i> ผูกมัดติดกับแพลตฟอร์มรายเดือน ไม่สามารถย้ายหรือเปลี่ยนโค้ดได้</div></td>
-            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="inline-cta reveal">
+        <p><strong>อยากรู้ว่าธุรกิจคุณประหยัดเวลาและต้นทุนได้เท่าไหร่?</strong> คุยกับวิศวกรของเราเพื่อวิเคราะห์ Workflow ได้ฟรี</p>
+        <button type="button" onclick="openAuditModal()" class="btn-primary">จองคิวรับ AI Audit ฟรี (30 นาที)</button>
+      </div>
+    </section>
+
+    <!-- 02 SERVICES -->
+    <section id="services">
+      <div class="section-head">
+        <p class="section-label">§02 — Services</p>
+        <h2 class="section-title narrow">โค้ดที่ช่วยให้ธุรกิจได้เงินเพิ่ม หรือเสียเงินน้อยลง</h2>
+      </div>
+      <div class="usp-grid cols-4 reveal">
+        <article class="usp-card">
+          <span class="usp-num">01</span>
+          <h3 class="usp-title">เว็บไซต์ที่ขายได้</h3>
+          <p class="usp-desc">เว็บไซต์ธุรกิจ Landing Page หรือ E-commerce ที่วางโครงสร้างเพื่อเปลี่ยนผู้เข้าชมให้เป็นลูกค้าจริง ไม่ใช่แค่ทำให้เสร็จ</p>
+          <ul class="dash-list">
+            <li>Custom UI/UX &amp; Responsive</li>
+            <li>SEO-Optimized Structure</li>
+            <li>Fast Speed &amp; Web Analytics</li>
+          </ul>
+          <p class="usp-price">เริ่มต้น <strong>฿15,000</strong></p>
+        </article>
+        <article class="usp-card">
+          <span class="usp-num">02</span>
+          <h3 class="usp-title">ระบบหลังบ้าน &amp; Web App</h3>
+          <p class="usp-desc">ระบบจัดเก็บข้อมูล Dashboard สรุปผล CRM หรือซอฟต์แวร์ภายในองค์กร ที่แข็งแกร่ง ปลอดภัย และโตไปพร้อมธุรกิจ</p>
+          <ul class="dash-list">
+            <li>Custom Databases &amp; APIs</li>
+            <li>User Login &amp; Permission Levels</li>
+            <li>Real-time Dashboard Reporting</li>
+          </ul>
+          <p class="usp-price">เริ่มต้น <strong>฿35,000</strong></p>
+        </article>
+        <article class="usp-card">
+          <span class="usp-num">03</span>
+          <h3 class="usp-title">AI &amp; Automation</h3>
+          <p class="usp-desc">เชื่อมต่อ AI และสร้างระบบทำงานแทนคนแบบอัตโนมัติ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนได้ถึง 80%</p>
+          <ul class="dash-list">
+            <li>Auto-Reply &amp; Intelligent Bots</li>
+            <li>Workflow Integrations (Zapier/Make)</li>
+            <li>AI Agents &amp; LLM Connections</li>
+          </ul>
+          <p class="usp-price">เริ่มต้น <strong>฿20,000</strong></p>
+        </article>
+        <article class="usp-card">
+          <span class="usp-num">04</span>
+          <h3 class="usp-title">งานโค้ดอื่นๆ ที่แก้ปัญหาได้</h3>
+          <p class="usp-desc">มีโจทย์ที่ไม่อยู่ในรายการ? ถ้าเขียนโค้ดแก้ได้ เรารับ ตั้งแต่งานเล็กไปจนถึงต่อยอดระบบเดิมที่มีอยู่</p>
+          <ul class="dash-list">
+            <li>เชื่อม API &amp; ระบบที่ใช้อยู่</li>
+            <li>สคริปต์ &amp; ดึงข้อมูลอัตโนมัติ</li>
+            <li>แก้บั๊ก / ต่อยอดระบบเดิม</li>
+          </ul>
+          <p class="usp-price">ประเมินราคาตามงาน</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 WORK -->
+    <section id="portfolio">
+      <div class="section-head split">
+        <div>
+          <p class="section-label">§03 — Selected work</p>
+          <h2 class="section-title">ผลงานที่ใช้งานจริง</h2>
+        </div>
+        <p class="section-intro">ตัวอย่างบางส่วนของระบบ AI Application และเว็บไซต์องค์กรที่ส่งมอบและเปิดใช้งานจริง</p>
+      </div>
+
+      <article class="portfolio-card featured reveal">
+        <div class="portfolio-img-wrapper">
+          <img src="assets/firstmodel_preview.jpg" alt="Firstmodel — AI API Gateway และคอนโซลจัดการ AI สำหรับองค์กร" class="portfolio-img" loading="lazy">
+        </div>
+        <div class="portfolio-content">
+          <div class="portfolio-meta"><span>AI API Platform</span><span>Next.js 16 · AI Gateway · Supabase</span></div>
+          <h3 class="portfolio-title">Firstmodel — One API สำหรับทุกโมเดล AI</h3>
+          <p class="portfolio-desc">แพลตฟอร์ม AI Gateway สำหรับองค์กร รวมผู้ให้บริการ AI หลายเจ้าไว้หลัง API เดียวที่ใช้แทน OpenAI ได้ทันที (แค่เปลี่ยน base_url) พร้อมคอนโซลสำหรับกำหนดเส้นทาง ควบคุมสิทธิ์ วัดการใช้งาน และคิดค่าบริการทุกคำขอ</p>
+          <ul class="dash-list portfolio-features">
+            <li>API เข้ากันได้กับ OpenAI: Chat, Streaming, Tool Calling, รูปภาพ และเสียง</li>
+            <li>Routing ข้ามผู้ให้บริการ วัด Usage และคิดเงินอัตโนมัติในคำขอเดียว</li>
+            <li>คอนโซลจัดการ 131 หน้า รองรับภาษาไทย/อังกฤษ และสัญญา API แบบ OpenAPI 3.1</li>
+          </ul>
+          <a href="https://console.firstmodel.app/login" target="_blank" rel="noopener noreferrer" class="text-link">console.firstmodel.app ↗</a>
+        </div>
+      </article>
+
+      <article class="portfolio-card featured reverse reveal">
+        <div class="portfolio-img-wrapper">
+          <img src="assets/aisleme_preview.png" alt="AISLEMe AI-Powered Learning Journey Platform" class="portfolio-img" loading="lazy">
+        </div>
+        <div class="portfolio-content">
+          <div class="portfolio-meta"><span>AI Web Application</span><span>Next.js · AI Engine · Tailwind</span></div>
+          <h3 class="portfolio-title">AISLEMe — AI-Powered Learning Journey Platform</h3>
+          <p class="portfolio-desc">แพลตฟอร์มการเรียนรู้ด้วย AI ที่ช่วยวิเคราะห์และวางเส้นทางการเรียนรู้ส่วนบุคคล (Personalized Learning Path) พร้อมระบบประมวลผล AI ที่ตอบสนองแบบเรียลไทม์</p>
+          <ul class="dash-list portfolio-features">
+            <li>สถาปัตยกรรม Next.js High Performance รองรับผู้ใช้งานจำนวนมาก</li>
+            <li>ระบบวิเคราะห์ข้อมูลส่วนบุคคลและ Interactive Dashboards</li>
+          </ul>
+          <a href="https://aisleme.com/" target="_blank" rel="noopener noreferrer" class="text-link">aisleme.com ↗</a>
+        </div>
+      </article>
+
+      <div class="portfolio-grid reveal">
+        <article class="portfolio-card">
+          <div class="portfolio-img-wrapper">
+            <img src="assets/ai-elderly_preview.jpg" alt="4 อ. เอไอ — ผู้ช่วยการเรียนรู้ด้วย AI สำหรับผู้สูงอายุผ่าน LINE" class="portfolio-img" loading="lazy">
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-meta"><span>AI × Health Research</span><span>LINE LIFF · Gemini · Supabase</span></div>
+            <h3 class="portfolio-title">4 อ. เอไอ — ผู้ช่วยการเรียนรู้สุขภาพสำหรับผู้สูงอายุ</h3>
+            <p class="portfolio-desc">แอปเรียนรู้ด้วย AI ผ่าน LINE เพื่อส่งเสริมความรอบรู้ด้านสุขภาพของผู้สูงอายุ ใน 4 เรื่อง อาหาร ออกกำลังกาย อารมณ์ และอากาศ มีผู้ช่วย "น้องใจดี" อ่านออกเสียงและให้กำลังใจ พร้อมคอนโซลผู้ดูแลสำหรับงานวิจัย</p>
+            <ul class="dash-list portfolio-features">
+              <li>เข้าใช้จากแชท LINE ได้ทันที ไม่ต้องพิมพ์รหัส ออกแบบตัวอักษรใหญ่สำหรับผู้สูงอายุ</li>
+              <li>บทเรียน 40 บท แบบวัด 30 ข้อ และ AI ตรวจคำตอบ Teach-back ตามเกณฑ์ Rubric</li>
+              <li>คอนโซลวิจัย 7 หน้า ส่งออกข้อมูล CSV สำหรับวิเคราะห์ผลได้ทันที</li>
+            </ul>
+            <button type="button" onclick="openAuditModal()" class="text-link">ปรึกษาระบบ AI บน LINE →</button>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-img-wrapper">
+            <img src="assets/falleac_preview.png" alt="FallEAC - ผู้เชี่ยวชาญด้านอุปกรณ์กันตกมืออาชีพ" class="portfolio-img" loading="lazy">
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-meta"><span>Corporate &amp; E-Catalog</span><span>Corporate Site · SEO · Catalog</span></div>
+            <h3 class="portfolio-title">FallEAC — ผู้เชี่ยวชาญด้านระบบและอุปกรณ์กันตกบนที่สูง</h3>
+            <p class="portfolio-desc">เว็บไซต์องค์กรและระบบแคตตาล็อกสินค้าโซลูชันความปลอดภัยอุตสาหกรรม โครงสร้างเว็บเน้นความเร็วสูง รองรับ SEO สำหรับการค้นหาโซลูชันสายช่วยชีวิต (Lifeline) และอุปกรณ์นิรภัยครบวงจร</p>
+            <ul class="dash-list portfolio-features">
+              <li>โครงสร้างเว็บไซต์เน้น SEO &amp; Mobile-First Performance โหลดเสร็จใน 1s</li>
+              <li>ระบบแสดงแคตตาล็อกสินค้าแยกหมวดหมู่และช่องทางขอใบเสนอราคาด่วน</li>
+            </ul>
+            <a href="https://falleac.com/" target="_blank" rel="noopener noreferrer" class="text-link">falleac.com ↗</a>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-img-wrapper">
+            <img src="assets/scraping_preview.png" alt="Automated Web Scraping & Market Intelligence Pipeline" class="portfolio-img" loading="lazy">
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-meta"><span>Confidential (NDA)</span><span>Python · Scraping · Data ETL</span></div>
+            <h3 class="portfolio-title">Automated Web Scraping &amp; Market Intelligence Pipeline</h3>
+            <p class="portfolio-desc">ระบบดึงข้อมูลและติดตามราคาสินค้าคู่แข่งอัตโนมัติ สกัดและประมวลผลข้อมูลกว่า 500,000+ รายการ/วัน และส่งออกข้อมูลเข้าฐานข้อมูลเรียลไทม์</p>
+            <ul class="dash-list portfolio-features">
+              <li>สกัดข้อมูลจากเว็บโครงสร้างซับซ้อนด้วย Headless Browser &amp; IP Rotation</li>
+              <li>แจ้งเตือนเมื่อราคาหรือสต็อกสินค้าเปลี่ยน · ส่งออก JSON, CSV, Database Sync</li>
+            </ul>
+            <button type="button" onclick="openAuditModal()" class="text-link">ปรึกษางานข้อมูล &amp; เชื่อมระบบ →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 PROCESS -->
+    <section class="how-wrap" id="how">
+      <div class="how-inner">
+        <div class="section-head">
+          <p class="section-label">§04 — Process</p>
+          <h2 class="section-title">จากคุยวันแรก ถึงเปิดใช้งานจริง</h2>
+        </div>
+        <ol class="steps reveal">
+          <li class="step">
+            <div class="step-n"><span>01</span><span class="step-time">วันที่ 1</span></div>
+            <h3 class="step-title">คุยเป้าหมายธุรกิจ</h3>
+            <p class="step-desc">แชร์วิสัยทัศน์ ความต้องการ หรือปัญหาหลักที่คุณต้องการแก้ไข เราวิเคราะห์และวางระบบให้เหมาะที่สุด</p>
+          </li>
+          <li class="step">
+            <div class="step-n"><span>02</span><span class="step-time">ภายใน 24 ชม.</span></div>
+            <h3 class="step-title">เห็นต้นแบบจริง (Prototype)</h3>
+            <p class="step-desc">ทดลองใช้งาน Prototype จริง เพื่อให้มั่นใจว่าหน้าตาและขั้นตอนทำงานตอบโจทย์ก่อนเริ่มพัฒนาเต็มรูปแบบ</p>
+          </li>
+          <li class="step">
+            <div class="step-n"><span>03</span><span class="step-time">3–7 วัน</span></div>
+            <h3 class="step-title">พัฒนา &amp; ปรับแต่ง</h3>
+            <p class="step-desc">พัฒนาระบบจริง เชื่อมต่อฐานข้อมูล APIs และตั้งค่าบอทอัตโนมัติ พร้อมปรับดีไซน์จนกว่าคุณจะพึงพอใจ</p>
+          </li>
+          <li class="step">
+            <div class="step-n"><span>04</span><span class="step-time">ส่งมอบ</span></div>
+            <h3 class="step-title">เปิดใช้งานและเติบโต</h3>
+            <p class="step-desc">ขึ้นโฮสต์จริงพร้อมรองรับลูกค้า ส่งมอบ Source Code ทั้งหมดและเอกสารคู่มืออย่างครบถ้วน</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 05 TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-head">
+        <p class="section-label">§05 — Clients</p>
+        <h2 class="section-title">ลูกค้าพูดถึงเรา</h2>
+      </div>
+      <div class="testi-grid reveal">
+        <figure class="testi-card">
+          <blockquote class="testi-quote">“ก่อนหน้านี้ร้านเราเสียเวลากับการตอบลูกค้าและคีย์ออเดอร์หลังบ้านมาก พอ NEONEX ทำระบบ CRM และระบบแอดมินให้ ช่วยประหยัดเวลาและลดงานซ้ำซ้อนไปได้มากกว่า 80% เลยครับ”</blockquote>
+          <figcaption class="testi-user"><span class="testi-name">คุณสมพล เลิศดี</span><span class="testi-title">เจ้าของธุรกิจค้าส่งออนไลน์</span></figcaption>
+        </figure>
+        <figure class="testi-card">
+          <blockquote class="testi-quote">“ประทับใจความเร็วในการขึ้นต้นแบบมาก คุยกันวันนี้ วันต่อมาก็ได้ลิงก์ไปทดสอบระบบแล้ว เว็บไซต์สะอาด โหลดรวดเร็ว ปรับแต่งหน้า SEO เองง่ายขึ้น ช่วยเพิ่มยอด Conversion ได้ชัดเจน”</blockquote>
+          <figcaption class="testi-user"><span class="testi-name">คุณนภัทร พานิชย์</span><span class="testi-title">Co-Founder, Tech Startup</span></figcaption>
+        </figure>
+        <figure class="testi-card">
+          <blockquote class="testi-quote">“คิดถูกที่ทำเว็บกับ NEONEX เพราะไม่ได้ติดล็อกแพลตฟอร์มแบบเจ้าอื่น ได้ Source Code และฐานข้อมูลครบทุกอย่าง แก้ไขและต่อยอดระบบเพิ่มเติมเองได้สะดวกรวดเร็วมาก”</blockquote>
+          <figcaption class="testi-user"><span class="testi-name">คุณวิริยะ ตั้งสกุล</span><span class="testi-title">ผู้จัดการไอที, SME Retail</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 06 COMPARISON -->
+    <section id="comparison">
+      <div class="section-head">
+        <p class="section-label">§06 — Comparison</p>
+        <h2 class="section-title">ทำไมไม่ใช้ Template สำเร็จรูป</h2>
+      </div>
+      <div class="table-scroll reveal">
+        <table class="ledger compare-table">
+          <thead>
+            <tr><th scope="col">หัวข้อ</th><th scope="col" class="ink">NEONEX</th><th scope="col">ทำเว็บเอง / ใช้ Template สำเร็จรูป</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">การออกแบบ (UI/UX)</th><td>ออกแบบเฉพาะตัวตนแบรนด์คุณ เพื่อผลลัพธ์ที่ดีที่สุด</td><td class="muted">ดีไซน์ซ้ำกับแบรนด์อื่น ขยับขยายหน้าตาระบบยาก</td></tr>
+            <tr><th scope="row">การดึงดูดลูกค้า (Conversion)</th><td>วางโครงสร้างเพื่อเปลี่ยนผู้เข้าชมเป็นลูกค้าจริง</td><td class="muted">เน้นสวยงามอย่างเดียว ไม่มีกลยุทธ์เพื่อเพิ่มยอดขาย</td></tr>
+            <tr><th scope="row">ระบบฐานข้อมูลหลังบ้าน</th><td>ดึงข้อมูลและจัดการออเดอร์ได้อย่างยืดหยุ่น</td><td class="muted">ทำไม่ได้ หรือต้องพึ่งปลั๊กอินที่มีค่าบริการรายเดือน</td></tr>
+            <tr><th scope="row">AI &amp; Automation</th><td>คีย์ออเดอร์ ตอบคำถาม ซิงค์ข้อมูลอัตโนมัติ</td><td class="muted">ต้องทำงานแอดมินทุกขั้นตอนด้วยมือ</td></tr>
+            <tr><th scope="row">ความเป็นเจ้าของซอฟต์แวร์</th><td>ส่งมอบ Source Code และสิทธิ์ขาดระบบ 100%</td><td class="muted">ผูกกับแพลตฟอร์มรายเดือน ย้ายหรือเปลี่ยนโค้ดไม่ได้</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- INTERACTIVE PROJECT COST ESTIMATOR -->
+    <!-- 07 PRICING ESTIMATOR -->
     <section id="pricing">
-      <p class="section-label reveal">Cost Estimator</p>
-      <h2 class="section-title reveal">จัดสเปกและประเมินราคางานดิจิทัลของคุณ</h2>
-      
+      <div class="section-head split">
+        <div>
+          <p class="section-label">§07 — Cost estimator</p>
+          <h2 class="section-title">จัดสเปกและประเมินราคา</h2>
+        </div>
+        <p class="section-intro">เลือกบริการและส่วนเสริมที่ต้องการ ระบบจะสรุปราคาเริ่มต้นและระยะเวลาให้ทันที</p>
+      </div>
+
       <div class="estimator-layout reveal">
-        <!-- Left Config Options -->
         <div class="estimator-config">
-          
-          <!-- Group 1: Service Type -->
           <div class="estimator-group">
-            <h3 class="estimator-group-title"><i data-lucide="package"></i> 1. เลือกบริการหลักที่ต้องการ</h3>
+            <h3 class="estimator-group-title"><span>1</span> บริการหลัก</h3>
             <div class="selector-grid">
               <div class="estimator-card selected" data-id="website" data-price="15000" data-days="4" onclick="toggleOption('website')">
                 <div class="estimator-checkbox"><i data-lucide="check"></i></div>
                 <div class="estimator-card-text">
                   <span class="est-card-title">เว็บไซต์ธุรกิจ / Landing Page</span>
-                  <span class="est-card-desc">ออกแบบ Custom UI/UX, โครงสร้าง SEO ครบถ้วน เริ่มต้น ฿15,000</span>
+                  <span class="est-card-desc">Custom UI/UX, โครงสร้าง SEO ครบถ้วน</span>
                 </div>
+                <span class="est-card-price">฿15,000</span>
               </div>
               <div class="estimator-card" data-id="system" data-price="35000" data-days="10" onclick="toggleOption('system')">
                 <div class="estimator-checkbox"><i data-lucide="check"></i></div>
                 <div class="estimator-card-text">
                   <span class="est-card-title">ระบบหลังบ้าน / CRM / Web App</span>
-                  <span class="est-card-desc">ฐานข้อมูล Dashboard สรุปผล จัดการข้อมูลเรียลไทม์ เริ่มต้น ฿35,000</span>
+                  <span class="est-card-desc">ฐานข้อมูล Dashboard สรุปผล จัดการข้อมูลเรียลไทม์</span>
                 </div>
+                <span class="est-card-price">฿35,000</span>
               </div>
               <div class="estimator-card" data-id="ai" data-price="20000" data-days="5" onclick="toggleOption('ai')">
                 <div class="estimator-checkbox"><i data-lucide="check"></i></div>
                 <div class="estimator-card-text">
-                  <span class="est-card-title">AI & Chatbot อัตโนมัติ</span>
-                  <span class="est-card-desc">บอทตอบ LINE/FB คีย์ข้อมูลลง Sheet ทำงานแทนคน เริ่มต้น ฿20,000</span>
+                  <span class="est-card-title">AI &amp; Chatbot อัตโนมัติ</span>
+                  <span class="est-card-desc">บอทตอบ LINE/FB คีย์ข้อมูลลง Sheet ทำงานแทนคน</span>
                 </div>
+                <span class="est-card-price">฿20,000</span>
               </div>
             </div>
           </div>
 
-          <!-- Group 2: Add-on Features -->
           <div class="estimator-group">
-            <h3 class="estimator-group-title"><i data-lucide="sliders"></i> 2. เพิ่มเติมส่วนเสริมระบบ (Add-ons)</h3>
+            <h3 class="estimator-group-title"><span>2</span> ส่วนเสริม (Add-ons)</h3>
             <div class="selector-grid">
               <div class="estimator-card" data-id="login" data-price="8000" data-days="2" onclick="toggleOption('login')">
                 <div class="estimator-checkbox"><i data-lucide="check"></i></div>
                 <div class="estimator-card-text">
-                  <span class="est-card-title">ระบบ Login & สิทธิ์สมาชิก</span>
-                  <span class="est-card-desc">ความปลอดภัยระดับสูง แยกสิทธิ์พนักงาน/ลูกค้า (+฿8,000)</span>
+                  <span class="est-card-title">ระบบ Login &amp; สิทธิ์สมาชิก</span>
+                  <span class="est-card-desc">แยกสิทธิ์พนักงาน/ลูกค้า</span>
                 </div>
+                <span class="est-card-price">+฿8,000</span>
               </div>
               <div class="estimator-card" data-id="payment" data-price="10000" data-days="3" onclick="toggleOption('payment')">
                 <div class="estimator-checkbox"><i data-lucide="check"></i></div>
                 <div class="estimator-card-text">
                   <span class="est-card-title">เชื่อมต่อช่องทางชำระเงิน</span>
-                  <span class="est-card-desc">บัตรเครดิต, พร้อมเพย์ สแกนคิวอาร์บิลทันที (+฿10,000)</span>
+                  <span class="est-card-desc">บัตรเครดิต, พร้อมเพย์ สแกนคิวอาร์</span>
                 </div>
+                <span class="est-card-price">+฿10,000</span>
               </div>
               <div class="estimator-card" data-id="api" data-price="8000" data-days="2" onclick="toggleOption('api')">
                 <div class="estimator-checkbox"><i data-lucide="check"></i></div>
                 <div class="estimator-card-text">
                   <span class="est-card-title">เชื่อม API / Google Sheets</span>
-                  <span class="est-card-desc">ส่งผ่านข้อมูลข้ามระบบอัตโนมัติ ไหลลื่นไม่สะดุด (+฿8,000)</span>
+                  <span class="est-card-desc">ส่งผ่านข้อมูลข้ามระบบอัตโนมัติ</span>
                 </div>
+                <span class="est-card-price">+฿8,000</span>
               </div>
               <div class="estimator-card" data-id="notify" data-price="5000" data-days="1" onclick="toggleOption('notify')">
                 <div class="estimator-checkbox"><i data-lucide="check"></i></div>
                 <div class="estimator-card-text">
                   <span class="est-card-title">ระบบแจ้งเตือน LINE / SMS</span>
-                  <span class="est-card-desc">ส่งข้อความอัตโนมัติแจ้งลูกค้า/ทีมทันทีเมื่อมีออเดอร์ (+฿5,000)</span>
+                  <span class="est-card-desc">แจ้งลูกค้า/ทีมทันทีเมื่อมีออเดอร์</span>
                 </div>
+                <span class="est-card-price">+฿5,000</span>
               </div>
             </div>
           </div>
 
-          <!-- Group 3: Project Speed -->
           <div class="estimator-group">
-            <h3 class="estimator-group-title"><i data-lucide="calendar"></i> 3. ความเร่งด่วนของแผนงาน</h3>
+            <h3 class="estimator-group-title"><span>3</span> ความเร่งด่วน</h3>
             <div class="selector-grid">
               <div class="estimator-card selected" id="opt-speed-normal" onclick="selectSpeedRadio('normal')">
                 <div class="estimator-radio"></div>
                 <div class="estimator-card-text">
-                  <span class="est-card-title">ระยะเวลาส่งมอบปกติ (Standard)</span>
-                  <span class="est-card-desc">ดำเนินการตามขั้นตอนปกติอย่างประณีต (ฟรี)</span>
+                  <span class="est-card-title">ระยะเวลาปกติ (Standard)</span>
+                  <span class="est-card-desc">ดำเนินการตามขั้นตอนปกติอย่างประณีต</span>
                 </div>
+                <span class="est-card-price">ฟรี</span>
               </div>
               <div class="estimator-card" id="opt-speed-express" onclick="selectSpeedRadio('express')">
                 <div class="estimator-radio"></div>
                 <div class="estimator-card-text">
-                  <span class="est-card-title">ด่วนพิเศษ (Express Delivery)</span>
-                  <span class="est-card-desc">เร่งด่วนดึงทีมมาพัฒนาระบบทันที (+฿12,000, ลดระยะเวลาลง 4 วัน)</span>
+                  <span class="est-card-title">ด่วนพิเศษ (Express)</span>
+                  <span class="est-card-desc">ลดระยะเวลาลง 4 วัน</span>
                 </div>
+                <span class="est-card-price">+฿12,000</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Summary Blueprint Panel -->
-        <div class="estimator-panel">
-          <span class="panel-header-text">Specification Blueprint</span>
-          <h3 class="panel-title">สรุปราคางานและระบบ</h3>
-          
-          <div class="panel-summary-list" id="panel-summary-items">
-            <!-- Selected features rendered dynamically here -->
-          </div>
-          
-          <div class="panel-calculation">
-            <span class="calc-label">ประมาณการงบประมาณเริ่มต้น</span>
-            <div class="calc-val" id="est-total-price">฿15,000</div>
-            <div class="calc-timeline"><i data-lucide="clock"></i> ระยะเวลาจัดทำ: <span id="est-total-days">4</span> วัน</div>
-          </div>
-
-          <div class="quote-form">
-            <span class="panel-header-text">ขอใบเสนอราคา / ปรึกษาแนวคิดฟรี</span>
-            <!-- HONEYPOT ANTI-SPAM BOT TRAP (Hidden from real users) -->
-            <div style="display:none !important; visibility:hidden !important; tab-index:-1;" aria-hidden="true">
-              <input type="text" id="quote-website-hp" name="website_hp" autocomplete="off" tabindex="-1">
+        <aside class="estimator-panel" aria-label="สรุปราคา">
+          <div class="spec-card-head"><span>Specification</span><span class="muted">NX-QUOTE</span></div>
+          <div class="estimator-panel-body">
+            <div class="panel-summary-list" id="panel-summary-items"></div>
+            <div class="panel-calculation">
+              <span class="calc-label">ประมาณการงบประมาณเริ่มต้น</span>
+              <div class="calc-val" id="est-total-price">฿15,000</div>
+              <div class="calc-timeline">ระยะเวลาจัดทำ: <span id="est-total-days">4</span> วัน</div>
             </div>
 
-            <input type="text" id="quote-name" placeholder="ชื่อ หรือชื่อบริษัทของคุณ" class="form-input" required maxlength="100">
-            <input type="text" id="quote-contact" placeholder="LINE ID / Facebook / อีเมลสำหรับการติดต่อกลับ" class="form-input" required maxlength="150">
-            <textarea id="quote-notes" placeholder="รายละเอียดหรือขอบเขตงานที่ต้องการเพิ่มเติม..." class="form-input" style="min-height: 80px; resize: vertical;" maxlength="1000"></textarea>
-            
-            <div style="font-size: 0.78rem; color: var(--muted); margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.4rem;">
-              <i data-lucide="shield-check" size="16" style="color: var(--primary); flex-shrink: 0; margin-top: 2px;"></i>
-              <span>ข้อมูลของคุณได้รับการคุ้มครองความปลอดภัยตามมาตรฐาน PDPA ใช้สำหรับประเมินราคาและติดต่อกลับเท่านั้น</span>
+            <div class="quote-form">
+              <span class="panel-header-text">ขอใบเสนอราคา / ปรึกษาฟรี</span>
+              <div class="hp-field" aria-hidden="true">
+                <input type="text" id="quote-website-hp" name="website_hp" autocomplete="off" tabindex="-1">
+              </div>
+              <label class="sr-only" for="quote-name">ชื่อ หรือชื่อบริษัท</label>
+              <input type="text" id="quote-name" placeholder="ชื่อ หรือชื่อบริษัทของคุณ" class="form-input" required maxlength="100">
+              <label class="sr-only" for="quote-contact">ช่องทางติดต่อกลับ</label>
+              <input type="text" id="quote-contact" placeholder="LINE ID / Facebook / อีเมล" class="form-input" required maxlength="150">
+              <label class="sr-only" for="quote-notes">รายละเอียดเพิ่มเติม</label>
+              <textarea id="quote-notes" placeholder="รายละเอียดหรือขอบเขตงานที่ต้องการเพิ่มเติม..." class="form-input form-textarea" maxlength="1000"></textarea>
+              <p class="form-note">ข้อมูลของคุณได้รับการคุ้มครองตามมาตรฐาน PDPA ใช้สำหรับประเมินราคาและติดต่อกลับเท่านั้น</p>
+              <button type="button" class="btn-form-submit" onclick="submitProjectBrief()">ส่งแผนงานสเปกนี้ให้เรา</button>
             </div>
-
-            <button class="btn-form-submit" onclick="submitProjectBrief()"><i data-lucide="send"></i> ส่งแผนงานสเปกนี้ให้เรา</button>
           </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 08 STACK -->
+    <section id="tech">
+      <div class="section-head">
+        <p class="section-label">§08 — Stack</p>
+        <h2 class="section-title">เครื่องมือที่เราใช้สร้างระบบ</h2>
+      </div>
+      <ul class="tech-pills reveal">
+        <li class="pill">Next.js / React</li>
+        <li class="pill">TypeScript</li>
+        <li class="pill">Tailwind CSS</li>
+        <li class="pill">Node.js / Bun</li>
+        <li class="pill">FastAPI / Python</li>
+        <li class="pill">PostgreSQL / Supabase</li>
+        <li class="pill">Firebase / MongoDB</li>
+        <li class="pill">Vercel / AWS</li>
+        <li class="pill">Docker</li>
+        <li class="pill">Cloudflare / GitHub Actions</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+      <div class="cta-inner">
+        <div>
+          <p class="cta-eyebrow">ฟรี 30 นาที · ไม่มีค่าใช้จ่าย</p>
+          <h2 class="cta-title">พร้อมสร้างระบบเพื่อเติบโตธุรกิจคุณแล้วหรือยัง<span>?</span></h2>
+        </div>
+        <div class="cta-side">
+          <p class="cta-desc">ปรึกษาไอเดีย แนะนำแนวทางแก้ปัญหา หรือประเมินแผนงานฟรี ทีมงานตอบกลับภายใน 1 ชั่วโมง</p>
+          <div class="cta-actions">
+            <button type="button" onclick="openAuditModal()" class="btn-primary">จองคิวรับ AI Audit ฟรี</button>
+            <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" class="btn-outline-light">ทักแชท Messenger</a>
+          </div>
+          <p class="cta-contact">อีเมล: <a href="mailto:nattaponhirun4@gmail.com" onclick="sendEmailDirect(event)">nattaponhirun4@gmail.com</a> · เพจ: <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer">NEONEX Facebook</a></p>
         </div>
       </div>
-    </section>
-
-    <!-- TECH STACK -->
-    <section id="tech">
-      <p class="section-label reveal">Tech Stack</p>
-      <h2 class="section-title reveal">เทคโนโลยีประสิทธิภาพสูงที่เราใช้สร้างระบบ</h2>
-      <div class="tech-pills reveal">
-        <span class="pill">Next.js / React</span>
-        <span class="pill">TypeScript</span>
-        <span class="pill">Tailwind CSS</span>
-        <span class="pill">Node.js / Bun</span>
-        <span class="pill">FastAPI / Python</span>
-        <span class="pill">PostgreSQL / Supabase</span>
-        <span class="pill">Firebase / MongoDB</span>
-        <span class="pill">Vercel / AWS</span>
-        <span class="pill">Docker</span>
-        <span class="pill">Cloudflare / GitHub Actions</span>
-      </div>
-    </section>
-
-    <!-- CTA CONTACT -->
-    <section class="cta-section" id="contact">
-      <p class="section-label">Get Started</p>
-      <h2 class="section-title">พร้อมสร้างระบบเพื่อ<br>เติบโตธุรกิจคุณแล้วหรือยัง?</h2>
-      <p class="cta-desc">ปรึกษาไอเดีย แนะนำแนวทางแก้ปัญหา หรือประเมินแผนงานฟรี ไม่มีค่าใช้จ่าย ทีมงานตอบกลับรวดเร็วภายใน 1 ชั่วโมง</p>
-      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
-        <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" class="btn-facebook" aria-label="ทักแชท Facebook Messenger"><i data-lucide="message-square" size="20"></i> ทักแชท Facebook Messenger</a>
-        <a href="#pricing" class="btn-dark" aria-label="คำนวณราคาและติดต่อผ่านระบบ"><i data-lucide="calculator" size="20"></i> คำนวณราคา & ส่งสเปก</a>
-        <a href="javascript:void(0)" onclick="sendEmailDirect(event)" class="btn-dark" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff;" aria-label="ส่งอีเมลหา NEONEX"><i data-lucide="mail" size="20"></i> ส่งอีเมลหาเราโดยตรง</a>
-      </div>
-      <p style="font-size:0.9rem;color:var(--muted); font-weight: 500;">Email: <a href="javascript:void(0)" onclick="sendEmailDirect(event)" style="color:var(--primary); text-decoration:underline;">nattaponhirun4@gmail.com</a> · Messenger: <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;">ทักแชท Messenger</a> · เพจ: <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;">NEONEX Facebook Page</a></p>
     </section>
   </main>
 
@@ -789,68 +589,59 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-info">
-        <div class="footer-logo"><i data-lucide="zap" size="24" stroke-width="3"></i> NEONEX</div>
-        <p class="footer-note">เราพัฒนาเว็บไซต์ ระบบดิจิทัล และ AI Automation ที่เน้นผลลัพธ์ในการขับเคลื่อนยอดขาย ลดขั้นตอนงานซ้ำซ้อน และเพิ่มมูลค่าการเติบโตให้ธุรกิจคุณ</p>
-        <div class="footer-socials">
-          <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Messenger" title="ทักแชท Messenger">
-            <i data-lucide="message-square" size="18"></i> ทักแชท Messenger
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook Page" title="ติดตามเพจ Facebook">
-            <i data-lucide="facebook" size="18"></i> Facebook Page
-          </a>
-        </div>
+        <div class="footer-logo">NEONEX<span>.</span></div>
+        <p class="footer-note">เราพัฒนาเว็บไซต์ ระบบดิจิทัล และ AI Automation ที่เน้นผลลัพธ์ ขับเคลื่อนยอดขาย ลดขั้นตอนงานซ้ำซ้อน และเพิ่มมูลค่าการเติบโตให้ธุรกิจคุณ</p>
       </div>
       <div class="footer-links-group">
         <div class="footer-links">
-          <h4>Product</h4>
-          <a href="#services">บริการของเรา</a>
+          <h4>เว็บไซต์</h4>
+          <a href="#portfolio">ผลงาน</a>
+          <a href="#services">บริการ</a>
           <a href="#before-after">ผลลัพธ์จริง</a>
           <a href="#how">ขั้นตอนทำงาน</a>
-          <a href="#testimonials">รีวิวจากลูกค้า</a>
-          <a href="#pricing">ประเมินราคา & สเปก</a>
+          <a href="#pricing">ประเมินราคา</a>
         </div>
         <div class="footer-links">
-          <h4>Support & Contact</h4>
-          <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.4rem;"><i data-lucide="message-square" size="14"></i> แชท Messenger</a>
-          <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.4rem;"><i data-lucide="facebook" size="14"></i> Facebook Page</a>
-          <a href="javascript:void(0)" onclick="sendEmailDirect(event)">ติดต่ออีเมล (nattaponhirun4@gmail.com)</a>
-          <a href="javascript:void(0)" onclick="openAuditModal()">จองคิวรับ AI Audit ฟรี</a>
+          <h4>ติดต่อ</h4>
+          <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer">Messenger ↗</a>
+          <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer">Facebook Page ↗</a>
+          <a href="mailto:nattaponhirun4@gmail.com" onclick="sendEmailDirect(event)">nattaponhirun4@gmail.com</a>
+          <button type="button" class="footer-link-btn" onclick="openAuditModal()">จองคิวรับ AI Audit ฟรี</button>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <p>© 2026 NEONEX. All rights reserved. Build AI & Digital Systems That Scale Your Business.</p>
-      </div>
+      <p>© 2026 NEONEX</p>
+      <p>Build AI &amp; digital systems that scale your business.</p>
     </div>
   </footer>
 
   <!-- AI & EFFICIENCY AUDIT BOOKING MODAL -->
   <div class="custom-modal" id="audit-modal">
     <div class="modal-content audit-modal-content">
-      <button class="modal-close-btn" onclick="closeAuditModal()"><i data-lucide="x" size="20"></i></button>
+      <button type="button" class="modal-close-btn" onclick="closeAuditModal()" aria-label="ปิด"><i data-lucide="x" size="20"></i></button>
 
       <div class="audit-modal-header">
         <div class="audit-badge"><i data-lucide="sparkles" size="14"></i> Exclusive 1-on-1 Session</div>
-        <h3 class="modal-title" style="margin-top:0.4rem;">จองคิวรับ AI & Efficiency Audit ฟรี</h3>
-        <p class="modal-desc" style="margin-bottom:1rem;">วิเคราะห์กระบวนการทำงาน ประเมินจุดลดต้นทุน และออกแบบแนวทาง AI Automation สำหรับธุรกิจคุณ (30 นาที)</p>
+        <h3 class="modal-title">จองคิวรับ AI & Efficiency Audit ฟรี</h3>
+        <p class="modal-desc">วิเคราะห์กระบวนการทำงาน ประเมินจุดลดต้นทุน และออกแบบแนวทาง AI Automation สำหรับธุรกิจคุณ (30 นาที)</p>
       </div>
 
       <form id="audit-form" onsubmit="handleAuditSubmit(event)" class="audit-form-body">
         <div class="form-grid">
           <div class="form-group">
-            <label class="form-label">ชื่อ-นามสกุล <span style="color:#EF4444;">*</span></label>
+            <label class="form-label" for="audit-name">ชื่อ-นามสกุล <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="audit-name" class="form-input" placeholder="เช่น คุณสมชาย วิวัฒน์" required>
           </div>
           <div class="form-group">
-            <label class="form-label">เบอร์โทรศัพท์ / LINE ID <span style="color:#EF4444;">*</span></label>
+            <label class="form-label" for="audit-contact">เบอร์โทรศัพท์ / LINE ID <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="audit-contact" class="form-input" placeholder="เช่น 081-234-5678 หรือ line_id" required>
           </div>
         </div>
 
         <div class="form-grid">
           <div class="form-group">
-            <label class="form-label">ชื่อบริษัท / ประเภทธุรกิจ <span style="color:#EF4444;">*</span></label>
+            <label class="form-label" for="audit-business">ชื่อบริษัท / ประเภทธุรกิจ <span class="req" aria-hidden="true">*</span></label>
             <select id="audit-business" class="form-input" required>
               <option value="" disabled selected>-- เลือกประเภทธุรกิจของคุณ --</option>
               <option value="ขายของออนไลน์ / E-Commerce">ขายของออนไลน์ / E-Commerce</option>
@@ -862,7 +653,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">งบประมาณที่คาดหวังในการพัฒนาระบบ</label>
+            <label class="form-label" for="audit-budget">งบประมาณที่คาดหวังในการพัฒนาระบบ</label>
             <select id="audit-budget" class="form-input">
               <option value="฿15,000 - ฿30,000">฿15,000 - ฿30,000 (starter/landing)</option>
               <option value="฿30,000 - ฿70,000" selected>฿30,000 - ฿70,000 (AI & Web App)</option>
@@ -873,17 +664,17 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">ปัญหาหลักหรือขั้นตอนงานซ้ำซ้อนที่อยากให้ AI ช่วยแก้ไข <span style="color:#EF4444;">*</span></label>
+          <label class="form-label" for="audit-bottleneck">ปัญหาหลักหรือขั้นตอนงานซ้ำซ้อนที่อยากให้ AI ช่วยแก้ไข <span class="req" aria-hidden="true">*</span></label>
           <textarea id="audit-bottleneck" class="form-input form-textarea" rows="3" placeholder="เช่น คีย์ออเดอร์ลง Excel ช้ามาก, แอดมินตอบแชทไม่ทันช่วงกลางคืน, อยากได้ระบบหลังบ้านจัดการสต็อก" required></textarea>
         </div>
 
         <div class="audit-perks">
-          <div class="perk-item"><i data-lucide="check-circle-2" size="16" style="color:var(--primary);"></i> ฟรี 30 นาที ไม่มีความผูกมัด</div>
-          <div class="perk-item"><i data-lucide="check-circle-2" size="16" style="color:var(--primary);"></i> สรุปประเมิน ROI ให้ทันที</div>
-          <div class="perk-item"><i data-lucide="check-circle-2" size="16" style="color:var(--primary);"></i> คุยตรงกับ AI Specialist</div>
+          <div class="perk-item"><i data-lucide="check-circle-2" size="16"></i> ฟรี 30 นาที ไม่มีความผูกมัด</div>
+          <div class="perk-item"><i data-lucide="check-circle-2" size="16"></i> สรุปประเมิน ROI ให้ทันที</div>
+          <div class="perk-item"><i data-lucide="check-circle-2" size="16"></i> คุยตรงกับ AI Specialist</div>
         </div>
 
-        <div class="modal-buttons" style="margin-top:1.2rem;">
+        <div class="modal-buttons">
           <button type="button" class="modal-btn secondary" onclick="closeAuditModal()">ยกเลิก</button>
           <button type="submit" class="modal-btn primary"><i data-lucide="send" size="16"></i> ยืนยันการจองคิว Audit ฟรี →</button>
         </div>
@@ -932,15 +723,6 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Cursor Glow Effect
-    const glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    document.body.appendChild(glow);
-    document.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
-
     // Stagger Reveal on Scroll
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -952,198 +734,33 @@
     }, {threshold: 0.1});
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    /* --- INTERACTIVE SIMULATOR CODE --- */
-    
-    // Tab switching
-    function switchTab(tabName) {
-      document.querySelectorAll('.mockup-tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.mockup-content').forEach(content => content.classList.remove('active'));
-      
-      const tabTitle = document.getElementById('mockup-window-title');
-      
-      if (tabName === 'bot') {
-        document.getElementById('btn-tab-bot').classList.add('active');
-        document.getElementById('tab-bot').classList.add('active');
-        tabTitle.textContent = 'AI Automation Console';
-      } else if (tabName === 'dash') {
-        document.getElementById('btn-tab-dash').classList.add('active');
-        document.getElementById('tab-dash').classList.add('active');
-        tabTitle.textContent = 'Real-time Backoffice System';
-        triggerDashboardLifecycle();
-      } else if (tabName === 'speed') {
-        document.getElementById('btn-tab-speed').classList.add('active');
-        document.getElementById('tab-speed').classList.add('active');
-        tabTitle.textContent = 'Web Performance Analyzer';
-        // Auto trigger speed test once
-        if (speedTestScore === 0) {
-          runSpeedTest();
+    // Nav: glass state on scroll + active section highlight
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const navLinkMap = new Map();
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => navLinkMap.set(a.getAttribute('href').slice(1), a));
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const link = navLinkMap.get(e.target.id);
+        if (link && e.isIntersecting) {
+          navLinkMap.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
         }
-      }
-    }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navLinkMap.forEach((_, id) => { const s = document.getElementById(id); if (s) sectionObs.observe(s); });
 
-    // 1. AI Chatbot Simulator Loop
-    const chatMessages = document.getElementById('chat-messages');
-    const systemLogs = document.getElementById('system-logs');
-    
-    const botScript = [
-      { sender: 'bot', text: 'สวัสดีค่ะ ยินดีต้อนรับสู่ NEONEX! 🤖' },
-      { sender: 'bot', text: 'เราออกแบบระบบบอทตอบคำถามและทำงานหลังบ้านแทนพนักงานได้ 24 ชั่วโมงค่ะ' },
-      { sender: 'user', text: 'ช่วยเช็คสถานะออเดอร์ของ คุณสมพล ให้หน่อยครับ' },
-      { sender: 'bot', text: 'กำลังเชื่อมต่อไปยัง Google Sheet & CRM Database...' },
-      { sender: 'log', text: '[AI] Intent recognized: check_order_status' },
-      { sender: 'log', text: '[DB] Query executed: SELECT * FROM orders WHERE name LIKE "%สมพล%"' },
-      { sender: 'bot', text: 'พบข้อมูลออเดอร์ #1042: คุณสมพล เลิศดี จัดส่งเรียบร้อยแล้วค่ะ! 📦 (เลขพัสดุ: TH98239A)' },
-      { sender: 'user', text: 'รบกวนสรุปยอดขายร้านค้าของวันนี้' },
-      { sender: 'bot', text: 'ดึงข้อมูลออเดอร์วันนี้สำเร็จ กำลังจัดทำตารางสรุปค่ะ...' },
-      { sender: 'log', text: '[API] Google sheets rows fetched: 182 rows' },
-      { sender: 'log', text: '[AI] Generating summaries: Total Revenue = 45,200 THB' },
-      { sender: 'bot', text: 'ยอดขายสะสมวันนี้: ฿45,200 (คำสั่งซื้อสำเร็จ 142 รายการ บอทช่วยตอบปิดการขาย 85%) 🎉' },
-      { sender: 'log', text: '[Success] Reports sent to Line group chat' }
-    ];
-    
-    let scriptIndex = 0;
-    let chatbotTimer = null;
-
-    function runChatbotSimulator() {
-      if (scriptIndex >= botScript.length) {
-        scriptIndex = 0;
-        chatMessages.innerHTML = '';
-        systemLogs.innerHTML = '<div class="log-line">> Console restarted...</div>';
-      }
-      
-      const current = botScript[scriptIndex];
-      
-      if (current.sender === 'log') {
-        // Appends to system log panel
-        appendLog(current.text);
-        scriptIndex++;
-        runChatbotSimulator();
-      } else {
-        // Normal chat messages
-        const typingBar = document.getElementById('chat-typing-placeholder');
-        typingBar.textContent = current.sender === 'bot' ? 'AI กำลังประมวลผลข้อความ...' : 'ลูกค้าจำลองกำลังพิมพ์ข้อความ...';
-        
-        setTimeout(() => {
-          appendChatMessage(current.sender, current.text);
-          typingBar.textContent = 'พิมพ์คำถามเพื่อจำลองระบบอัตโนมัติ...';
-          scriptIndex++;
-          // Wait longer after bot replies
-          const nextWait = current.sender === 'bot' ? 2500 : 1500;
-          chatbotTimer = setTimeout(runChatbotSimulator, nextWait);
-        }, 1200);
-      }
-    }
-
-    function appendChatMessage(sender, text) {
-      const msgDiv = document.createElement('div');
-      msgDiv.className = `chat-msg ${sender}`;
-      msgDiv.textContent = text;
-      
-      const timeSpan = document.createElement('span');
-      timeSpan.className = 'chat-msg-time';
-      const now = new Date();
-      timeSpan.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-      msgDiv.appendChild(timeSpan);
-      
-      chatMessages.appendChild(msgDiv);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    function appendLog(text) {
-      const logLine = document.createElement('div');
-      logLine.className = 'log-line';
-      logLine.textContent = `> ${text}`;
-      systemLogs.appendChild(logLine);
-      systemLogs.scrollTop = systemLogs.scrollHeight;
-    }
-
-    // Start Chatbot simulator on load
-    runChatbotSimulator();
-
-    // 2. Dashboard Simulator
-    let dashOrders = 142;
-    let dashSales = 45200;
-    const feedNames = ["คุณสมจิตต์", "คุณนที", "คุณรพีภัทร", "คุณศิริ", "คุณอรพิน", "คุณธวัชชัย"];
-    const feedActions = ["คีย์ออเดอร์สำเร็จ", "แจ้งโอนเงินเข้า CRM", "สั่งซื้อสินค้าหมวด A", "สมัครสมาชิกใหม่", "รับแผนงานใบเสนอราคา"];
-    let dashInterval = null;
-
-    function triggerDashboardLifecycle() {
-      if (dashInterval) return;
-      
-      dashInterval = setInterval(() => {
-        // Randomly update dashboard metrics
-        const orderInc = Math.floor(Math.random() * 2) + 1;
-        const salesInc = orderInc * (Math.floor(Math.random() * 800) + 300);
-        
-        dashOrders += orderInc;
-        dashSales += salesInc;
-        
-        document.getElementById('dash-orders').textContent = dashOrders;
-        document.getElementById('dash-sales').textContent = `฿${dashSales.toLocaleString()}`;
-        
-        // Append item to live feed list
-        const randomName = feedNames[Math.floor(Math.random() * feedNames.length)];
-        const randomAction = feedActions[Math.floor(Math.random() * feedActions.length)];
-        const liveFeed = document.getElementById('live-feed');
-        
-        const feedItem = document.createElement('div');
-        feedItem.className = 'feed-item';
-        feedItem.innerHTML = `<span class="feed-name">${randomName}: ${randomAction}</span><span class="feed-status success">Success</span>`;
-        
-        liveFeed.insertBefore(feedItem, liveFeed.firstChild);
-        if (liveFeed.children.length > 3) {
-          liveFeed.removeChild(liveFeed.lastChild);
-        }
-      }, 3000);
-    }
-
-    // 3. Web Speed Simulator
-    let speedTestScore = 0;
-    function runSpeedTest() {
-      const gauge = document.getElementById('speed-gauge');
-      const scoreNum = document.getElementById('speed-score-num');
-      const fcpVal = document.getElementById('speed-fcp');
-      const lcpVal = document.getElementById('speed-lcp');
-      const btn = document.getElementById('btn-speed-trigger');
-      
-      // Reset
-      btn.disabled = true;
-      btn.textContent = 'Analyzing...';
-      gauge.style.strokeDashoffset = '377';
-      scoreNum.textContent = '0';
-      fcpVal.textContent = '0.0s';
-      lcpVal.textContent = '0.0s';
-      speedTestScore = 0;
-      
-      let count = 0;
-      const targetScore = 99;
-      const duration = 1500;
-      const stepTime = Math.abs(Math.floor(duration / targetScore));
-      
-      setTimeout(() => {
-        // Gauge fill animation
-        const offset = 377 - (377 * (targetScore / 100));
-        gauge.style.strokeDashoffset = offset;
-        
-        // Text count up
-        const timer = setInterval(() => {
-          count++;
-          scoreNum.textContent = count;
-          
-          // FCP & LCP fake updates
-          fcpVal.textContent = `${(0.1 + (count / 100) * 0.2).toFixed(1)}s`;
-          lcpVal.textContent = `${(0.2 + (count / 100) * 0.5).toFixed(1)}s`;
-          
-          if (count >= targetScore) {
-            clearInterval(timer);
-            btn.disabled = false;
-            btn.textContent = 'Re-run Test';
-            speedTestScore = targetScore;
-          }
-        }, stepTime);
-      }, 500);
-    }
-
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const setMenu = open => {
+      navbar.classList.toggle('menu-open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    };
+    navToggle.addEventListener('click', () => setMenu(!navbar.classList.contains('menu-open')));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
     /* --- PROJECT COST ESTIMATOR CODE --- */
     const selectedOptions = {
@@ -1218,9 +835,8 @@
         totalDays = Math.max(2, totalDays - 4); // Reduces days by 4, min 2 days
         
         const speedSummaryItem = document.createElement('div');
-        speedSummaryItem.className = 'panel-summary-item';
-        speedSummaryItem.style.color = '#10B981';
-        speedSummaryItem.innerHTML = `<span class="panel-summary-label" style="color: #10B981;">• ด่วนพิเศษ (Express Delivery)</span><span class="panel-summary-val">฿12,000</span>`;
+        speedSummaryItem.className = 'panel-summary-item express';
+        speedSummaryItem.innerHTML = `<span class="panel-summary-label">• ด่วนพิเศษ (Express Delivery)</span><span class="panel-summary-val">฿12,000</span>`;
         summaryContainer.appendChild(speedSummaryItem);
       }
       
