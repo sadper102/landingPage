@@ -83,7 +83,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261118d">
+  <link rel="stylesheet" href="style.css?v=20261119a">
 </head>
 <body>
 
@@ -577,6 +577,14 @@
             <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer" class="btn-outline-light">ทักแชท Messenger</a>
           </div>
           <p class="cta-contact">อีเมล: <a href="mailto:nattaponhirun4@gmail.com" onclick="sendEmailDirect(event)">nattaponhirun4@gmail.com</a> · เพจ: <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer">NEONEX Facebook</a></p>
+          <div class="line-card">
+            <img src="assets/line-qr.png" alt="QR Code สำหรับแอด LINE ID tarnsucked" width="120" height="120" class="line-qr" loading="lazy">
+            <div class="line-info">
+              <p class="line-label">สแกนเพื่อแอด LINE</p>
+              <p class="line-id">LINE ID: <strong>tarnsucked</strong></p>
+              <a href="https://line.me/ti/p/~tarnsucked" target="_blank" rel="noopener noreferrer" class="line-link">เพิ่มเพื่อนใน LINE ↗</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -600,6 +608,7 @@
         </div>
         <div class="footer-links">
           <h4>ติดต่อ</h4>
+          <a href="https://line.me/ti/p/~tarnsucked" target="_blank" rel="noopener noreferrer">LINE: tarnsucked ↗</a>
           <a href="https://m.me/61588520352122" target="_blank" rel="noopener noreferrer">Messenger ↗</a>
           <a href="https://www.facebook.com/profile.php?id=61588520352122" target="_blank" rel="noopener noreferrer">Facebook Page ↗</a>
           <a href="mailto:nattaponhirun4@gmail.com" onclick="sendEmailDirect(event)">nattaponhirun4@gmail.com</a>
@@ -976,7 +985,7 @@ ${itemsList.join('\n')}
       // So copy-paste is the absolute best fallback.
       // We already copied it, let's open line and remind user.
       alert('เราได้คัดลอกรายละเอียดสเปกให้คุณแล้ว! ระบบกำลังนำคุณแอดไลน์เพื่อติดต่อแชท ให้คุณกดวาง (Paste) ส่งข้อความหาเราในช่องแชทได้ทันทีค่ะ');
-      window.open('https://line.me/R/ti/p/@neonex', '_blank'); // Replace with actual line link
+      window.open('https://line.me/ti/p/~tarnsucked', '_blank');
     }
 
     /* --- TOAST & SMART EMAIL SYSTEM --- */
