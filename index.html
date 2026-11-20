@@ -863,9 +863,23 @@
       ENABLE_HONEYPOT: true,
       ENABLE_RATE_LIMIT: true,
       RATE_LIMIT_COOLDOWN_MS: 10000, // 10s cooldown
-      ENABLE_WEBHOOK: false, // Set true when connecting to Google Sheets / Discord / Make
-      WEBHOOK_URL: '' // Place API Webhook URL here
+      ENABLE_WEBHOOK: true,
+      // Google Apps Script Web app URL (see integrations/google-apps-script.gs)
+      WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbx5r6pmDoHaghXdcb3DyXRLpM-7qrVbQPkzfLlvZ1NcKPkMId7VKb196EHfdet3sburIw/exec'
     };
+
+    // Send a lead to the Google Sheet. text/plain + no-cors avoids a CORS preflight,
+    // which Apps Script web apps don't answer.
+    function sendLead(payload) {
+      if (!SECURITY_CONFIG.ENABLE_WEBHOOK || !SECURITY_CONFIG.WEBHOOK_URL) return;
+      fetch(SECURITY_CONFIG.WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ ...payload, page: location.pathname, timestamp: new Date().toISOString() }),
+        keepalive: true
+      }).catch(err => console.error('Lead webhook error:', err));
+    }
 
     let lastSubmissionTime = 0;
     let lastGeneratedBrief = '';
@@ -949,22 +963,15 @@ ${itemsList.join('\n')}
 
       lastGeneratedBrief = blueprintText;
 
-      // Optional Secure Webhook Dispatch
-      if (SECURITY_CONFIG.ENABLE_WEBHOOK && SECURITY_CONFIG.WEBHOOK_URL) {
-        fetch(SECURITY_CONFIG.WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: nameVal,
-            contact: contactVal,
-            notes: notesVal,
-            totalPrice: totalPrice,
-            totalDays: totalDays,
-            blueprint: blueprintText,
-            timestamp: new Date().toISOString()
-          })
-        }).catch(err => console.error('Webhook error:', err));
-      }
+      sendLead({
+        type: 'PROJECT_BRIEF',
+        name: nameVal,
+        contact: contactVal,
+        notes: notesVal,
+        totalPrice: totalPrice,
+        totalDays: totalDays,
+        blueprint: blueprintText
+      });
 
       // Copy to clipboard
       navigator.clipboard.writeText(blueprintText).then(() => {
@@ -1080,21 +1087,15 @@ ${bottleneck}
 
       lastGeneratedBrief = auditBrief;
 
-      if (SECURITY_CONFIG && SECURITY_CONFIG.ENABLE_WEBHOOK && SECURITY_CONFIG.WEBHOOK_URL) {
-        fetch(SECURITY_CONFIG.WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            type: 'AUDIT_BOOKING',
-            name,
-            contact,
-            business,
-            budget,
-            bottleneck,
-            timestamp: new Date().toISOString()
-          })
-        }).catch(err => console.error('Audit Webhook Error:', err));
-      }
+      sendLead({
+        type: 'AUDIT_BOOKING',
+        name,
+        contact,
+        business,
+        budget,
+        bottleneck,
+        blueprint: auditBrief
+      });
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(auditBrief).catch(() => {});
